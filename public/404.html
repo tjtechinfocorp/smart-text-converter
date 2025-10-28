@@ -50,9 +50,40 @@
     </div>
 
     <script>
-      // Redirect to the main app for SPA routing
-      // This ensures that all routes are handled by Angular
-      window.location.href = '/';
+        // Load the main Angular app for SPA routing
+        (function () {
+          // Load the main app scripts and styles
+          const scripts = [
+            '/polyfills-B6TNHZQ6.js',
+            '/main-XTTQIBMB.js'
+          ];
+
+          const styles = [
+            '/styles-LHHVGYM3.css'
+          ];
+
+          // Load styles
+          styles.forEach(href => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+          });
+
+          // Load scripts
+          scripts.forEach((src, index) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.type = 'module';
+            if (index === scripts.length - 1) {
+              // On the last script, update the body
+              script.onload = function () {
+                document.body.innerHTML = '<app-root></app-root>';
+              };
+            }
+            document.head.appendChild(script);
+          });
+        })();
     </script>
   </body>
 </html>
