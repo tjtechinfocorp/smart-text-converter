@@ -7,7 +7,7 @@
     "build": "npx ng build --configuration=production",
     "build:cloudflare": "npx ng build --configuration=production --output-path=dist/cloudflare",
     "build:cloudflare-ssr": "npx ng build --configuration=production --output-path=dist/cloudflare && npm run prepare:cloudflare-ssr",
-    "prepare:cloudflare-ssr": "cp -r dist/cloudflare/browser/* dist/cloudflare/ && cp dist/cloudflare/server/server.mjs dist/cloudflare/ && cp functions/_worker.js dist/cloudflare/",
+    "prepare:cloudflare-ssr": "cp -r dist/cloudflare/browser/* dist/cloudflare/ && cp dist/cloudflare/server/server.mjs dist/cloudflare/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr": "node dist/cloudflare/server/server.mjs",
