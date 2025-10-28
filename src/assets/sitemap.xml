@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Home — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/"/>
+  </url>
+  <!-- Case Converter — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/case-converter</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/case-converter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/case-converter?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/case-converter?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/case-converter?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/case-converter?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/case-converter?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/case-converter?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/case-converter?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/case-converter?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/case-converter?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/case-converter?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/case-converter?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/case-converter?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/case-converter?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/case-converter?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/case-converter?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/case-converter?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/case-converter?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/case-converter?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/case-converter?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/case-converter"/>
+  </url>
+  <!-- Text Formatter — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/text-formatter</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/text-formatter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/text-formatter?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/text-formatter?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/text-formatter?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/text-formatter?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/text-formatter?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/text-formatter?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/text-formatter?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/text-formatter?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/text-formatter?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/text-formatter?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/text-formatter?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/text-formatter?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/text-formatter?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/text-formatter?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/text-formatter?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/text-formatter?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/text-formatter?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/text-formatter?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/text-formatter?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/text-formatter"/>
+  </url>
+  <!-- List Tools — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/line-tools</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/line-tools"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/line-tools?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/line-tools?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/line-tools?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/line-tools?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/line-tools?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/line-tools?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/line-tools?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/line-tools?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/line-tools?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/line-tools?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/line-tools?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/line-tools?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/line-tools?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/line-tools?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/line-tools?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/line-tools?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/line-tools?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/line-tools?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/line-tools?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/line-tools"/>
+  </url>
+  <!-- Encode Decode — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/encode-decode</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/encode-decode"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/encode-decode?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/encode-decode?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/encode-decode?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/encode-decode?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/encode-decode?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/encode-decode?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/encode-decode?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/encode-decode?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/encode-decode?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/encode-decode?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/encode-decode?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/encode-decode?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/encode-decode?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/encode-decode?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/encode-decode?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/encode-decode?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/encode-decode?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/encode-decode?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/encode-decode?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/encode-decode"/>
+  </url>
+  <!-- Text Analyzer — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/text-analyzer</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/text-analyzer"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/text-analyzer?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/text-analyzer?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/text-analyzer?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/text-analyzer?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/text-analyzer?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/text-analyzer?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/text-analyzer?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/text-analyzer?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/text-analyzer?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/text-analyzer?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/text-analyzer?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/text-analyzer?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/text-analyzer?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/text-analyzer?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/text-analyzer?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/text-analyzer?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/text-analyzer?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/text-analyzer?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/text-analyzer?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/text-analyzer"/>
+  </url>
+  <!-- Text Generator — Multi-language Support -->
+  <url>
+    <loc>https://smarttextconverter.com/text-generator</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/text-generator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/text-generator?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/text-generator?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/text-generator?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/text-generator?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/text-generator?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/text-generator?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/text-generator?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/text-generator?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/text-generator?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/text-generator?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/text-generator?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/text-generator?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/text-generator?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/text-generator?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/text-generator?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/text-generator?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/text-generator?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/text-generator?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/text-generator?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/text-generator"/>
+  </url>
+  <!-- JSON Formatter & Validator — Free Online JSON Tool -->
+  <url>
+    <loc>https://smarttextconverter.com/json/formatter</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/json/formatter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/json/formatter?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/json/formatter?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/json/formatter?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/json/formatter?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/json/formatter?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/json/formatter?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/json/formatter?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/json/formatter?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/json/formatter?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/json/formatter?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/json/formatter?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/json/formatter?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/json/formatter?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/json/formatter?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/json/formatter?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/json/formatter?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/json/formatter?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/json/formatter?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/json/formatter?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/json/formatter"/>
+  </url>
+  <!-- JSON Parser & Analyzer — Free Online JSON Parsing Tool -->
+  <url>
+    <loc>https://smarttextconverter.com/json/parser</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/json/parser"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/json/parser?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/json/parser?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/json/parser?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/json/parser?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/json/parser?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/json/parser?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/json/parser?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/json/parser?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/json/parser?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/json/parser?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/json/parser?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/json/parser?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/json/parser?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/json/parser?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/json/parser?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/json/parser?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/json/parser?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/json/parser?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/json/parser?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/json/parser"/>
+  </url>
+  <!-- JavaScript Formatter — Free Online JS Code Formatter -->
+  <url>
+    <loc>https://smarttextconverter.com/js/formatter</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/js/formatter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/js/formatter?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/js/formatter?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/js/formatter?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/js/formatter?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/js/formatter?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/js/formatter?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/js/formatter?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/js/formatter?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/js/formatter?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/js/formatter?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/js/formatter?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/js/formatter?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/js/formatter?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/js/formatter?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/js/formatter?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/js/formatter?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/js/formatter?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/js/formatter?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/js/formatter?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/js/formatter"/>
+  </url>
+  <!-- HTML Formatter — Free Online HTML Code Formatter -->
+  <url>
+    <loc>https://smarttextconverter.com/html/formatter</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/html/formatter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/html/formatter?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/html/formatter?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/html/formatter?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/html/formatter?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/html/formatter?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/html/formatter?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/html/formatter?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/html/formatter?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/html/formatter?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/html/formatter?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/html/formatter?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/html/formatter?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/html/formatter?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/html/formatter?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/html/formatter?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/html/formatter?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/html/formatter?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/html/formatter?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/html/formatter?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/html/formatter"/>
+  </url>
+  <!-- XML Formatter — Free Online XML Code Formatter -->
+  <url>
+    <loc>https://smarttextconverter.com/xml/formatter</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/xml/formatter"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/xml/formatter?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/xml/formatter?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/xml/formatter?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/xml/formatter?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/xml/formatter?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/xml/formatter?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/xml/formatter?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/xml/formatter?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/xml/formatter?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/xml/formatter?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/xml/formatter?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/xml/formatter?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/xml/formatter?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/xml/formatter?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/xml/formatter?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/xml/formatter?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/xml/formatter?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/xml/formatter?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/xml/formatter?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/xml/formatter"/>
+  </url>
+  <!-- Tools — Free Online Text Processing Tools -->
+  <url>
+    <loc>https://smarttextconverter.com/tools</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/tools"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/tools?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/tools?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/tools?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/tools?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/tools?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/tools?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/tools?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/tools?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/tools?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/tools?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/tools?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/tools?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/tools?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/tools?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/tools?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/tools?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/tools?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/tools?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/tools?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/tools"/>
+  </url>
+  <!-- Developer Tools — Free Online Developer Utilities -->
+  <url>
+    <loc>https://smarttextconverter.com/developer-tools</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/developer-tools"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/developer-tools?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/developer-tools?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/developer-tools?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/developer-tools?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/developer-tools?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/developer-tools?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/developer-tools?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/developer-tools?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/developer-tools?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/developer-tools?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/developer-tools?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/developer-tools?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/developer-tools?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/developer-tools?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/developer-tools?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/developer-tools?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/developer-tools?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/developer-tools?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/developer-tools?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/developer-tools"/>
+  </url>
+  <!-- Text Processing — Free Online Text Processing Tools -->
+  <url>
+    <loc>https://smarttextconverter.com/text-processing</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/text-processing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/text-processing?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/text-processing?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/text-processing?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/text-processing?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/text-processing?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/text-processing?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/text-processing?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/text-processing?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/text-processing?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/text-processing?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/text-processing?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/text-processing?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/text-processing?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/text-processing?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/text-processing?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/text-processing?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/text-processing?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/text-processing?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/text-processing?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/text-processing"/>
+  </url>
+  <!-- Privacy Policy — Smart Text Converter -->
+  <url>
+    <loc>https://smarttextconverter.com/privacy</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/privacy?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/privacy?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/privacy?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/privacy?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/privacy?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/privacy?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/privacy?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/privacy?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/privacy?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/privacy?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/privacy?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/privacy?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/privacy?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/privacy?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/privacy?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/privacy?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/privacy?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/privacy?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/privacy?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/privacy"/>
+  </url>
+  <!-- Terms of Service — Smart Text Converter -->
+  <url>
+    <loc>https://smarttextconverter.com/terms</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/terms?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/terms?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/terms?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/terms?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/terms?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/terms?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/terms?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/terms?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/terms?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/terms?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/terms?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/terms?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/terms?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/terms?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/terms?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/terms?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/terms?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/terms?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/terms?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/terms"/>
+  </url>
+  <!-- Contact Us — Smart Text Converter -->
+  <url>
+    <loc>https://smarttextconverter.com/contact</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/contact?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/contact?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/contact?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/contact?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/contact?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/contact?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/contact?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/contact?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/contact?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/contact?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/contact?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/contact?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/contact?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/contact?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/contact?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/contact?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/contact?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/contact?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/contact?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/contact"/>
+  </url>
+  <!-- Blog — Text Conversion Tips & Best Practices -->
+  <url>
+    <loc>https://smarttextconverter.com/blog</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog"/>
+  </url>
+  <!-- SEO Best Practices: Title Case vs Sentence Case for Headlines -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case</loc>
+    <lastmod>2024-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/seo-best-practices-title-case-vs-sentence-case"/>
+  </url>
+  <!-- Complete Guide to Text Case Conversion: Uppercase, Lowercase, Title Case -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/complete-guide-text-case-conversion</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/complete-guide-text-case-conversion"/>
+  </url>
+  <!-- Text Case Conversion Best Practices for Professional Writing -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/case-conversion-best-practices-when-how-use-different-case-styles"/>
+  </url>
+  <!-- Accessibility in Text Formatting: Making Content Inclusive -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design</loc>
+    <lastmod>2024-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/text-formatting-best-practices-inclusive-design"/>
+  </url>
+  <!-- Programming Conventions: Naming Conventions and Code Style -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case</loc>
+    <lastmod>2024-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/programming-case-conventions-camelcase-vs-snake-case"/>
+  </url>
+  <!-- Social Media Case Conversion: Best Practices for Online Content -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/social-media-case-conversion</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/social-media-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/social-media-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/social-media-case-conversion"/>
+  </url>
+  <!-- E-commerce Case Conversion: Product Names and Descriptions -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/ecommerce-case-conversion</loc>
+    <lastmod>2024-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/ecommerce-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/ecommerce-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/ecommerce-case-conversion"/>
+  </url>
+  <!-- Email Marketing Case Conversion: Subject Lines, Headers & Deliverability Optimization -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/email-marketing-case-conversion</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/email-marketing-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/email-marketing-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/email-marketing-case-conversion"/>
+  </url>
+  <!-- Technical Documentation Case Conversion: API Docs, User Manuals & Developer Resources -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/technical-documentation-case-conversion</loc>
+    <lastmod>2024-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/technical-documentation-case-conversion"/>
+  </url>
+  <!-- CMS Case Conversion: WordPress, Drupal & Headless CMS Content Formatting -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/cms-case-conversion</loc>
+    <lastmod>2024-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/cms-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/cms-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/cms-case-conversion"/>
+  </url>
+  <!-- Text Analysis: Beyond Case Conversion - Advanced Text Processing & Analytics -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/text-analysis-beyond-case-conversion"/>
+  </url>
+  <!-- The Complete Guide to JSON Formatting: Best Practices for Developers in 2025 -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/json-formatting-complete-guide</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/json-formatting-complete-guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/json-formatting-complete-guide?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/json-formatting-complete-guide"/>
+  </url>
+  <!-- JSON Validation: The Developer's Guide to Error-Free Data Processing -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/json-validation-developer-guide</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/json-validation-developer-guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/json-validation-developer-guide?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/json-validation-developer-guide"/>
+  </url>
+  <!-- JSON Performance Optimization: Speed Up Your Applications in 2025 -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/json-performance-optimization</loc>
+    <lastmod>2025-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/json-performance-optimization"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/json-performance-optimization?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/json-performance-optimization"/>
+  </url>
+  <!-- JavaScript Formatter Complete Guide: Format, Beautify, Minify JS Code -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/javascript-formatter-complete-guide</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/javascript-formatter-complete-guide"/>
+  </url>
+  <!-- Complete HTML Formatter Guide: Format, Beautify, Minify HTML Code -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/html-formatter-complete-guide</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/html-formatter-complete-guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/html-formatter-complete-guide?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/html-formatter-complete-guide"/>
+  </url>
+  <!-- XML Best Practices Guide: Format, Validate, and Optimize XML -->
+  <url>
+    <loc>https://smarttextconverter.com/blog/xml-best-practices-guide</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/blog/xml-best-practices-guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/blog/xml-best-practices-guide?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/blog/xml-best-practices-guide"/>
+  </url>
+  <!-- SmartTextConverter vs CaseConverter.org: Complete Comparison 2024 | Which is Better? -->
+  <url>
+    <loc>https://smarttextconverter.com/comparison/caseconverter-org</loc>
+    <lastmod>2024-12-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/comparison/caseconverter-org"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/comparison/caseconverter-org?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/comparison/caseconverter-org"/>
+  </url>
+  <!-- SmartTextConverter vs ConvertCase.net: Feature Comparison & Review 2024 -->
+  <url>
+    <loc>https://smarttextconverter.com/comparison/convertcase-net</loc>
+    <lastmod>2024-12-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/comparison/convertcase-net"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/comparison/convertcase-net?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/comparison/convertcase-net?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/comparison/convertcase-net?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/comparison/convertcase-net?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/comparison/convertcase-net?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/comparison/convertcase-net?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/comparison/convertcase-net?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/comparison/convertcase-net?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/comparison/convertcase-net?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/comparison/convertcase-net?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/comparison/convertcase-net?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/comparison/convertcase-net?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/comparison/convertcase-net?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/comparison/convertcase-net?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/comparison/convertcase-net?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/comparison/convertcase-net?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/comparison/convertcase-net?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/comparison/convertcase-net?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/comparison/convertcase-net?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/comparison/convertcase-net"/>
+  </url>
+  <!-- SmartTextConverter vs TextCase.org: Complete Tool Comparison & Review 2024 -->
+  <url>
+    <loc>https://smarttextconverter.com/comparison/textcase-org</loc>
+    <lastmod>2024-12-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/comparison/textcase-org"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/comparison/textcase-org?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/comparison/textcase-org?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/comparison/textcase-org?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/comparison/textcase-org?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/comparison/textcase-org?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/comparison/textcase-org?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/comparison/textcase-org?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/comparison/textcase-org?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/comparison/textcase-org?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/comparison/textcase-org?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/comparison/textcase-org?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/comparison/textcase-org?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/comparison/textcase-org?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/comparison/textcase-org?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/comparison/textcase-org?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/comparison/textcase-org?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/comparison/textcase-org?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/comparison/textcase-org?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/comparison/textcase-org?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/comparison/textcase-org"/>
+  </url>
+  <!-- Best Case Converter Tools 2024: Complete Comparison & Reviews | SmartTextConverter -->
+  <url>
+    <loc>https://smarttextconverter.com/comparison/best-case-converters-2024</loc>
+    <lastmod>2024-12-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smarttextconverter.com/comparison/best-case-converters-2024"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=pt-br"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=ur"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=sw"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/comparison/best-case-converters-2024?lang=fil"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/comparison/best-case-converters-2024"/>
+  </url>
+
+</urlset>

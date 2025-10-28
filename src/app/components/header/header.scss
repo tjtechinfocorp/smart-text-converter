@@ -1,0 +1,111 @@
+// Active link styling - blue for light mode
+.active-link {
+  color: #2563eb !important; // blue-600 for light mode
+  font-weight: 500 !important; // font-medium
+}
+
+// Dark mode active link styling - custom emerald for better contrast in dark mode
+.dark .active-link,
+html.dark .active-link,
+body.dark .active-link {
+  color: rgb(168 255 83 / var(--tw-bg-opacity, 1)) !important; // custom emerald for dark mode
+  font-weight: 500 !important; // font-medium
+}
+
+// Active state for dropdown buttons
+.text-transformation-active {
+  color: #2563eb !important; // blue for light mode
+}
+
+// Dark mode text transformation active state
+html.dark .text-transformation-active,
+.dark .text-transformation-active {
+  color: rgb(168 255 83) !important; // green for dark mode
+}
+
+.analysis-utilities-active {
+  color: #2563eb !important; // blue for light mode
+}
+
+// Dark mode analysis utilities active state
+html.dark .analysis-utilities-active,
+.dark .analysis-utilities-active {
+  color: rgb(168 255 83) !important; // green for dark mode
+}
+
+// JSON active state with CSS custom properties
+.json-active {
+  color: #2563eb; // blue for light mode
+}
+
+// Dark mode JSON active state - override all possible Tailwind classes
+html.dark button.json-active,
+html.dark .json-active,
+.dark button.json-active,
+.dark .json-active,
+html.dark button.json-active span,
+html.dark .json-active span,
+.dark button.json-active span,
+.dark .json-active span {
+  color: #22c55e !important; // bright green for dark mode
+  --tw-text-opacity: 1 !important;
+}
+
+// Remove focus outlines and unwanted borders
+button:focus,
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// Remove focus rings and borders in dark mode
+.dark button:focus,
+.dark a:focus,
+.dark button:active,
+.dark a:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+// Ensure dropdown buttons don't show focus borders
+.dark .relative button {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.dark .relative button:focus,
+.dark .relative button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+// Remove borders from mobile menu button
+.dark button[aria-label*='Toggle mobile navigation menu'] {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.dark button[aria-label*='Toggle mobile navigation menu']:focus,
+.dark button[aria-label*='Toggle mobile navigation menu']:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+// Remove borders from theme toggle buttons
+.dark button[title='Toggle theme'] {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.dark button[title='Toggle theme']:focus,
+.dark button[title='Toggle theme']:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

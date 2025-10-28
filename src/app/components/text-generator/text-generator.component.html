@@ -1,0 +1,309 @@
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="text-generator.title"></app-translated-text>
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
+        <app-translated-text key="text-generator.description"></app-translated-text>
+      </p>
+    </div>
+
+    <!-- Utility Options -->
+    <div
+      class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-6 mb-6 transition-all duration-300"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Utility Type Selection -->
+        <div>
+          <label
+            for="utility-type"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2 transition-colors duration-300"
+          >
+            <app-translated-text key="text-generator.utility-type"></app-translated-text>
+          </label>
+          <select
+            id="utility-type"
+            [value]="selectedUtility()"
+            (change)="onUtilityChange($event)"
+            class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+          >
+            @for (type of utilityTypes; track type.value) {
+              <option [value]="type.value">{{ translationService.translate(type.labelKey) }}</option>
+            }
+          </select>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 transition-colors duration-300">
+            {{ getCurrentDescription() }}
+          </p>
+        </div>
+
+        <!-- Generation Options -->
+        @if (selectedUtility() === 'loremIpsum') {
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                for="lorem-count"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+              >
+                <app-translated-text key="text-generator.count"></app-translated-text>
+              </label>
+              <input
+                id="lorem-count"
+                type="number"
+                min="1"
+                max="50"
+                [value]="loremCount()"
+                (input)="onLoremCountChange($event)"
+                class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              />
+            </div>
+            <div>
+              <label
+                for="lorem-type"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+              >
+                <app-translated-text key="text-generator.type"></app-translated-text>
+              </label>
+              <select
+                id="lorem-type"
+                [value]="loremType()"
+                (change)="onLoremTypeChange($event)"
+                class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              >
+                @for (type of loremTypes; track type.value) {
+                  <option [value]="type.value">{{ translationService.translate(type.labelKey) }}</option>
+                }
+              </select>
+            </div>
+          </div>
+        }
+
+        @if (selectedUtility() === 'randomText') {
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                for="random-count"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+              >
+                <app-translated-text key="text-generator.count"></app-translated-text>
+              </label>
+              <input
+                id="random-count"
+                type="number"
+                min="1"
+                max="100"
+                [value]="randomCount()"
+                (input)="onRandomCountChange($event)"
+                class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              />
+            </div>
+            <div>
+              <label
+                for="random-type"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+              >
+                <app-translated-text key="text-generator.type"></app-translated-text>
+              </label>
+              <select
+                id="random-type"
+                [value]="randomType()"
+                (change)="onRandomTypeChange($event)"
+                class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              >
+                @for (type of randomTypes; track type.value) {
+                  <option [value]="type.value">{{ translationService.translate(type.labelKey) }}</option>
+                }
+              </select>
+            </div>
+          </div>
+        }
+
+        @if (selectedUtility() === 'uuidGenerator') {
+          <div>
+            <label
+              for="uuid-count"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+            >
+              <app-translated-text key="text-generator.number-of-uuids"></app-translated-text>
+            </label>
+            <input
+              id="uuid-count"
+              type="number"
+              min="1"
+              max="100"
+              [value]="uuidCount()"
+              (input)="onUuidCountChange($event)"
+              class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+            />
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Text Areas -->
+    <div [class]="needsInputText() ? 'grid grid-cols-1 lg:grid-cols-2 gap-6' : 'w-full'">
+      <!-- Input Text - Only show for utilities that need input -->
+      @if (needsInputText()) {
+        <div>
+          <div class="flex justify-between items-center mb-4">
+            <label
+              for="input-text"
+              class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300"
+            >
+              <app-translated-text key="text-generator.input-text"></app-translated-text>
+            </label>
+            <button
+              (click)="clearText()"
+              [disabled]="!inputText()"
+              class="text-sm text-white px-3 py-1 rounded transition-colors"
+              [class.bg-red-500]="inputText()"
+              [class.hover:bg-red-600]="inputText()"
+              [class.bg-gray-400]="!inputText()"
+              [class.cursor-not-allowed]="!inputText()"
+              [class.cursor-pointer]="inputText()"
+              aria-label="Clear input text"
+            >
+              <app-translated-text key="text-generator.clear"></app-translated-text>
+            </button>
+          </div>
+          <textarea
+            #inputTextarea
+            id="input-text"
+            [value]="inputText()"
+            (input)="onInputChange($event)"
+            [placeholder]="translationService.translate('text-generator.input-placeholder')"
+            class="w-full h-64 p-4 border border-gray-300 dark:border-gray-700 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+          ></textarea>
+        </div>
+      }
+
+      <!-- Output Text -->
+      <div [class]="needsInputText() ? '' : 'w-full'">
+        <div class="flex justify-between items-center mb-4">
+          <label
+            for="output-text"
+            class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300"
+          >
+            <app-translated-text key="text-generator.result"></app-translated-text>
+          </label>
+          <button
+            (click)="copyToClipboard()"
+            [disabled]="!outputText()"
+            class="text-sm text-white px-3 py-1 rounded transition-colors"
+            [class.bg-blue-600]="outputText()"
+            [class.hover:bg-blue-700]="outputText()"
+            [class.bg-gray-400]="!outputText()"
+            [class.cursor-not-allowed]="!outputText()"
+            [class.cursor-pointer]="outputText()"
+            aria-label="Copy output text to clipboard"
+          >
+            <app-translated-text key="text-generator.copy"></app-translated-text>
+          </button>
+        </div>
+        <textarea
+          id="output-text"
+          [value]="outputText()"
+          readonly
+          [placeholder]="translationService.translate('text-generator.output-placeholder')"
+          class="w-full h-64 p-4 border border-gray-300 dark:border-gray-700 rounded-lg resize-none bg-gray-50 dark:bg-gray-800 font-mono text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Extraction Results -->
+    @if (extractedItems().length > 0) {
+      <div class="mt-8">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+          <app-translated-text key="text-generator.extracted-items"></app-translated-text> ({{
+            extractedItems().length
+          }}
+          <app-translated-text key="text-generator.found"></app-translated-text>)
+        </h2>
+        <div
+          class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-4 max-h-64 overflow-y-auto transition-all duration-300"
+        >
+          @for (item of extractedItems(); track item.index) {
+            <div
+              class="mb-3 p-3 bg-gray-50 dark:bg-gray-800 rounded border-l-4 border-blue-500 dark:border-blue-400 transition-all duration-300"
+            >
+              <div class="text-sm text-gray-600 dark:text-gray-300 mb-1 transition-colors duration-300">
+                {{ item.type }} <app-translated-text key="text-generator.at-position"></app-translated-text>
+                {{ item.index }}
+              </div>
+              <div
+                class="font-mono text-sm text-blue-600 dark:text-blue-400 font-semibold transition-colors duration-300"
+              >
+                {{ item.value }}
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Features List -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center transition-colors duration-300">
+        <app-translated-text key="text-generator.available-tools"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.lorem-ipsum"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.lorem-ipsum-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.random-text"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.random-text-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.uuid-generator"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.uuid-generator-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.data-extractors"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.data-extractors-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.privacy-maskers"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-generator.feature.privacy-maskers-desc"></app-translated-text>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-16">
+      <app-faq-display toolName="text-generator" [showTitle]="true"></app-faq-display>
+    </div>
+  </main>
+</div>

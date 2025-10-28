@@ -1,0 +1,803 @@
+<!-- CSS Formatter Page -->
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 min-h-screen">
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <app-translated-text key="css-formatter.title"></app-translated-text>
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-6xl mx-auto mb-8">
+      <app-translated-text key="css-formatter.subtitle"></app-translated-text>
+    </p>
+
+    <!-- Quick Actions -->
+    <div class="flex flex-wrap justify-center gap-4">
+      <button
+        (click)="loadSample()"
+        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          ></path>
+        </svg>
+        <app-translated-text key="css-formatter.load-sample"></app-translated-text>
+      </button>
+      <button
+        (click)="clearInput()"
+        class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+          ></path>
+        </svg>
+        <app-translated-text key="css-formatter.clear-all"></app-translated-text>
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- View Mode Selector -->
+    <div class="mb-6">
+      <div class="flex flex-wrap gap-2">
+        <button
+          *ngFor="
+            let view of [
+              { key: 'formatted', label: 'css-formatter.format-css' },
+              { key: 'minified', label: 'css-formatter.minify-css' },
+              { key: 'validate', label: 'css-formatter.validate-css' },
+              { key: 'optimize', label: 'css-formatter.optimize-css' },
+              { key: 'convert', label: 'css-formatter.convert-css' },
+              { key: 'lint', label: 'css-formatter.lint-css' },
+            ]
+          "
+          (click)="switchView(view.key)"
+          [class]="
+            currentView === view.key
+              ? 'px-4 py-2 bg-blue-600 text-white rounded-lg font-medium'
+              : 'px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
+          "
+        >
+          <app-translated-text [key]="view.label"></app-translated-text>
+        </button>
+      </div>
+    </div>
+
+    <!-- Format Options (shown only for formatted view) -->
+    <div
+      *ngIf="currentView === 'formatted'"
+      class="mb-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6"
+    >
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <app-translated-text key="css-formatter.format-options"></app-translated-text>
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <app-translated-text key="css-formatter.indent-size"></app-translated-text>
+          </label>
+          <select
+            [(ngModel)]="formatOptions.indentSize"
+            (change)="updateFormatOptions()"
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="2">2 spaces</option>
+            <option value="4">4 spaces</option>
+            <option value="8">8 spaces</option>
+          </select>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="preserveComments"
+            [(ngModel)]="formatOptions.preserveComments"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="preserveComments" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="css-formatter.preserve-comments"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="sortProperties"
+            [(ngModel)]="formatOptions.sortProperties"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="sortProperties" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="css-formatter.sort-properties"></app-translated-text>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Display -->
+    <div
+      *ngIf="errors.length > 0"
+      class="mb-6 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4"
+    >
+      <div class="flex items-center">
+        <svg class="w-5 h-5 text-red-600 dark:text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
+          <app-translated-text key="css-formatter.errors"></app-translated-text>
+        </h3>
+      </div>
+      <ul class="mt-2 text-sm text-red-700 dark:text-red-300">
+        <li *ngFor="let error of errors">• {{ error }}</li>
+      </ul>
+    </div>
+
+    <!-- Editor Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Input Editor -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <app-translated-text key="css-formatter.input"></app-translated-text>
+          </h3>
+          <button
+            (click)="processCSS()"
+            [disabled]="isProcessing"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center"
+          >
+            <svg
+              *ngIf="isProcessing"
+              class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            <svg *ngIf="!isProcessing" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              ></path>
+            </svg>
+            <app-translated-text [key]="getActionLabel()"></app-translated-text>
+          </button>
+        </div>
+        <div class="p-4">
+          <textarea
+            #inputTextarea
+            [(ngModel)]="inputText"
+            placeholder="Paste your CSS code here..."
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Output Editor -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <app-translated-text [key]="getOutputLabel()"></app-translated-text>
+          </h3>
+          <div class="flex items-center space-x-2">
+            <button
+              (click)="copyOutput()"
+              class="px-4 py-2 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700 rounded-lg transition-all duration-200 flex items-center text-sm font-medium shadow-sm hover:shadow-md"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <app-translated-text key="css-formatter.copy"></app-translated-text>
+            </button>
+            <button
+              (click)="downloadOutput()"
+              class="px-4 py-2 bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-700 rounded-lg transition-all duration-200 flex items-center text-sm font-medium shadow-sm hover:shadow-md"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              <app-translated-text key="css-formatter.download"></app-translated-text>
+            </button>
+            <button
+              (click)="clearOutput()"
+              class="px-4 py-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 rounded-lg transition-all duration-200 flex items-center text-sm font-medium shadow-sm hover:shadow-md"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                ></path>
+              </svg>
+              <app-translated-text key="css-formatter.clear"></app-translated-text>
+            </button>
+          </div>
+        </div>
+        <div class="p-4">
+          <pre
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white font-mono text-sm overflow-auto whitespace-pre-wrap"
+            >{{ outputText }}</pre
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div *ngIf="currentView === 'formatted'" class="mt-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-6">
+          <app-translated-text key="css-formatter.css-statistics"></app-translated-text>
+        </h3>
+
+        <!-- Basic Statistics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div
+            class="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800"
+          >
+            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">{{ statistics.originalLength }}</div>
+            <div class="text-sm text-blue-700 dark:text-blue-300 font-medium">
+              <app-translated-text key="css-formatter.original-length"></app-translated-text>
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800"
+          >
+            <div class="text-2xl font-bold text-green-600 dark:text-green-400">{{ statistics.formattedLength }}</div>
+            <div class="text-sm text-green-700 dark:text-green-300 font-medium">
+              <app-translated-text key="css-formatter.formatted-length"></app-translated-text>
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800"
+          >
+            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">{{ statistics.lines }}</div>
+            <div class="text-sm text-purple-700 dark:text-purple-300 font-medium">
+              <app-translated-text key="css-formatter.lines"></app-translated-text>
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800"
+          >
+            <div class="text-2xl font-bold text-orange-600 dark:text-orange-400">
+              {{ (statistics.compressionRatio * 100).toFixed(1) }}%
+            </div>
+            <div class="text-sm text-orange-700 dark:text-orange-300 font-medium">
+              <app-translated-text key="css-formatter.compression"></app-translated-text>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="text-center p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg border border-indigo-200 dark:border-indigo-800"
+          >
+            <div class="text-xl font-bold text-indigo-600 dark:text-indigo-400">{{ statistics.rules }}</div>
+            <div class="text-sm text-indigo-700 dark:text-indigo-300 font-medium">
+              <app-translated-text key="css-formatter.rules"></app-translated-text>
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-pink-50 dark:bg-pink-900/20 rounded-lg border border-pink-200 dark:border-pink-800"
+          >
+            <div class="text-xl font-bold text-pink-600 dark:text-pink-400">{{ statistics.selectors }}</div>
+            <div class="text-sm text-pink-700 dark:text-pink-300 font-medium">
+              <app-translated-text key="css-formatter.selectors"></app-translated-text>
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-teal-50 dark:bg-teal-900/20 rounded-lg border border-teal-200 dark:border-teal-800"
+          >
+            <div class="text-xl font-bold text-teal-600 dark:text-teal-400">{{ statistics.properties }}</div>
+            <div class="text-sm text-teal-700 dark:text-teal-300 font-medium">
+              <app-translated-text key="css-formatter.properties"></app-translated-text>
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-lg border border-cyan-200 dark:border-cyan-800"
+          >
+            <div class="text-xl font-bold text-cyan-600 dark:text-cyan-400">{{ statistics.comments }}</div>
+            <div class="text-sm text-cyan-700 dark:text-cyan-300 font-medium">
+              <app-translated-text key="css-formatter.comments"></app-translated-text>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="mt-6 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+          <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+            <app-translated-text key="css-formatter.performance-metrics"></app-translated-text>
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-lg font-bold text-gray-800 dark:text-gray-200">
+                {{ getFileSize(statistics.originalLength) }}
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400">
+                <app-translated-text key="css-formatter.original-size"></app-translated-text>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-lg font-bold text-gray-800 dark:text-gray-200">
+                {{ getFileSize(statistics.formattedLength) }}
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400">
+                <app-translated-text key="css-formatter.formatted-size"></app-translated-text>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-lg font-bold text-gray-800 dark:text-gray-200">{{ getSavings() }}</div>
+              <div class="text-xs text-gray-600 dark:text-gray-400">
+                <app-translated-text key="css-formatter.size-savings"></app-translated-text>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CSS Tools Explanation Section -->
+    <div class="mt-8 mb-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <app-translated-text key="css-formatter.css-tools-explanation"></app-translated-text>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- CSS Formatting -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 border border-blue-200 dark:border-blue-800">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-blue-100 dark:bg-blue-800 rounded-lg flex items-center justify-center mr-4">
+                <svg
+                  class="w-6 h-6 text-blue-600 dark:text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-blue-900 dark:text-blue-100">
+                <app-translated-text key="css-formatter.formatting"></app-translated-text>
+              </h4>
+            </div>
+            <p class="text-blue-800 dark:text-blue-200 text-sm leading-relaxed">
+              <app-translated-text key="css-formatter.formatting-desc"></app-translated-text>
+            </p>
+          </div>
+
+          <!-- CSS Minification -->
+          <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 border border-green-200 dark:border-green-800">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-green-100 dark:bg-green-800 rounded-lg flex items-center justify-center mr-4">
+                <svg
+                  class="w-6 h-6 text-green-600 dark:text-green-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-green-900 dark:text-green-100">
+                <app-translated-text key="css-formatter.minification"></app-translated-text>
+              </h4>
+            </div>
+            <p class="text-green-800 dark:text-green-200 text-sm leading-relaxed">
+              <app-translated-text key="css-formatter.minification-desc"></app-translated-text>
+            </p>
+          </div>
+
+          <!-- CSS Validation -->
+          <div
+            class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6 border border-purple-200 dark:border-purple-800"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-purple-100 dark:bg-purple-800 rounded-lg flex items-center justify-center mr-4">
+                <svg
+                  class="w-6 h-6 text-purple-600 dark:text-purple-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-purple-900 dark:text-purple-100">
+                <app-translated-text key="css-formatter.validation"></app-translated-text>
+              </h4>
+            </div>
+            <p class="text-purple-800 dark:text-purple-200 text-sm leading-relaxed">
+              <app-translated-text key="css-formatter.validation-desc"></app-translated-text>
+            </p>
+          </div>
+
+          <!-- CSS Optimization -->
+          <div
+            class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6 border border-orange-200 dark:border-orange-800"
+          >
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-orange-100 dark:bg-orange-800 rounded-lg flex items-center justify-center mr-4">
+                <svg
+                  class="w-6 h-6 text-orange-600 dark:text-orange-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-orange-900 dark:text-orange-100">
+                <app-translated-text key="css-formatter.optimization"></app-translated-text>
+              </h4>
+            </div>
+            <p class="text-orange-800 dark:text-orange-200 text-sm leading-relaxed">
+              <app-translated-text key="css-formatter.optimization-desc"></app-translated-text>
+            </p>
+          </div>
+
+          <!-- CSS Conversion -->
+          <div class="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-6 border border-teal-200 dark:border-teal-800">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-teal-100 dark:bg-teal-800 rounded-lg flex items-center justify-center mr-4">
+                <svg
+                  class="w-6 h-6 text-teal-600 dark:text-teal-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-teal-900 dark:text-teal-100">
+                <app-translated-text key="css-formatter.conversion"></app-translated-text>
+              </h4>
+            </div>
+            <p class="text-teal-800 dark:text-teal-200 text-sm leading-relaxed">
+              <app-translated-text key="css-formatter.conversion-desc"></app-translated-text>
+            </p>
+          </div>
+
+          <!-- CSS Linting -->
+          <div class="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-6 border border-pink-200 dark:border-pink-800">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-pink-100 dark:bg-pink-800 rounded-lg flex items-center justify-center mr-4">
+                <svg
+                  class="w-6 h-6 text-pink-600 dark:text-pink-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-pink-900 dark:text-pink-100">
+                <app-translated-text key="css-formatter.linting"></app-translated-text>
+              </h4>
+            </div>
+            <p class="text-pink-800 dark:text-pink-200 text-sm leading-relaxed">
+              <app-translated-text key="css-formatter.linting-desc"></app-translated-text>
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div
+          class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border border-blue-200 dark:border-blue-800"
+        >
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            <app-translated-text key="css-formatter.benefits-title"></app-translated-text>
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">
+                <app-translated-text key="css-formatter.benefit-1"></app-translated-text>
+              </span>
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">
+                <app-translated-text key="css-formatter.benefit-2"></app-translated-text>
+              </span>
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">
+                <app-translated-text key="css-formatter.benefit-3"></app-translated-text>
+              </span>
+            </div>
+            <div class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">
+                <app-translated-text key="css-formatter.benefit-4"></app-translated-text>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mb-2">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+        <app-translated-text key="css-formatter.faq-title"></app-translated-text>
+      </h3>
+      <div class="space-y-6">
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="css-formatter.faq1-question"></app-translated-text>
+              </h4>
+              <svg
+                class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="css-formatter.faq1-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="css-formatter.faq2-question"></app-translated-text>
+              </h4>
+              <svg
+                class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="css-formatter.faq2-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="css-formatter.faq3-question"></app-translated-text>
+              </h4>
+              <svg
+                class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="css-formatter.faq3-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="css-formatter.faq4-question"></app-translated-text>
+              </h4>
+              <svg
+                class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="css-formatter.faq4-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="css-formatter.faq5-question"></app-translated-text>
+              </h4>
+              <svg
+                class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="css-formatter.faq5-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Post Backlink -->
+    <div class="mt-8">
+      <div
+        class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border border-blue-200 dark:border-blue-800 p-6"
+      >
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+              <app-translated-text key="css-formatter.blog-title"></app-translated-text>
+            </h3>
+            <p class="text-blue-800 dark:text-blue-200 mb-4">
+              <app-translated-text key="css-formatter.blog-description"></app-translated-text>
+            </p>
+            <a
+              href="/blog/css-formatter-complete-guide"
+              class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+            >
+              <app-translated-text key="css-formatter.blog-link"></app-translated-text>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warnings Display -->
+    <div *ngIf="warnings.length > 0" class="mt-8">
+      <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-yellow-600 dark:text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <h4 class="text-sm font-medium text-yellow-800 dark:text-yellow-200">
+            <app-translated-text key="css-formatter.warnings"></app-translated-text>
+          </h4>
+        </div>
+        <ul class="mt-2 text-sm text-yellow-700 dark:text-yellow-300">
+          <li *ngFor="let warning of warnings">• {{ warning }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Processing Indicator -->
+    <div
+      *ngIf="isProcessing"
+      class="mt-8 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4"
+    >
+      <div class="flex items-center">
+        <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600 dark:border-blue-400 mr-3"></div>
+        <span class="text-blue-800 dark:text-blue-200">
+          <app-translated-text key="css-formatter.processing"></app-translated-text>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

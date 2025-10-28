@@ -1,0 +1,220 @@
+// JSON Parser Component Styles
+.json-editor-container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  // Dark mode support
+  .dark & {
+    background-color: #1f2937;
+    border-color: #4b5563;
+  }
+
+  // Light mode
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+// Custom scrollbar for JSON editors
+.json-editor-container ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.json-editor-container ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.json-editor-container ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+
+  &:hover {
+    background: #94a3b8;
+  }
+}
+
+.dark .json-editor-container ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark .json-editor-container ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+
+  &:hover {
+    background: #9ca3af;
+  }
+}
+
+// Processing indicator animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+// Error message styling
+.error-message {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  .dark & {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+    border-color: #dc2626;
+  }
+}
+
+// Success message styling
+.success-message {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  .dark & {
+    background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+    border-color: #16a34a;
+  }
+}
+
+// Button hover effects
+.btn-hover {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Feature grid animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-item {
+  animation: fadeInUp 0.6s ease-out;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  &:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}
+
+// FAQ accordion styling
+.faq-item {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+// Benefits section gradient
+.benefits-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  .dark & {
+    background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+  }
+}
+
+// Responsive design adjustments
+@media (max-width: 768px) {
+  .json-editor-container {
+    height: 24rem !important;
+  }
+
+  .grid-cols-1 {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .json-editor-container {
+    height: 20rem !important;
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// Print styles
+@media print {
+  .json-editor-container {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+  }
+
+  .dark .json-editor-container {
+    background: #fff;
+    color: #000;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .json-editor-container {
+    border: 2px solid #000;
+  }
+
+  .dark .json-editor-container {
+    border: 2px solid #fff;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin {
+    animation: none;
+  }
+
+  .feature-item {
+    animation: none;
+  }
+
+  .btn-hover:hover {
+    transform: none;
+  }
+
+  .faq-item:hover {
+    transform: none;
+  }
+}

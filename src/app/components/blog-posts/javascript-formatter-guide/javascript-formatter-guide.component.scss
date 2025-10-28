@@ -1,0 +1,110 @@
+// JavaScript Formatter Guide Blog Post Styles
+
+.prose {
+  // Custom styles for code blocks
+  pre {
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+    color: #f9fafb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-size: inherit;
+    }
+  }
+
+  // Custom styles for inline code
+  code {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+
+    .dark & {
+      background-color: #374151;
+      color: #d1d5db;
+    }
+  }
+
+  // Custom styles for lists
+  ul,
+  ol {
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  // Custom styles for headings
+  h2,
+  h3,
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  // Custom styles for paragraphs
+  p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  // Custom styles for blockquotes
+  blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #6b7280;
+
+    .dark & {
+      color: #9ca3af;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .prose {
+    font-size: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Dark mode adjustments
+.dark {
+  .prose {
+    color: #d1d5db;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #f9fafb;
+    }
+
+    strong {
+      color: #f3f4f6;
+    }
+  }
+}

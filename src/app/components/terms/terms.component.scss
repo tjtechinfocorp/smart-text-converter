@@ -1,0 +1,52 @@
+// Terms component specific styles
+.terms-content {
+  line-height: 1.7;
+}
+
+.terms-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.dark .terms-content h2 {
+  border-bottom-color: #374151;
+}
+
+.terms-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.terms-content ul {
+  margin-left: 1.5rem;
+}
+
+.terms-content li {
+  margin-bottom: 0.5rem;
+}
+
+.terms-content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.terms-content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .terms-content {
+    padding: 1rem;
+  }
+
+  .terms-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .terms-content h3 {
+    font-size: 1.25rem;
+  }
+}

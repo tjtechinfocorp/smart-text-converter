@@ -1,0 +1,376 @@
+<div class="bg-white dark:bg-gray-950 transition-colors duration-300">
+  <main class="pt-8 pb-16">
+    <!-- CSS Formatter Guide Blog Post -->
+    <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <a
+          (click)="goBackToBlog()"
+          class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-300 cursor-pointer"
+        >
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+      </nav>
+      <!-- Header -->
+      <header class="mb-8">
+        <!-- Title -->
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-8 leading-tight tracking-tight"
+        >
+          CSS Formatter Guide: Best Practices for Code Formatting and Beautification in 2025
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+          Master CSS formatting with our comprehensive guide covering best practices, tools, and techniques.
+          Learn how to format, beautify, minify, and validate CSS code effectively.
+        </p>
+        <!-- Meta Information -->
+        <div class="mb-2 flex items-center gap-8 text-sm text-gray-600 dark:text-gray-400">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            October 8, 2025
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            12 min read
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+              />
+            </svg>
+            CSS, Formatting, Tools
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="mb-12">
+        <img
+          src="blog-images/css-formatter-complete-guide.jpg"
+          alt="CSS Formatter Complete Guide - Best Practices for Code Formatting and Beautification"
+          class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="mb-12 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+        <h2 class="text-xl font-bold text-blue-900 dark:text-blue-100 mb-4">Table of Contents</h2>
+        <ul class="space-y-2 text-blue-800 dark:text-blue-200">
+          <li><a (click)="scrollToSection('introduction', $event)" class="hover:underline cursor-pointer">1. Introduction to CSS Formatting</a></li>
+          <li><a (click)="scrollToSection('best-practices', $event)" class="hover:underline cursor-pointer">2. CSS Formatting Best Practices</a></li>
+          <li><a (click)="scrollToSection('tools', $event)" class="hover:underline cursor-pointer">3. Essential CSS Formatting Tools</a></li>
+          <li><a (click)="scrollToSection('minification', $event)" class="hover:underline cursor-pointer">4. CSS Minification and Optimization</a></li>
+          <li><a (click)="scrollToSection('validation', $event)" class="hover:underline cursor-pointer">5. CSS Validation and Error Checking</a></li>
+          <li><a (click)="scrollToSection('preprocessors', $event)" class="hover:underline cursor-pointer">6. Working with CSS Preprocessors</a></li>
+          <li><a (click)="scrollToSection('performance', $event)" class="hover:underline cursor-pointer">7. Performance Optimization</a></li>
+          <li><a (click)="scrollToSection('conclusion', $event)" class="hover:underline cursor-pointer">8. Conclusion and Next Steps</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Introduction to CSS Formatting</h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            CSS formatting is the foundation of maintainable and professional web development. Well-formatted CSS code
+            not only improves readability but also enhances collaboration, debugging, and long-term maintenance of your
+            projects.
+          </p>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            In this comprehensive guide, we'll explore the essential techniques, tools, and best practices for CSS
+            formatting that will help you write cleaner, more efficient, and more maintainable stylesheets.
+          </p>
+        </section>
+
+        <!-- Best Practices -->
+        <section id="best-practices" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">CSS Formatting Best Practices</h2>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">1. Consistent Indentation</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Use consistent indentation throughout your CSS files. Whether you choose 2 spaces, 4 spaces, or tabs,
+            maintain the same pattern across your entire project.
+          </p>
+
+          <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+            <pre class="text-sm text-gray-800 dark:text-gray-200"><code>/* Good: Consistent 2-space indentation */
+.container {{ '{' }}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+{{ '}' }}
+
+.container .item {{ '{' }}
+  margin: 10px;
+  padding: 15px;
+{{ '}' }}</code></pre>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">2. Logical Property Ordering</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Organize CSS properties in a logical order to improve readability and maintainability.
+          </p>
+
+          <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+            <pre class="text-sm text-gray-800 dark:text-gray-200"><code>/* Recommended property order */
+.element {{ '{' }}
+  /* Positioning */
+  position: relative;
+  top: 0;
+  left: 0;
+
+  /* Display & Box Model */
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 20px;
+
+  /* Typography */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+
+  /* Visual */
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  /* Effects */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+{{ '}' }}</code></pre>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">3. Meaningful Comments</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Add meaningful comments to explain complex CSS logic, browser-specific hacks, and section purposes.
+          </p>
+
+          <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+            <pre class="text-sm text-gray-800 dark:text-gray-200"><code>/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+
+/* Main navigation */
+.nav {{ '{' }}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+{{ '}' }}
+
+/* Mobile navigation toggle */
+.nav-toggle {{ '{' }}
+  display: none; /* Hidden on desktop */
+
+  /* Show on mobile devices */
+  @media (max-width: 768px) {{ '{' }}
+    display: block;
+  {{ '}' }}
+{{ '}' }}</code></pre>
+          </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Essential CSS Formatting Tools</h2>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">1. Online CSS Formatters</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Online CSS formatters provide quick and easy ways to format your CSS code without installing any software.
+            Our <a href="/css/formatter" class="text-blue-600 dark:text-blue-400 hover:underline">CSS Formatter tool</a> offers
+            comprehensive formatting options including beautification, minification, and validation.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">2. Code Editor Extensions</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Most modern code editors offer CSS formatting extensions that automatically format your code as you type
+            or on save.
+          </p>
+
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li><strong>Prettier:</strong> Popular code formatter with CSS support</li>
+            <li><strong>Stylelint:</strong> CSS linter with formatting rules</li>
+            <li><strong>CSScomb:</strong> CSS property sorting tool</li>
+            <li><strong>Beautify:</strong> Multi-language code beautifier</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">3. Build Tools Integration</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Integrate CSS formatting into your build process for consistent code quality across your team.
+          </p>
+        </section>
+
+        <!-- Minification Section -->
+        <section id="minification" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">CSS Minification and Optimization</h2>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            CSS minification is crucial for production websites as it reduces file size, improves loading times,
+            and enhances user experience.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Benefits of CSS Minification</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li>Reduces file size by 20-50%</li>
+            <li>Improves page load times</li>
+            <li>Reduces bandwidth usage</li>
+            <li>Better mobile performance</li>
+            <li>Improved SEO rankings</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Minification Techniques</h3>
+          <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+            <pre class="text-sm text-gray-800 dark:text-gray-200"><code>/* Before minification */
+.header {{ '{' }}
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 20px;
+{{ '}' }}
+
+/* After minification */
+.header{{ '{' }}background-color:#fff;color:#333;font-size:16px;line-height:1.5;margin:0;padding:20px{{ '}' }}</code></pre>
+          </div>
+        </section>
+
+        <!-- Validation Section -->
+        <section id="validation" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">CSS Validation and Error Checking</h2>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            CSS validation helps identify syntax errors, browser compatibility issues, and ensures your stylesheets
+            follow web standards.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Common CSS Errors</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li>Missing semicolons</li>
+            <li>Unmatched braces</li>
+            <li>Invalid property values</li>
+            <li>Unsupported CSS properties</li>
+            <li>Syntax errors</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Validation Tools</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li>W3C CSS Validator</li>
+            <li>Browser Developer Tools</li>
+            <li>Online CSS validators</li>
+            <li>Build process integration</li>
+          </ul>
+        </section>
+
+        <!-- Preprocessors Section -->
+        <section id="preprocessors" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Working with CSS Preprocessors</h2>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            CSS preprocessors like SCSS, SASS, LESS, and Stylus extend CSS with variables, mixins, functions,
+            and other programming features.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Popular CSS Preprocessors</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li><strong>SCSS/SASS:</strong> Most popular, Ruby-based</li>
+            <li><strong>LESS:</strong> JavaScript-based, easy to learn</li>
+            <li><strong>Stylus:</strong> Flexible syntax, Node.js-based</li>
+            <li><strong>PostCSS:</strong> Plugin-based CSS processor</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Preprocessor Benefits</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li>Variables for consistent theming</li>
+            <li>Mixins for reusable code blocks</li>
+            <li>Nesting for better organization</li>
+            <li>Functions for calculations</li>
+            <li>Import system for modular CSS</li>
+          </ul>
+        </section>
+
+        <!-- Performance Section -->
+        <section id="performance" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Performance Optimization</h2>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            Optimizing CSS performance is essential for fast-loading websites and better user experience.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Performance Best Practices</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li>Minify CSS files for production</li>
+            <li>Use efficient selectors</li>
+            <li>Avoid deep nesting</li>
+            <li>Remove unused CSS</li>
+            <li>Use CSS compression</li>
+            <li>Optimize critical CSS</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">CSS Optimization Tools</h3>
+          <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+            <li>PurgeCSS for removing unused styles</li>
+            <li>Critical CSS extraction tools</li>
+            <li>CSS compression utilities</li>
+            <li>Bundle analysis tools</li>
+          </ul>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Conclusion and Next Steps</h2>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            CSS formatting is a crucial skill for modern web developers. By following the best practices outlined
+            in this guide, you'll write cleaner, more maintainable CSS code that's easier to debug and collaborate on.
+          </p>
+
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            Remember to use our <a href="/css/formatter" class="text-blue-600 dark:text-blue-400 hover:underline">CSS Formatter tool</a>
+            to format, minify, and validate your CSS code. It's a powerful resource that can help you implement
+            all the techniques discussed in this guide.
+          </p>
+
+          <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-100 mb-4">Ready to Format Your CSS?</h3>
+            <p class="text-blue-800 dark:text-blue-200 mb-4">
+              Try our comprehensive CSS formatter tool to beautify, minify, and validate your CSS code.
+            </p>
+            <button
+              (click)="goToCssFormatter()"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+            >
+              Use CSS Formatter Tool
+            </button>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>
+

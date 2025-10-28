@@ -1,0 +1,370 @@
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+        Contact Us
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
+        We'd love to hear from you! Send us a message and we'll respond as soon as possible.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div
+        class="bg-white dark:bg-gray-900 rounded-xl shadow-xl dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-8 transition-all duration-300"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+          Send us a Message
+        </h2>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <!-- Name Field -->
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300"
+            >
+              Full Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              placeholder="Your full name"
+            />
+            <div *ngIf="getFieldError('name')" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getFieldError('name') }}
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300"
+            >
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              placeholder="your.email@example.com"
+            />
+            <div *ngIf="getFieldError('email')" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getFieldError('email') }}
+            </div>
+          </div>
+
+          <!-- Subject Field -->
+          <div>
+            <label
+              for="subject"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300"
+            >
+              Subject *
+            </label>
+            <input
+              type="text"
+              id="subject"
+              formControlName="subject"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+              placeholder="What's this about?"
+            />
+            <div *ngIf="getFieldError('subject')" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getFieldError('subject') }}
+            </div>
+          </div>
+
+          <!-- Message Type -->
+          <div>
+            <label
+              for="type"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300"
+            >
+              Message Type
+            </label>
+            <select
+              id="type"
+              formControlName="type"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+            >
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="feature">Feature Request</option>
+              <option value="bug">Bug Report</option>
+              <option value="business">Business Inquiry</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </div>
+
+          <!-- Message Field -->
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300"
+            >
+              Message *
+            </label>
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="6"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 resize-none"
+              placeholder="Tell us more about your inquiry..."
+            ></textarea>
+            <div *ngIf="getFieldError('message')" class="mt-1 text-sm text-red-600 dark:text-red-400">
+              {{ getFieldError('message') }}
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            [disabled]="isSubmitting || contactForm.invalid"
+            class="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 disabled:cursor-not-allowed"
+          >
+            <span *ngIf="!isSubmitting">Send Message</span>
+            <span *ngIf="isSubmitting" class="flex items-center justify-center">
+              <svg
+                class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Sending...
+            </span>
+          </button>
+
+          <!-- Submit Message -->
+          <div
+            *ngIf="submitMessage"
+            class="mt-4 p-4 rounded-lg transition-colors duration-300"
+            [class.bg-green-50]="submitSuccess"
+            [class.dark:bg-green-900]="submitSuccess"
+            [class.border-green-200]="submitSuccess"
+            [class.dark:border-green-800]="submitSuccess"
+            [class.text-green-800]="submitSuccess"
+            [class.dark:text-green-200]="submitSuccess"
+            [class.bg-red-50]="!submitSuccess"
+            [class.dark:bg-red-900]="!submitSuccess"
+            [class.border-red-200]="!submitSuccess"
+            [class.dark:border-red-800]="!submitSuccess"
+            [class.text-red-800]="!submitSuccess"
+            [class.dark:text-red-200]="!submitSuccess"
+            [class.border]="true"
+          >
+            {{ submitMessage }}
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <!-- Contact Details -->
+        <div
+          class="bg-white dark:bg-gray-900 rounded-xl shadow-xl dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-8 transition-all duration-300"
+        >
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+            Get in Touch
+          </h2>
+
+          <div class="space-y-6">
+            <!-- Email -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                  <svg
+                    class="w-5 h-5 text-blue-600 dark:text-blue-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300">
+                  Email Us
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                  <a
+                    href="mailto:support@smarttextconverter.com"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  >
+                    support&#64;smarttextconverter.com
+                  </a>
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors duration-300">
+                  We typically respond within 24 hours
+                </p>
+              </div>
+            </div>
+
+            <!-- Website -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                  <svg
+                    class="w-5 h-5 text-green-600 dark:text-green-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300">
+                  Visit Our Website
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                  <a
+                    href="https://smarttextconverter.com"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  >
+                    smarttextconverter.com
+                  </a>
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors duration-300">
+                  Explore our text conversion tools
+                </p>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                  <svg
+                    class="w-5 h-5 text-purple-600 dark:text-purple-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300">
+                  Response Time
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">Within 24 hours</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors duration-300">
+                  Monday to Friday, 9 AM - 6 PM EST
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div
+          class="bg-white dark:bg-gray-900 rounded-xl shadow-xl dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-8 transition-all duration-300"
+        >
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+            Frequently Asked Questions
+          </h2>
+
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                Is my text data secure?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                Yes! All text processing happens locally in your browser. We never store, transmit, or have access to
+                your text content.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                Do you offer API access?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                Currently, we don't offer API access, but we're considering it for future releases. Contact us if you're
+                interested!
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                Can I suggest new features?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                Absolutely! We love hearing from our users. Use the "Feature Request" option in the contact form.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Hours -->
+        <div
+          class="bg-white dark:bg-gray-900 rounded-xl shadow-xl dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-8 transition-all duration-300"
+        >
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+            Business Hours
+          </h2>
+
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="text-gray-600 dark:text-gray-300 transition-colors duration-300">Monday - Friday</span>
+              <span class="text-gray-900 dark:text-white font-medium transition-colors duration-300"
+                >9:00 AM - 6:00 PM EST</span
+              >
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600 dark:text-gray-300 transition-colors duration-300">Saturday</span>
+              <span class="text-gray-900 dark:text-white font-medium transition-colors duration-300"
+                >10:00 AM - 4:00 PM EST</span
+              >
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600 dark:text-gray-300 transition-colors duration-300">Sunday</span>
+              <span class="text-gray-900 dark:text-white font-medium transition-colors duration-300">Closed</span>
+            </div>
+          </div>
+
+          <div
+            class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800 transition-colors duration-300"
+          >
+            <p class="text-sm text-blue-800 dark:text-blue-200 transition-colors duration-300">
+              <strong>Note:</strong> We respond to emails 24/7, but phone support is available during business hours
+              only.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

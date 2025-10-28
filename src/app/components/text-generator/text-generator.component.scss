@@ -1,0 +1,71 @@
+// Generation helpers component specific styles
+
+// Custom textarea styling
+textarea {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+// Button hover effects
+button {
+  transition: all 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Feature card hover effects
+.feature-card {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Select and input focus styling
+select,
+input[type='text'],
+input[type='number'] {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+// Extraction results styling
+.extraction-item {
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f1f5f9;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+}

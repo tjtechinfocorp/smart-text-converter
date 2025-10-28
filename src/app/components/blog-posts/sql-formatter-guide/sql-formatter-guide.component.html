@@ -1,0 +1,393 @@
+<div class="bg-white dark:bg-gray-950 transition-colors duration-300">
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 dark:bg-gray-900 py-4">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center space-x-2 text-sm">
+        <a href="/" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Home</a>
+        <span class="text-gray-400">/</span>
+        <a href="/blog" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Blog</a>
+        <span class="text-gray-400">/</span>
+        <span class="text-gray-900 dark:text-white font-medium">SQL Formatter Guide</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Article Header -->
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        SQL Formatter Guide: Best Practices for Query Formatting and Optimization in 2025
+      </h1>
+      <div class="flex flex-wrap items-center text-gray-600 dark:text-gray-400 mb-8">
+        <span class="mr-4">By SmartTextConverter</span>
+        <span class="mr-4">•</span>
+        <time class="mr-4">October 8, 2025</time>
+        <span class="mr-4">•</span>
+        <span>15 min read</span>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span
+          class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+          >SQL</span
+        >
+        <span
+          class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-sm font-medium"
+          >Database</span
+        >
+        <span
+          class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium"
+          >Development</span
+        >
+        <span
+          class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium"
+          >Best Practices</span
+        >
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="mb-12">
+      <img
+        src="blog-images/sql-formatter-complete-guide.jpg"
+        alt="SQL Formatter Guide: Best Practices for Query Formatting and Optimization"
+        class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+      />
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Table of Contents</h2>
+      <nav class="space-y-2">
+        <a
+          (click)="scrollToSection('introduction', $event)"
+          class="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer"
+          >1. Introduction to SQL Formatting</a
+        >
+        <a
+          (click)="scrollToSection('best-practices', $event)"
+          class="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer"
+          >2. SQL Formatting Best Practices</a
+        >
+        <a
+          (click)="scrollToSection('tools', $event)"
+          class="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer"
+          >3. SQL Formatting Tools</a
+        >
+        <a
+          (click)="scrollToSection('optimization', $event)"
+          class="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer"
+          >4. SQL Query Optimization</a
+        >
+        <a
+          (click)="scrollToSection('validation', $event)"
+          class="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer"
+          >5. SQL Validation and Error Checking</a
+        >
+        <a
+          (click)="scrollToSection('conclusion', $event)"
+          class="block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 cursor-pointer"
+          >6. Conclusion</a
+        >
+      </nav>
+    </div>
+
+    <!-- Introduction -->
+    <section id="introduction" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Introduction to SQL Formatting</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        SQL formatting is the practice of organizing and structuring SQL queries to improve readability,
+        maintainability, and performance. Well-formatted SQL code is easier to understand, debug, and modify, making it
+        an essential skill for database developers and administrators.
+      </p>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        In this comprehensive guide, we'll explore the best practices for SQL formatting, the tools available to help
+        you format your queries, and techniques for optimizing SQL performance. Whether you're a beginner or an
+        experienced developer, this guide will help you write cleaner, more efficient SQL code.
+      </p>
+    </section>
+
+    <!-- Best Practices -->
+    <section id="best-practices" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">SQL Formatting Best Practices</h2>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">1. Consistent Indentation</h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        Use consistent indentation throughout your SQL queries. Whether you choose 2 spaces, 4 spaces, or tabs, maintain
+        the same pattern across your entire project.
+      </p>
+
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>/* Good: Consistent 2-space indentation */
+SELECT
+  u.id,
+  u.name,
+  u.email,
+  p.title,
+  p.content
+FROM users u
+INNER JOIN posts p ON u.id = p.user_id
+WHERE u.active = 1
+  AND p.published = 1
+ORDER BY p.created_at DESC
+LIMIT 10;</code></pre>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">2. Logical Query Structure</h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        Organize your SQL queries in a logical order to improve readability and maintainability.
+      </p>
+
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>/* Recommended query structure */
+SELECT
+  /* Column selection */
+  u.id,
+  u.name,
+  u.email,
+  p.title,
+  p.content,
+  c.name AS category_name
+FROM
+  /* Main table */
+  users u
+  /* Joins */
+  INNER JOIN posts p ON u.id = p.user_id
+  LEFT JOIN categories c ON p.category_id = c.id
+WHERE
+  /* Filtering conditions */
+  u.active = 1
+  AND p.published = 1
+  AND p.created_at >= '2025-01-01'
+GROUP BY
+  /* Grouping columns */
+  u.id, u.name, u.email, p.title, p.content, c.name
+HAVING
+  /* Post-aggregation filtering */
+  COUNT(p.id) > 1
+ORDER BY
+  /* Sorting */
+  p.created_at DESC, u.name ASC
+LIMIT 10;</code></pre>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">3. Meaningful Comments</h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        Add meaningful comments to explain complex SQL logic, business rules, and section purposes.
+      </p>
+
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre
+          class="text-sm text-gray-800 dark:text-gray-200"
+        ><code>/* ==========================================================================
+   User Analytics Query
+   ========================================================================== */
+
+-- Get active users with their post statistics
+SELECT
+  u.id,
+  u.name,
+  u.email,
+  COUNT(p.id) AS post_count,
+  MAX(p.created_at) AS last_post_date
+FROM users u
+  -- Only include published posts
+  INNER JOIN posts p ON u.id = p.user_id AND p.published = 1
+WHERE
+  -- Filter for active users only
+  u.active = 1
+  -- Exclude users who haven't posted in the last 30 days
+  AND p.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+GROUP BY u.id, u.name, u.email
+HAVING post_count > 0
+ORDER BY post_count DESC, last_post_date DESC;</code></pre>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">SQL Formatting Tools</h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        There are several tools available to help you format SQL queries automatically. These tools can save time and
+        ensure consistent formatting across your codebase.
+      </p>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Online SQL Formatters</h3>
+      <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+        <li>
+          <strong>SmartTextConverter SQL Formatter</strong> - Free online SQL formatter with multiple formatting options
+        </li>
+        <li><strong>SQLFormat.com</strong> - Simple and fast SQL formatting</li>
+        <li><strong>CodeBeautify SQL Formatter</strong> - Comprehensive SQL formatting with customization options</li>
+        <li><strong>SQL Formatter by SQLines</strong> - Advanced SQL formatting with dialect support</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">IDE Extensions and Plugins</h3>
+      <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+        <li><strong>VS Code</strong> - SQL Formatter extension</li>
+        <li><strong>IntelliJ IDEA</strong> - Built-in SQL formatting</li>
+        <li><strong>DBeaver</strong> - Built-in SQL formatter</li>
+        <li><strong>DataGrip</strong> - Advanced SQL formatting and analysis</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Command Line Tools</h3>
+      <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+        <li><strong>sqlfluff</strong> - Python-based SQL linter and formatter</li>
+        <li><strong>sqlformat</strong> - PostgreSQL's built-in SQL formatter</li>
+        <li><strong>sql-formatter</strong> - Node.js SQL formatter</li>
+      </ul>
+    </section>
+
+    <!-- Optimization -->
+    <section id="optimization" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">SQL Query Optimization</h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        SQL optimization goes beyond formatting and focuses on improving query performance. Here are key techniques to
+        optimize your SQL queries.
+      </p>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">1. Index Usage</h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        Ensure your queries use appropriate indexes for better performance.
+      </p>
+
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>-- Create indexes for frequently queried columns
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_posts_user_id ON posts(user_id);
+CREATE INDEX idx_posts_published ON posts(published);
+CREATE INDEX idx_posts_created_at ON posts(created_at);
+
+-- Use indexes in WHERE clauses
+SELECT * FROM users
+WHERE email = 'user&#64;example.com';  -- Uses idx_users_email
+
+SELECT * FROM posts
+WHERE user_id = 123 AND published = 1;  -- Uses both indexes</code></pre>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">2. Query Structure Optimization</h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        Structure your queries to minimize data processing and improve performance.
+      </p>
+
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>-- Good: Use specific columns instead of SELECT *
+SELECT u.id, u.name, u.email
+FROM users u
+WHERE u.active = 1;
+
+-- Good: Use LIMIT to restrict results
+SELECT * FROM posts
+WHERE published = 1
+ORDER BY created_at DESC
+LIMIT 10;
+
+-- Good: Use appropriate JOIN types
+SELECT u.name, p.title
+FROM users u
+INNER JOIN posts p ON u.id = p.user_id  -- Only users with posts
+WHERE u.active = 1;</code></pre>
+      </div>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">3. Performance Monitoring</h3>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">Monitor query performance and identify bottlenecks.</p>
+
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>-- MySQL: Use EXPLAIN to analyze query execution
+EXPLAIN SELECT u.name, p.title
+FROM users u
+INNER JOIN posts p ON u.id = p.user_id
+WHERE u.active = 1;
+
+-- PostgreSQL: Use EXPLAIN ANALYZE for detailed analysis
+EXPLAIN ANALYZE SELECT u.name, p.title
+FROM users u
+INNER JOIN posts p ON u.id = p.user_id
+WHERE u.active = 1;</code></pre>
+      </div>
+    </section>
+
+    <!-- Validation -->
+    <section id="validation" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">SQL Validation and Error Checking</h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        SQL validation helps identify syntax errors, performance issues, and ensures your queries follow best practices.
+      </p>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Common SQL Errors</h3>
+      <ul class="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 mb-6 space-y-2">
+        <li>Missing commas in SELECT statements</li>
+        <li>Unmatched parentheses in complex queries</li>
+        <li>Incorrect JOIN syntax</li>
+        <li>Missing table aliases in multi-table queries</li>
+        <li>Incorrect data type comparisons</li>
+      </ul>
+
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Validation Techniques</h3>
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
+        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>-- Test queries with sample data
+SELECT
+  u.id,
+  u.name,
+  COUNT(p.id) as post_count
+FROM users u
+LEFT JOIN posts p ON u.id = p.user_id
+WHERE u.active = 1
+GROUP BY u.id, u.name
+HAVING post_count > 0
+ORDER BY post_count DESC;
+
+-- Use parameterized queries to prevent SQL injection
+PREPARE stmt FROM 'SELECT * FROM users WHERE id = ?';
+SET &#64;user_id = 123;
+EXECUTE stmt USING &#64;user_id;
+DEALLOCATE PREPARE stmt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Conclusion</h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        SQL formatting is an essential skill for database developers and administrators. By following the best practices
+        outlined in this guide, you can write cleaner, more maintainable, and more efficient SQL queries.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Remember to use consistent formatting, appropriate tools, and always validate your queries before deploying them
+        to production. The time invested in proper SQL formatting will pay dividends in terms of code maintainability
+        and team productivity.
+      </p>
+
+      <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-8">
+        <h3 class="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">Ready to Format Your SQL?</h3>
+        <p class="text-blue-800 dark:text-blue-200 mb-4">
+          Try our free SQL formatter tool to format, beautify, and optimize your SQL queries instantly.
+        </p>
+        <a
+          href="/sql/formatter"
+          class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+        >
+          Use SQL Formatter Tool
+        </a>
+      </div>
+    </section>
+
+    <!-- Back to Blog -->
+    <div class="border-t border-gray-200 dark:border-gray-700 pt-8">
+      <button
+        (click)="goBackToBlog()"
+        class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+      >
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to Blog
+      </button>
+    </div>
+  </article>
+</div>

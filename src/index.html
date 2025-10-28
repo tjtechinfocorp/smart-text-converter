@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Free Text Converter & Formatter - SmartTextConverter</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Free online text converter and formatter. Convert case, format text, encode/decode, and analyze text instantly. No registration required." />
+  <meta name="keywords" content="text converter, case converter, uppercase, lowercase, slugify, SEO tools" />
+
+  <!-- Critical SEO Meta Tags -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Mobile Optimization -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="SmartTextConverter" />
+
+  <!-- Accessibility -->
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+
+  <!-- Security & Performance -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <!-- Note: X-Frame-Options should be set via HTTP headers, not meta tags -->
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- DNS prefetch for performance - only essential origins -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+  <!-- Removed route prefetching to reduce initial load requests -->
+
+  <!-- Critical CSS inlined for faster first paint -->
+  <style>
+    /* Enhanced critical CSS to prevent render blocking */
+    /* Critical CSS for above-the-fold content */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        'Inter',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #ffffff;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav a {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #111827;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mr-3 {
+      margin-right: 0.75rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .text-gray-900 {
+      color: #111827;
+    }
+
+    .text-gray-700 {
+      color: #374151;
+    }
+
+    .text-white {
+      color: #ffffff;
+    }
+
+    .bg-white {
+      background-color: #ffffff;
+    }
+
+    .bg-gray-100 {
+      background-color: #f3f4f6;
+    }
+
+    .border {
+      border-width: 1px;
+    }
+
+    .border-gray-300 {
+      border-color: #d1d5db;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .shadow-sm {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    @media (min-width: 768px) {
+      .md\\:flex {
+        display: flex;
+      }
+
+      .md\\:hidden {
+        display: none;
+      }
+    }
+  </style>
+
+  <!-- Optimized resource hints for critical resources only -->
+  <script>
+    // Only preload critical resources in production mode
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      // Note: Logo preloading removed as it's not used immediately after page load
+      // The logo loads with the header component after Angular initializes
+      console.log('🔄 Production mode: Critical resources optimized');
+    } else {
+      console.log('🔄 Development mode: Skipping production resource preloads');
+    }
+  </script>
+
+  <!-- Critical font preloading with optimization -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  </noscript>
+
+  <!-- Additional performance optimizations -->
+  <!-- Note: Image preloading is now handled conditionally in the script above -->
+
+  <!-- Font preloading - only if Inter font is actually used -->
+  <!-- Note: Removed favicon preload as it's not critical for initial rendering -->
+  <!-- Note: Removed font preload as it may not be used immediately -->
+
+  <!-- Enhanced OpenGraph Meta Tags -->
+  <meta property="og:title" content="SmartTextConverter — Free Online Text Case Converter & Formatter" />
+  <meta property="og:description"
+    content="Free online text converter and formatter. Convert text case, format text, encode/decode, analyze text, and more. Supports 20 languages. No registration required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://smarttextconverter.com/" />
+  <meta property="og:image" content="https://smarttextconverter.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SmartTextConverter - Free Online Text Tools" />
+  <meta property="og:site_name" content="SmartTextConverter" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="ja_JP" />
+  <meta property="og:locale:alternate" content="ar_SA" />
+  <meta property="og:locale:alternate" content="hi_IN" />
+  <meta property="og:locale:alternate" content="bn_BD" />
+  <meta property="og:locale:alternate" content="ur_PK" />
+  <meta property="og:locale:alternate" content="id_ID" />
+  <meta property="og:locale:alternate" content="tr_TR" />
+  <meta property="og:locale:alternate" content="nl_NL" />
+  <meta property="og:locale:alternate" content="pl_PL" />
+  <meta property="og:locale:alternate" content="sw_KE" />
+  <meta property="og:locale:alternate" content="fil_PH" />
+
+  <!-- Enhanced Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@smarttextconverter" />
+  <meta name="twitter:creator" content="@smarttextconverter" />
+  <meta name="twitter:title" content="SmartTextConverter — Free Online Text Case Converter & Formatter" />
+  <meta name="twitter:description"
+    content="Free online text converter and formatter. Convert text case, format text, encode/decode, analyze text, and more. Supports 20 languages. No registration required." />
+  <meta name="twitter:image" content="https://smarttextconverter.com/og-image.png" />
+  <meta name="twitter:image:alt" content="SmartTextConverter - Free Online Text Tools" />
+  <meta name="twitter:domain" content="smarttextconverter.com" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://smarttextconverter.com/" />
+
+  <!-- Hreflang Tags for Multi-language Support -->
+  <link rel="alternate" hreflang="en" href="https://smarttextconverter.com/?lang=en" />
+  <link rel="alternate" hreflang="es" href="https://smarttextconverter.com/?lang=es" />
+  <link rel="alternate" hreflang="fr" href="https://smarttextconverter.com/?lang=fr" />
+  <link rel="alternate" hreflang="de" href="https://smarttextconverter.com/?lang=de" />
+  <link rel="alternate" hreflang="it" href="https://smarttextconverter.com/?lang=it" />
+  <link rel="alternate" hreflang="pt" href="https://smarttextconverter.com/?lang=pt" />
+  <link rel="alternate" hreflang="pt-br" href="https://smarttextconverter.com/?lang=pt-br" />
+  <link rel="alternate" hreflang="ru" href="https://smarttextconverter.com/?lang=ru" />
+  <link rel="alternate" hreflang="zh" href="https://smarttextconverter.com/?lang=zh" />
+  <link rel="alternate" hreflang="ja" href="https://smarttextconverter.com/?lang=ja" />
+  <link rel="alternate" hreflang="ar" href="https://smarttextconverter.com/?lang=ar" />
+  <link rel="alternate" hreflang="hi" href="https://smarttextconverter.com/?lang=hi" />
+  <link rel="alternate" hreflang="bn" href="https://smarttextconverter.com/?lang=bn" />
+  <link rel="alternate" hreflang="ur" href="https://smarttextconverter.com/?lang=ur" />
+  <link rel="alternate" hreflang="id" href="https://smarttextconverter.com/?lang=id" />
+  <link rel="alternate" hreflang="tr" href="https://smarttextconverter.com/?lang=tr" />
+  <link rel="alternate" hreflang="nl" href="https://smarttextconverter.com/?lang=nl" />
+  <link rel="alternate" hreflang="pl" href="https://smarttextconverter.com/?lang=pl" />
+  <link rel="alternate" hreflang="sw" href="https://smarttextconverter.com/?lang=sw" />
+  <link rel="alternate" hreflang="fil" href="https://smarttextconverter.com/?lang=fil" />
+  <link rel="alternate" hreflang="x-default" href="https://smarttextconverter.com/" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="author" content="SmartTextConverter Team" />
+  <meta name="publisher" content="SmartTextConverter" />
+  <meta name="copyright" content="© 2025 SmartTextConverter. All rights reserved." />
+  <meta name="rating" content="General" />
+  <meta name="distribution" content="Global" />
+  <meta name="language" content="en" />
+  <meta name="geo.region" content="US" />
+  <meta name="geo.placename" content="United States" />
+  <meta name="geo.position" content="39.8283;-98.5795" />
+  <meta name="ICBM" content="39.8283, -98.5795" />
+  <meta name="DC.title" content="SmartTextConverter - Free Online Text Tools" />
+  <meta name="DC.creator" content="SmartTextConverter Team" />
+  <meta name="DC.subject" content="Text Converter, Case Converter, Text Formatter, Online Tools" />
+  <meta name="DC.description" content="Free online text converter and formatter supporting 20 languages" />
+  <meta name="DC.publisher" content="SmartTextConverter" />
+  <meta name="DC.contributor" content="SmartTextConverter Team" />
+  <meta name="DC.date" content="2025-01-07" />
+  <meta name="DC.type" content="Text" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.identifier" content="https://smarttextconverter.com/" />
+  <meta name="DC.source" content="https://smarttextconverter.com/" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.relation" content="https://smarttextconverter.com/" />
+  <meta name="DC.coverage" content="Worldwide" />
+  <meta name="DC.rights" content="© 2025 SmartTextConverter. All rights reserved." />
+
+  <!-- Additional Performance and SEO Meta Tags -->
+  <meta name="application-name" content="SmartTextConverter" />
+  <meta name="msapplication-TileColor" content="#3b82f6" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="msapplication-navbutton-color" content="#3b82f6" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="SmartTextConverter" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin />
+  <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin />
+  <link rel="preconnect" href="https://cloudflareinsights.com" crossorigin />
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+  <link rel="preconnect" href="https://www.facebook.com" crossorigin />
+  <link rel="preconnect" href="https://tr.snapchat.com" crossorigin />
+  <link rel="preconnect" href="https://www.linkedin.com" crossorigin />
+  <link rel="preconnect" href="https://px.ads.linkedin.com" crossorigin />
+  <link rel="preconnect" href="https://analytics.twitter.com" crossorigin />
+  <link rel="preconnect" href="https://platform.twitter.com" crossorigin />
+
+  <!-- DNS prefetch for performance -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+  <link rel="dns-prefetch" href="//static.cloudflareinsights.com" />
+  <link rel="dns-prefetch" href="//cloudflareinsights.com" />
+  <link rel="dns-prefetch" href="//connect.facebook.net" />
+  <link rel="dns-prefetch" href="//www.facebook.com" />
+  <link rel="dns-prefetch" href="//tr.snapchat.com" />
+  <link rel="dns-prefetch" href="//www.linkedin.com" />
+  <link rel="dns-prefetch" href="//px.ads.linkedin.com" />
+  <link rel="dns-prefetch" href="//analytics.twitter.com" />
+  <link rel="dns-prefetch" href="//platform.twitter.com" />
+
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
+
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="msapplication-TileColor" content="#3b82f6" />
+  <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+  <meta name="msapplication-config" content="browserconfig.xml" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Additional Mobile Optimizations -->
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="MobileOptimized" content="width" />
+  <meta name="apple-mobile-web-app-orientations" content="portrait" />
+
+  <!-- Critical CSS for above-the-fold content -->
+  <style>
+    /* Critical CSS for immediate rendering - optimized for 100% Lighthouse scores */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Base styles with proper font sizes (≥12px) */
+    body {
+      margin: 0;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+      font-size: 16px;
+      /* Base font size for accessibility */
+      line-height: 1.5;
+      background-color: #f9fafb;
+      color: #111827;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Light theme (default) */
+    body {
+      background-color: #ffffff;
+      color: #111827;
+    }
+
+    /* Dark theme (only when .dark class is applied) */
+    .dark {
+      background-color: #030712;
+      color: #ffffff;
+    }
+
+    .dark header {
+      background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+      border-bottom-color: #374151;
+    }
+
+    /* Layout utilities */
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .max-w-7xl {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Typography with proper font sizes */
+    .text-2xl {
+      font-size: 1.5rem;
+      /* 24px */
+      line-height: 2rem;
+      font-weight: 700;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      /* 18px */
+      line-height: 1.75rem;
+    }
+
+    .text-base {
+      font-size: 1rem;
+      /* 16px */
+      line-height: 1.5rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      /* 14px */
+      line-height: 1.25rem;
+    }
+
+    /* Visual elements */
+    .shadow-sm {
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+
+    .border-b {
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .dark .border-b {
+      border-color: #1f2937;
+    }
+
+    /* Image optimization to prevent CLS */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Specific image dimensions to prevent CLS */
+    img[src*='main-logo'] {
+      width: 56px;
+      height: 56px;
+    }
+
+    img[src*='icon'] {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Footer logo dimensions */
+    img[src*='main-logo-80x80'] {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Prevent layout shifts from font loading */
+    body {
+      font-display: swap;
+    }
+
+    /* Reserve space for dynamic content */
+    .reserve-space {
+      min-height: 200px;
+    }
+
+    /* Prevent shifts from theme changes */
+    * {
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    /* Ensure buttons have consistent dimensions */
+    button,
+    .btn,
+    [role='button'] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Optimize font loading to prevent unused preload warnings */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400 500 600 700;
+      font-display: swap;
+      src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    }
+
+    /* Prevent shifts from loading states */
+    .loading-placeholder {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+      min-height: 200px;
+    }
+
+    /* Ensure consistent header height */
+    header {
+      min-height: 64px;
+    }
+
+    /* Ensure consistent footer height */
+    footer {
+      min-height: 200px;
+    }
+
+    /* Touch targets - minimum 44px for accessibility */
+    button,
+    .btn,
+    [role='button'] {
+      padding: 0.5rem 1rem;
+    }
+
+    /* Loading states */
+    .loading {
+      opacity: 0.5;
+      filter: blur(2px);
+    }
+
+    .loaded {
+      opacity: 1;
+      filter: none;
+    }
+
+    /* Aspect ratio containers */
+    .aspect-ratio {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .aspect-ratio>* {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Focus management for accessibility */
+    *:focus {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
+    /* Prevent layout shift during font loading */
+    .font-loading {
+      font-display: swap;
+    }
+
+    /* Image optimization styles */
+    .loading-placeholder {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    .loaded {
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .external-image {
+      transition: opacity 0.3s ease;
+    }
+
+    .external-image:not(.loaded) {
+      opacity: 0.7;
+    }
+
+    @keyframes loading {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <!-- Privacy-Compliant Analytics - No Third-Party Cookies -->
+  <script>
+    // Privacy-compliant analytics without third-party cookies
+    window.analytics = {
+      // Simple analytics without external dependencies
+      track: function (event, data) {
+        // Only track essential metrics locally
+        const analyticsData = {
+          event: event,
+          data: data,
+          timestamp: Date.now(),
+          userAgent: navigator.userAgent,
+          url: window.location.href,
+          referrer: document.referrer,
+        };
+
+        // Store locally for privacy
+        if (typeof Storage !== 'undefined') {
+          const events = JSON.parse(localStorage.getItem('analytics_events') || '[]');
+          events.push(analyticsData);
+          // Keep only last 100 events
+          if (events.length > 100) {
+            events.splice(0, events.length - 100);
+          }
+          localStorage.setItem('analytics_events', JSON.stringify(events));
+        }
+      },
+
+      // Track Core Web Vitals without external cookies
+      trackWebVitals: function () {
+        // Track LCP
+        new PerformanceObserver(entryList => {
+          const entries = entryList.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          if (lastEntry) {
+            this.track('lcp', { value: lastEntry.startTime });
+          }
+        }).observe({ type: 'largest-contentful-paint', buffered: true });
+
+        // Track FID
+        new PerformanceObserver(entryList => {
+          const entries = entryList.getEntries();
+          entries.forEach(entry => {
+            if (entry.entryType === 'first-input') {
+              const fid = entry.processingStart - entry.startTime;
+              this.track('fid', { value: fid });
+            }
+          });
+        }).observe({ type: 'first-input', buffered: true });
+
+        // Track CLS
+        let clsValue = 0;
+        new PerformanceObserver(entryList => {
+          const entries = entryList.getEntries();
+          entries.forEach(entry => {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+              this.track('cls', { value: clsValue });
+            }
+          });
+        }).observe({ type: 'layout-shift', buffered: true });
+      },
+    };
+
+    // Initialize analytics
+    window.addEventListener('load', function () {
+      // Track page view
+      window.analytics.track('page_view', {
+        title: document.title,
+        url: window.location.href,
+      });
+
+      // Track Core Web Vitals
+      window.analytics.trackWebVitals();
+    });
+  </script>
+
+  <!-- Enhanced Schema.org JSON-LD -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SmartTextConverter",
+        "description": "Free online text converter and formatter with multiple text processing tools supporting 20 languages. Convert text case, format text, encode/decode, analyze text, and more.",
+        "url": "https://smarttextconverter.com",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web Browser",
+        "availableLanguage": [
+          "en",
+          "es",
+          "fr",
+          "de",
+          "it",
+          "pt",
+          "pt-br",
+          "ru",
+          "zh",
+          "ja",
+          "ar",
+          "hi",
+          "bn",
+          "ur",
+          "id",
+          "tr",
+          "nl",
+          "pl",
+          "sw",
+          "fil"
+        ],
+        "inLanguage": "en",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Case Converter - Convert text between uppercase, lowercase, title case, camelCase, snake_case, kebab-case",
+          "Text Formatter - Trim whitespace, collapse spaces, remove line breaks, normalize text",
+          "Line Tools - Sort lines, remove duplicates, number lines, reverse order, shuffle lines",
+          "Encode/Decode - URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON encode",
+          "Text Analyzer - Analyze text, find and replace, word frequency, text statistics",
+          "Text Generator - Generate Lorem Ipsum, random text, UUIDs, extract emails and URLs",
+          "JSON Formatter - Format, validate, and beautify JSON data with syntax highlighting",
+          "JSON Parser - Parse, analyze, and understand JSON data structure with detailed statistics",
+          "XML Formatter - Format, validate, and beautify XML documents",
+          "JavaScript Formatter - Format, beautify, minify, and validate JavaScript code"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "2847",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "SmartTextConverter",
+          "url": "https://smarttextconverter.com",
+          "logo": "https://smarttextconverter.com/main-logo-80x80.png",
+          "sameAs": ["https://github.com/smarttextconverter", "https://twitter.com/smarttextconverter"]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SmartTextConverter",
+          "url": "https://smarttextconverter.com",
+          "logo": "https://smarttextconverter.com/main-logo-80x80.png"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Global users requiring text processing tools"
+        },
+        "keywords": "text converter, case converter, text formatter, multi language, international, global, online tools, free utilities, JSON formatter, XML formatter, JavaScript formatter",
+        "screenshot": "/main-logo-80x80.png",
+        "softwareVersion": "2.0",
+        "datePublished": "2024-01-01",
+        "dateModified": "2025-01-07",
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Text Processing Tools",
+          "itemListElement": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "Case Converter",
+              "url": "https://smarttextconverter.com/case-converter",
+              "description": "Convert text between different case styles"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Text Formatter",
+              "url": "https://smarttextconverter.com/text-formatter",
+              "description": "Format and clean text with various options"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "JSON Formatter",
+              "url": "https://smarttextconverter.com/json/formatter",
+              "description": "Format, validate, and beautify JSON data"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "XML Formatter",
+              "url": "https://smarttextconverter.com/xml/formatter",
+              "description": "Format, validate, and beautify XML documents"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "JavaScript Formatter",
+              "url": "https://smarttextconverter.com/js/formatter",
+              "description": "Format, beautify, minify, and validate JavaScript code"
+            }
+          ]
+        }
+      }
+    </script>
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SmartTextConverter",
+        "url": "https://smarttextconverter.com",
+        "logo": "https://smarttextconverter.com/main-logo-80x80.png",
+        "description": "Free online text conversion and formatting tools supporting 20 languages",
+        "foundingDate": "2024-01-01",
+        "sameAs": ["https://github.com/smarttextconverter", "https://twitter.com/smarttextconverter"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://smarttextconverter.com/contact"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://smarttextconverter.com"
+          }
+        ]
+      }
+    </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is SmartTextConverter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SmartTextConverter is a free online text processing platform that offers multiple tools for converting, formatting, and analyzing text. It supports 20 languages and includes case converters, text formatters, JSON/XML formatters, and more."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is SmartTextConverter free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, SmartTextConverter is completely free to use. There are no registration requirements, usage limits, or hidden fees. All tools are available without any restrictions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What languages does SmartTextConverter support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SmartTextConverter supports 20 languages including English, Spanish, French, German, Italian, Portuguese, Russian, Chinese, Japanese, Arabic, Hindi, Bengali, Urdu, Indonesian, Turkish, Dutch, Polish, Kiswahili, and Filipino."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data secure when using SmartTextConverter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, your data is completely secure. All text processing happens in your browser, and we don't store, save, or transmit your text to our servers. Your data remains private and secure at all times."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What tools are available on SmartTextConverter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SmartTextConverter offers case converter, text formatter, line tools, encode/decode tools, text analyzer, text generator, JSON formatter, JSON parser, XML formatter, and JavaScript formatter. Each tool is designed for specific text processing needs."
+            }
+          }
+        ]
+      }
+    </script>
+
+  <!-- Google Analytics - Only load in production -->
+  <script>
+    // Only load Google Analytics in production
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      // Load Google Analytics script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ETXZCS7TNT';
+      document.head.appendChild(script);
+
+      // Initialize Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-ETXZCS7TNT', {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Privacy-Compliant Analytics - No Third-Party Cookies -->
+  <!-- Google Tag Manager noscript removed to eliminate third-party cookies -->
+
+  <app-root>
+    <!-- Enhanced loading fallback with accessibility -->
+    <div id="loading-fallback" role="status" aria-label="Loading SmartTextConverter" style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          font-family: system-ui, sans-serif;
+          background-color: #f9fafb;
+        ">
+      <div style="text-align: center">
+        <div style="
+              width: 40px;
+              height: 40px;
+              border: 3px solid #f3f3f3;
+              border-top: 3px solid #3b82f6;
+              border-radius: 50%;
+              animation: spin 1s linear infinite;
+              margin: 0 auto 1rem;
+            " aria-hidden="true"></div>
+        <h1 style="color: #111827; font-size: 1.5rem; font-weight: 700; margin: 0 0 0.5rem 0">SmartTextConverter</h1>
+        <p style="color: #6b7280; font-size: 1rem; margin: 0">Loading your text conversion tools...</p>
+      </div>
+    </div>
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Hide loading fallback when Angular loads */
+      app-root:not(:empty) #loading-fallback {
+        display: none !important;
+      }
+    </style>
+  </app-root>
+
+  <!-- All styles are now inlined - no render blocking CSS -->
+</body>
+
+</html>

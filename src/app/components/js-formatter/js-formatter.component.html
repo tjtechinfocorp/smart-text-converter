@@ -1,0 +1,509 @@
+<!-- JS Formatter Page -->
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 min-h-screen">
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <app-translated-text key="js-formatter.title"></app-translated-text>
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-6xl mx-auto mb-8">
+      <app-translated-text key="js-formatter.description"></app-translated-text>
+    </p>
+
+    <!-- Quick Actions -->
+    <div class="flex flex-wrap justify-center gap-4">
+      <button (click)="loadSample()"
+        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+          </path>
+        </svg>
+        <app-translated-text key="js-formatter.load-sample"></app-translated-text>
+      </button>
+      <button (click)="clearInput()"
+        class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+          </path>
+        </svg>
+        <app-translated-text key="js-formatter.clear"></app-translated-text>
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- View Mode Selector -->
+    <div class="mb-6">
+      <div class="flex flex-wrap gap-2">
+        <button *ngFor="
+            let view of [
+              { key: 'formatted', label: 'js-formatter.formatted' },
+              { key: 'minified', label: 'js-formatter.minified' },
+              { key: 'stats', label: 'js-formatter.stats' },
+              { key: 'validate', label: 'js-formatter.validate' },
+              { key: 'convert', label: 'js-formatter.convert' },
+            ]
+          " (click)="switchView(view.key)" [class]="
+            currentView === view.key
+              ? 'px-4 py-2 bg-blue-600 text-white rounded-lg font-medium'
+              : 'px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
+          ">
+          <app-translated-text [key]="view.label"></app-translated-text>
+        </button>
+      </div>
+    </div>
+
+    <!-- Format Options (shown only for formatted view) -->
+    <div *ngIf="currentView === 'formatted'"
+      class="mb-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <app-translated-text key="js-formatter.format-options"></app-translated-text>
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <app-translated-text key="js-formatter.indent-size"></app-translated-text>
+          </label>
+          <select [(ngModel)]="formatOptions.indentSize" (change)="updateFormatOptions()"
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <option value="2">2 spaces</option>
+            <option value="4">4 spaces</option>
+            <option value="8">8 spaces</option>
+          </select>
+        </div>
+
+        <div class="flex items-center">
+          <input type="checkbox" id="useTabs" [(ngModel)]="formatOptions.useTabs" (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+          <label for="useTabs" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="js-formatter.use-tabs"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input type="checkbox" id="preserveComments" [(ngModel)]="formatOptions.preserveComments"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+          <label for="preserveComments" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="js-formatter.preserve-comments"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input type="checkbox" id="addSemicolons" [(ngModel)]="formatOptions.addSemicolons"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+          <label for="addSemicolons" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="js-formatter.add-semicolons"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input type="checkbox" id="fixIndentation" [(ngModel)]="formatOptions.fixIndentation"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+          <label for="fixIndentation" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="js-formatter.fix-indentation"></app-translated-text>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Display -->
+    <div *ngIf="!isValidJs && jsError"
+      class="mb-6 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+      <div class="flex items-center">
+        <svg class="w-5 h-5 text-red-600 dark:text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
+          <app-translated-text key="js-formatter.syntax-error"></app-translated-text>
+        </h3>
+      </div>
+      <p class="mt-2 text-sm text-red-700 dark:text-red-300">{{ jsError }}</p>
+    </div>
+
+    <!-- Editor Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Input Editor -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <app-translated-text key="js-formatter.input"></app-translated-text>
+          </h3>
+          <button (click)="processJs()" [disabled]="isProcessing"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center">
+            <svg *ngIf="isProcessing" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none"
+              viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            <svg *ngIf="!isProcessing" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <app-translated-text key="js-formatter.process"></app-translated-text>
+          </button>
+        </div>
+        <div class="p-4">
+          <textarea [(ngModel)]="jsInput"
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Enter your JavaScript code here..."></textarea>
+        </div>
+      </div>
+
+      <!-- Output Editor -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <app-translated-text key="js-formatter.output"></app-translated-text>
+          </h3>
+          <button (click)="copyToClipboard(jsOutput)" [disabled]="!jsOutput"
+            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+              </path>
+            </svg>
+            <app-translated-text key="js-formatter.copy"></app-translated-text>
+          </button>
+        </div>
+        <div class="p-4">
+          <textarea [(ngModel)]="jsOutput" readonly
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white font-mono text-sm resize-none"
+            placeholder="Formatted JavaScript code will appear here..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <app-translated-text key="js-formatter.features-title"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
+              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="js-formatter.feature-formatting"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="js-formatter.feature-formatting-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
+              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="js-formatter.feature-validation"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="js-formatter.feature-validation-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-purple-100 dark:bg-purple-900 rounded-lg">
+              <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="js-formatter.feature-minification"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="js-formatter.feature-minification-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
+              <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="js-formatter.feature-stats"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="js-formatter.feature-stats-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-red-100 dark:bg-red-900 rounded-lg">
+              <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="js-formatter.feature-conversion"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="js-formatter.feature-conversion-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
+              <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="js-formatter.feature-customization"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="js-formatter.feature-customization-desc"></app-translated-text>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mb-6">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+        <app-translated-text key="js-formatter.faq-title"></app-translated-text>
+      </h3>
+      <div class="space-y-6">
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq1-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq1-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq2-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq2-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq3-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq3-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq4-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq4-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq5-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq5-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq6-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq6-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq7-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq7-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq8-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq8-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq9-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq9-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <details class="group">
+            <summary
+              class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <app-translated-text key="js-formatter.faq10-question"></app-translated-text>
+              </h4>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              <app-translated-text key="js-formatter.faq10-answer"></app-translated-text>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Link Section -->
+    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+      <div class="flex items-center justify-center">
+        <div class="flex items-center text-blue-700 dark:text-blue-300">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+            </path>
+          </svg>
+          <span class="text-sm font-medium"><app-translated-text
+              key="js-formatter.blog-link-text"></app-translated-text></span>
+          <a routerLink="/blog/javascript-formatter-complete-guide"
+            class="ml-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 underline font-semibold">
+            <app-translated-text key="js-formatter.blog-link-title"></app-translated-text>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

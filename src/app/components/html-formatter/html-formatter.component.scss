@@ -1,0 +1,163 @@
+// HTML Formatter Component Styles
+
+// Custom scrollbar for textareas
+textarea {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
+
+// Dark mode scrollbar
+.dark textarea {
+  &::-webkit-scrollbar-track {
+    background: #374151;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #6b7280;
+
+    &:hover {
+      background: #9ca3af;
+    }
+  }
+}
+
+// Tab navigation styles
+nav button {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    transition: background-color 0.2s ease;
+  }
+
+  &.border-blue-500::after {
+    background: #3b82f6;
+  }
+}
+
+// Loading spinner animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+// Stats cards hover effect
+.text-center {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Feature cards hover effect
+.bg-white,
+.bg-gray-50 {
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow:
+      0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.dark .bg-gray-800,
+.dark .bg-gray-900 {
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow:
+      0 10px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// FAQ details animation
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+// Button hover effects
+button {
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Input focus effects
+input,
+select,
+textarea {
+  transition: all 0.2s ease;
+
+  &:focus {
+    transform: scale(1.02);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .grid-cols-1.lg\\:grid-cols-2 {
+    gap: 1rem;
+  }
+
+  .h-96 {
+    height: 16rem;
+  }
+}
+
+// Print styles
+@media print {
+  .bg-gray-50,
+  .bg-white,
+  .bg-gray-800,
+  .bg-gray-900 {
+    background: white !important;
+    color: black !important;
+  }
+
+  .shadow-sm,
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  .border {
+    border: 1px solid #ccc !important;
+  }
+}

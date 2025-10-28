@@ -1,0 +1,34 @@
+.faq-display {
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+
+  .hover\:shadow-md:hover {
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .hover\:shadow-lg:hover {
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.3),
+      0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  }
+
+  button {
+    &:focus {
+      outline: none;
+      ring: 2px;
+      ring-color: #3b82f6;
+      ring-inset: true;
+    }
+  }
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,104 @@
+// Text modifier component specific styles
+
+// Custom textarea styling
+textarea {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+// Button hover effects
+button {
+  transition: all 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Feature card hover effects
+.feature-card {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Checkbox styling
+input[type='checkbox'] {
+  accent-color: #2563eb;
+}
+
+// Select and input focus styling
+select,
+input[type='text'],
+input[type='number'] {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+// Match results styling
+.match-result {
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f1f5f9;
+  }
+}
+
+// Frequency analysis styling
+.frequency-item {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Progress bar styling
+.progress-bar {
+  background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+  transition: width 0.3s ease-in-out;
+}
+
+// Character frequency display
+.char-display {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+
+  // Stack checkboxes vertically on mobile
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

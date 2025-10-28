@@ -1,0 +1,137 @@
+# Robots.txt for SmartTextConverter.com
+# Multi-language text converter and formatter
+# Supports 20 languages: English, Spanish, French, German, Italian, Portuguese, Russian, Chinese, Japanese, Arabic, Hindi, Bengali, Urdu, Indonesian, Turkish, Dutch, Polish, Kiswahili, Filipino
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /build/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /tsconfig.json
+Disallow: /angular.json
+Disallow: /vite.config.ts
+Disallow: /webpack.config.js
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+
+# Allow specific important pages (all languages supported)
+Allow: /case-converter
+Allow: /text-formatter
+Allow: /line-tools
+Allow: /encode-decode
+Allow: /text-analyzer
+Allow: /text-generator
+Allow: /json/formatter
+Allow: /json/parser
+Allow: /xml/formatter
+Allow: /js/formatter
+Allow: /html/formatter
+Allow: /css/formatter
+Allow: /sql/formatter
+Allow: /blog
+Allow: /tools
+Allow: /developer-tools
+Allow: /text-processing
+Allow: /comparison
+Allow: /privacy
+Allow: /terms
+Allow: /contact
+
+# Allow language-specific URLs
+Allow: /*?lang=*
+
+# Allow important file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.eot$
+
+# Disallow crawling of unnecessary files
+Disallow: /assets/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /images/
+Disallow: /icons/
+Disallow: /fonts/
+Disallow: /*.map$
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.ppt$
+Disallow: /*.pptx$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.tar$
+Disallow: /*.gz$
+
+# Crawl delay (be respectful to server resources)
+Crawl-delay: 1
+
+# Sitemap location (includes hreflang tags for multi-language support)
+Sitemap: https://smarttextconverter.com/sitemap.xml
+
+# Host directive (canonical domain)
+Host: https://smarttextconverter.com
+
+# SEO Optimization Directives
+# Allow crawling of important pages with language variants
+Allow: /case-converter/
+Allow: /text-formatter/
+Allow: /line-tools/
+Allow: /encode-decode/
+Allow: /text-analyzer/
+Allow: /text-generator/
+Allow: /json/formatter/
+Allow: /json/parser/
+Allow: /xml/formatter/
+Allow: /js/formatter/
+Allow: /css/formatter/
+Allow: /sql/formatter/
+
+# Multi-language SEO Information
+# This site supports the following languages:
+# - English (en) - Default
+# - Spanish (es) - Español
+# - French (fr) - Français
+# - German (de) - Deutsch
+# - Italian (it) - Italiano
+# - Portuguese (pt) - Português
+# - Portuguese Brazil (pt-br) - Português (Brasil)
+# - Russian (ru) - Русский
+# - Chinese (zh) - 中文
+# - Japanese (ja) - 日本語
+# - Arabic (ar) - العربية
+# - Hindi (hi) - हिन्दी
+# - Bengali (bn) - বাংলা
+# - Urdu (ur) - اردو
+# - Indonesian (id) - Bahasa Indonesia
+# - Turkish (tr) - Türkçe
+# - Dutch (nl) - Nederlands
+# - Polish (pl) - Polski
+# - Kiswahili (sw) - Kiswahili
+# - Filipino (fil) - Filipino
+
+# Language switching is available via ?lang= parameter
+# Example: https://smarttextconverter.com/case-converter?lang=es

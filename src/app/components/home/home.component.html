@@ -1,0 +1,116 @@
+<div
+  class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
+        <app-translated-text key="home.hero.title"></app-translated-text>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          <app-translated-text key="home.hero.subtitle"></app-translated-text>
+        </span>
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto transition-colors duration-300">
+        <app-translated-text key="home.hero.description"></app-translated-text>
+      </p>
+      <div class="flex flex-col gap-4 justify-center">
+        <!-- First row of buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a routerLink="/case-converter"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <app-translated-text key="nav.case-converter"></app-translated-text>
+          </a>
+          <a routerLink="/text-formatter"
+            class="bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <app-translated-text key="nav.text-formatter"></app-translated-text>
+          </a>
+          <a routerLink="/line-tools"
+            class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <app-translated-text key="nav.line-tools"></app-translated-text>
+          </a>
+          <a routerLink="/encode-decode"
+            class="bg-orange-700 hover:bg-orange-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <app-translated-text key="nav.encode-decode"></app-translated-text>
+          </a>
+        </div>
+        <!-- Second row of buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a routerLink="/text-analyzer"
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <app-translated-text key="nav.text-analyzer"></app-translated-text>
+          </a>
+          <a routerLink="/text-generator"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <app-translated-text key="nav.text-generator"></app-translated-text>
+          </a>
+          <a routerLink="/blog"
+            class="border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800"
+            aria-label="Learn more about text conversion tools">
+            <app-translated-text key="home.button.learn-more"></app-translated-text>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="mt-20">
+      <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12 transition-colors duration-300">
+        <app-translated-text key="home.features.title"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div *ngFor="let feature of features"
+          class="bg-white dark:bg-gray-900 rounded-lg shadow-md dark:shadow-2xl p-6 hover:shadow-lg dark:hover:shadow-2xl transition-all duration-200 border border-gray-200 dark:border-gray-800">
+          <div class="text-4xl mb-4">{{ feature.icon }}</div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text [key]="feature.titleKey"></app-translated-text>
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text [key]="feature.descriptionKey"></app-translated-text>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div
+      class="mt-20 bg-white dark:bg-gray-900 rounded-lg shadow-lg dark:shadow-2xl p-8 text-center border border-gray-200 dark:border-gray-800 transition-all duration-300">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="home.cta.title"></app-translated-text>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6 transition-colors duration-300">
+        <app-translated-text key="home.cta.description"></app-translated-text>
+      </p>
+      <div class="flex flex-col gap-4 justify-center">
+        <!-- First row of buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a routerLink="/case-converter"
+            class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-block">
+            <app-translated-text key="nav.case-converter"></app-translated-text>
+          </a>
+          <a routerLink="/text-formatter"
+            class="bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-block">
+            <app-translated-text key="nav.text-formatter"></app-translated-text>
+          </a>
+          <a routerLink="/line-tools"
+            class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-block">
+            <app-translated-text key="nav.line-tools"></app-translated-text>
+          </a>
+        </div>
+        <!-- Second row of buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a routerLink="/encode-decode"
+            class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-block">
+            <app-translated-text key="nav.encode-decode"></app-translated-text>
+          </a>
+          <a routerLink="/text-analyzer"
+            class="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-block">
+            <app-translated-text key="nav.text-analyzer"></app-translated-text>
+          </a>
+          <a routerLink="/text-generator"
+            class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 inline-block">
+            <app-translated-text key="nav.text-generator"></app-translated-text>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

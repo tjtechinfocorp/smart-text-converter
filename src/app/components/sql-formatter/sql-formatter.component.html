@@ -1,0 +1,707 @@
+<!-- SQL Formatter Page -->
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300 min-h-screen">
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <app-translated-text key="sql-formatter.title"></app-translated-text>
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-6xl mx-auto mb-8">
+      <app-translated-text key="sql-formatter.subtitle"></app-translated-text>
+    </p>
+
+    <!-- Quick Actions -->
+    <div class="flex flex-wrap justify-center gap-4">
+      <button
+        (click)="loadSample()"
+        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          ></path>
+        </svg>
+        <app-translated-text key="sql-formatter.load-sample"></app-translated-text>
+      </button>
+      <button
+        (click)="clearInput()"
+        class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+          ></path>
+        </svg>
+        <app-translated-text key="sql-formatter.clear"></app-translated-text>
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- View Mode Selector -->
+    <div class="mb-6">
+      <div class="flex flex-wrap gap-2">
+        <button
+          *ngFor="
+            let view of [
+              { key: 'formatted', label: 'sql-formatter.format-sql' },
+              { key: 'minified', label: 'sql-formatter.minify-sql' },
+              { key: 'validate', label: 'sql-formatter.validate-sql' },
+              { key: 'optimize', label: 'sql-formatter.optimize-sql' },
+              { key: 'convert', label: 'sql-formatter.convert-sql' },
+              { key: 'lint', label: 'sql-formatter.lint-sql' },
+            ]
+          "
+          (click)="switchView(view.key)"
+          [class]="
+            currentView === view.key
+              ? 'px-4 py-2 bg-blue-600 text-white rounded-lg font-medium'
+              : 'px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
+          "
+        >
+          <app-translated-text [key]="view.label"></app-translated-text>
+        </button>
+      </div>
+    </div>
+
+    <!-- Format Options (shown only for formatted view) -->
+    <div
+      *ngIf="currentView === 'formatted'"
+      class="mb-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6"
+    >
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <app-translated-text key="sql-formatter.format-options"></app-translated-text>
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <app-translated-text key="sql-formatter.indent-size"></app-translated-text>
+          </label>
+          <select
+            [(ngModel)]="formatOptions.indentSize"
+            (change)="updateFormatOptions()"
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="2">2 spaces</option>
+            <option value="4">4 spaces</option>
+            <option value="8">8 spaces</option>
+          </select>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="useTabs"
+            [(ngModel)]="formatOptions.indentType"
+            (change)="updateFormatOptions()"
+            [checked]="formatOptions.indentType === 'tabs'"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="useTabs" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.indent-type"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="preserveComments"
+            [(ngModel)]="formatOptions.preserveComments"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="preserveComments" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.preserve-comments"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="alignColumns"
+            [(ngModel)]="formatOptions.alignColumns"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="alignColumns" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.align-columns"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="addSemicolon"
+            [(ngModel)]="formatOptions.addSemicolon"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="addSemicolon" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.add-semicolon"></app-translated-text>
+          </label>
+        </div>
+
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="removeExtraSpaces"
+            [(ngModel)]="formatOptions.removeExtraSpaces"
+            (change)="updateFormatOptions()"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label for="removeExtraSpaces" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.remove-extra-spaces"></app-translated-text>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Display -->
+    <div
+      *ngIf="sqlError"
+      class="mb-6 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4"
+    >
+      <div class="flex items-center">
+        <svg class="w-5 h-5 text-red-600 dark:text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <h3 class="text-sm font-medium text-red-800 dark:text-red-200">
+          <app-translated-text key="sql-formatter.errors"></app-translated-text>
+        </h3>
+      </div>
+      <p class="mt-2 text-sm text-red-700 dark:text-red-300">{{ sqlError }}</p>
+    </div>
+
+    <!-- Editor Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Input Editor -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <app-translated-text key="sql-formatter.input"></app-translated-text>
+          </h3>
+          <button
+            (click)="processSQL()"
+            [disabled]="isProcessing"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center"
+          >
+            <svg
+              *ngIf="isProcessing"
+              class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            <svg *ngIf="!isProcessing" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <app-translated-text [key]="'sql-formatter.' + getActionLabel()"></app-translated-text>
+          </button>
+        </div>
+        <div class="p-4">
+          <textarea
+            [(ngModel)]="inputText"
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Enter your SQL query here..."
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Output Editor -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+        <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            <app-translated-text [key]="'sql-formatter.' + currentView + '-output'"></app-translated-text>
+          </h3>
+          <div class="flex gap-2">
+            <button
+              (click)="copyOutput()"
+              [disabled]="!outputText"
+              class="px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center text-sm"
+            >
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <app-translated-text key="sql-formatter.copy"></app-translated-text>
+            </button>
+            <button
+              (click)="downloadOutput()"
+              [disabled]="!outputText"
+              class="px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center text-sm"
+            >
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              <app-translated-text key="sql-formatter.download"></app-translated-text>
+            </button>
+            <button
+              (click)="clearOutput()"
+              [disabled]="!outputText"
+              class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center text-sm"
+            >
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                ></path>
+              </svg>
+              <app-translated-text key="sql-formatter.clear"></app-translated-text>
+            </button>
+          </div>
+        </div>
+        <div class="p-4">
+          <textarea
+            [(ngModel)]="outputText"
+            readonly
+            class="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white font-mono text-sm resize-none"
+            [placeholder]="'Formatted SQL query will appear here...'"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div *ngIf="currentView === 'formatted' || currentView === 'minified'" class="mt-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          <app-translated-text key="sql-formatter.sql-statistics"></app-translated-text>
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">{{ statistics.originalLength }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              <app-translated-text key="sql-formatter.original-length"></app-translated-text>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-green-600 dark:text-green-400">{{ statistics.formattedLength }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              <app-translated-text key="sql-formatter.formatted-length"></app-translated-text>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">{{ statistics.lines }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              <app-translated-text key="sql-formatter.lines"></app-translated-text>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-orange-600 dark:text-orange-400">{{ statistics.statements }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              <app-translated-text key="sql-formatter.statements"></app-translated-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error/Warning Display -->
+    <div *ngIf="errors.length > 0 || warnings.length > 0" class="mt-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          *ngIf="errors.length > 0"
+          class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4"
+        >
+          <h3 class="text-lg font-semibold text-red-800 dark:text-red-200 mb-2">
+            <app-translated-text key="sql-formatter.errors"></app-translated-text>
+          </h3>
+          <ul class="text-sm text-red-700 dark:text-red-300">
+            <li *ngFor="let error of errors">{{ error }}</li>
+          </ul>
+        </div>
+        <div
+          *ngIf="warnings.length > 0"
+          class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4"
+        >
+          <h3 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+            <app-translated-text key="sql-formatter.warnings"></app-translated-text>
+          </h3>
+          <ul class="text-sm text-yellow-700 dark:text-yellow-300">
+            <li *ngFor="let warning of warnings">{{ warning }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <app-translated-text key="sql-formatter.sql-tools-explanation"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
+              <svg
+                class="w-6 h-6 text-blue-600 dark:text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="sql-formatter.formatting"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.formatting-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
+              <svg
+                class="w-6 h-6 text-green-600 dark:text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="sql-formatter.minification"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.minification-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-purple-100 dark:bg-purple-900 rounded-lg">
+              <svg
+                class="w-6 h-6 text-purple-600 dark:text-purple-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="sql-formatter.validation"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.validation-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-orange-100 dark:bg-orange-900 rounded-lg">
+              <svg
+                class="w-6 h-6 text-orange-600 dark:text-orange-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="sql-formatter.optimization"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.optimization-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
+              <svg
+                class="w-6 h-6 text-indigo-600 dark:text-indigo-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="sql-formatter.conversion"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.conversion-desc"></app-translated-text>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex items-center mb-4">
+            <div class="p-2 bg-red-100 dark:bg-red-900 rounded-lg">
+              <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white ml-3">
+              <app-translated-text key="sql-formatter.linting"></app-translated-text>
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.linting-desc"></app-translated-text>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <app-translated-text key="sql-formatter.benefits-title"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+              <svg
+                class="w-5 h-5 text-blue-600 dark:text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <app-translated-text key="sql-formatter.benefit-1"></app-translated-text>
+            </h3>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+              <svg
+                class="w-5 h-5 text-green-600 dark:text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <app-translated-text key="sql-formatter.benefit-2"></app-translated-text>
+            </h3>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center">
+              <svg
+                class="w-5 h-5 text-purple-600 dark:text-purple-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <app-translated-text key="sql-formatter.benefit-3"></app-translated-text>
+            </h3>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center">
+              <svg
+                class="w-5 h-5 text-orange-600 dark:text-orange-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <app-translated-text key="sql-formatter.benefit-4"></app-translated-text>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <app-translated-text key="sql-formatter.faq-title"></app-translated-text>
+      </h2>
+      <div class="space-y-4">
+        <details class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <summary
+            class="px-6 py-4 cursor-pointer text-lg font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <app-translated-text key="sql-formatter.faq1-question"></app-translated-text>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.faq1-answer"></app-translated-text>
+          </div>
+        </details>
+
+        <details class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <summary
+            class="px-6 py-4 cursor-pointer text-lg font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <app-translated-text key="sql-formatter.faq2-question"></app-translated-text>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.faq2-answer"></app-translated-text>
+          </div>
+        </details>
+
+        <details class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <summary
+            class="px-6 py-4 cursor-pointer text-lg font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <app-translated-text key="sql-formatter.faq3-question"></app-translated-text>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.faq3-answer"></app-translated-text>
+          </div>
+        </details>
+
+        <details class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <summary
+            class="px-6 py-4 cursor-pointer text-lg font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <app-translated-text key="sql-formatter.faq4-question"></app-translated-text>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.faq4-answer"></app-translated-text>
+          </div>
+        </details>
+
+        <details class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <summary
+            class="px-6 py-4 cursor-pointer text-lg font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <app-translated-text key="sql-formatter.faq5-question"></app-translated-text>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 dark:text-gray-300">
+            <app-translated-text key="sql-formatter.faq5-answer"></app-translated-text>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Blog Post Backlink -->
+    <div class="mt-8">
+      <div
+        class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border border-blue-200 dark:border-blue-800 p-6"
+      >
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+              <app-translated-text key="sql-formatter.blog-title"></app-translated-text>
+            </h3>
+            <p class="text-blue-800 dark:text-blue-200 mb-4">
+              <app-translated-text key="sql-formatter.blog-description"></app-translated-text>
+            </p>
+            <a
+              href="/blog/sql-formatter-complete-guide"
+              class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+            >
+              <app-translated-text key="sql-formatter.blog-link"></app-translated-text>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

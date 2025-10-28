@@ -1,0 +1,443 @@
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="text-analyzer.title"></app-translated-text>
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
+        <app-translated-text key="text-analyzer.description"></app-translated-text>
+      </p>
+    </div>
+
+    <!-- Utility Options -->
+    <div
+      class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-6 mb-6 transition-all duration-300"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Utility Type Selection -->
+        <div>
+          <label
+            for="utility-type"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2 transition-colors duration-300"
+          >
+            <app-translated-text key="text-analyzer.utility-type"></app-translated-text>
+          </label>
+          <select
+            id="utility-type"
+            [value]="selectedUtility()"
+            (change)="onUtilityChange($event)"
+            class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+          >
+            @for (type of utilityTypes; track type.value) {
+              <option [value]="type.value">{{ translationService.translate(type.labelKey) }}</option>
+            }
+          </select>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 transition-colors duration-300">
+            {{ getCurrentDescription() }}
+          </p>
+        </div>
+
+        <!-- Top N for frequency analysis -->
+        <div *ngIf="selectedUtility() === 'wordFrequency' || selectedUtility() === 'charFrequency'">
+          <label
+            for="top-n"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+          >
+            <app-translated-text key="text-analyzer.top-n"></app-translated-text>
+          </label>
+          <input
+            id="top-n"
+            type="number"
+            min="1"
+            max="100"
+            [value]="topN()"
+            (input)="onTopNChange($event)"
+            class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+          />
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.top-n-description"></app-translated-text>
+          </p>
+        </div>
+      </div>
+
+      <!-- Find & Replace Options -->
+      <div *ngIf="selectedUtility() === 'replace' || selectedUtility() === 'findMatches'" class="mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label
+              for="find-text"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+            >
+              <app-translated-text key="text-analyzer.find-text"></app-translated-text>
+            </label>
+            <input
+              id="find-text"
+              type="text"
+              [value]="findText()"
+              (input)="onFindTextChange($event)"
+              [placeholder]="translationService.translate('text-analyzer.find-placeholder')"
+              class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+            />
+          </div>
+          <div *ngIf="selectedUtility() === 'replace'">
+            <label
+              for="replace-text"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+            >
+              <app-translated-text key="text-analyzer.replace-with"></app-translated-text>
+            </label>
+            <input
+              id="replace-text"
+              type="text"
+              [value]="replaceText()"
+              (input)="onReplaceTextChange($event)"
+              [placeholder]="translationService.translate('text-analyzer.replace-placeholder')"
+              class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+            />
+          </div>
+        </div>
+
+        <!-- Regex and Options -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="flex items-center">
+            <input
+              id="use-regex"
+              type="checkbox"
+              [checked]="useRegex()"
+              (change)="onRegexToggle($event)"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-400 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800"
+            />
+            <label
+              for="use-regex"
+              class="ml-2 block text-sm text-gray-700 dark:text-gray-200 transition-colors duration-300"
+            >
+              <app-translated-text key="text-analyzer.use-regex"></app-translated-text>
+            </label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="case-sensitive"
+              type="checkbox"
+              [checked]="caseSensitive()"
+              (change)="onCaseSensitiveChange($event)"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-400 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800"
+            />
+            <label
+              for="case-sensitive"
+              class="ml-2 block text-sm text-gray-700 dark:text-gray-200 transition-colors duration-300"
+            >
+              <app-translated-text key="text-analyzer.case-sensitive"></app-translated-text>
+            </label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="global-replace"
+              type="checkbox"
+              [checked]="globalReplace()"
+              (change)="onGlobalReplaceChange($event)"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-400 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800"
+            />
+            <label
+              for="global-replace"
+              class="ml-2 block text-sm text-gray-700 dark:text-gray-200 transition-colors duration-300"
+            >
+              <app-translated-text key="text-analyzer.global-replace"></app-translated-text>
+            </label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="multiline"
+              type="checkbox"
+              [checked]="multiline()"
+              (change)="onMultilineChange($event)"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-400 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-800"
+            />
+            <label
+              for="multiline"
+              class="ml-2 block text-sm text-gray-700 dark:text-gray-200 transition-colors duration-300"
+            >
+              <app-translated-text key="text-analyzer.multiline"></app-translated-text>
+            </label>
+          </div>
+        </div>
+
+        <!-- Regex Flags -->
+        <div *ngIf="useRegex()" class="mt-4">
+          <label
+            for="regex-flags"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 transition-colors duration-300"
+          >
+            Regex Flags
+          </label>
+          <input
+            id="regex-flags"
+            type="text"
+            [value]="regexFlags()"
+            (input)="onRegexFlagsChange($event)"
+            placeholder="g, i, m, etc."
+            class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+          />
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 transition-colors duration-300">
+            Common flags: g (global), i (case-insensitive), m (multiline)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Areas -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Input Text -->
+      <div>
+        <div class="flex justify-between items-center mb-4">
+          <label
+            for="input-text"
+            class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300"
+          >
+            <app-translated-text key="text-analyzer.input-label"></app-translated-text>
+          </label>
+          <button
+            (click)="clearText()"
+            [disabled]="!inputText()"
+            class="text-sm text-white px-3 py-1 rounded transition-colors"
+            [class.bg-red-500]="inputText()"
+            [class.hover:bg-red-600]="inputText()"
+            [class.bg-gray-400]="!inputText()"
+            [class.cursor-not-allowed]="!inputText()"
+            [class.cursor-pointer]="inputText()"
+            aria-label="Clear input text"
+          >
+            <app-translated-text key="text-analyzer.clear-button"></app-translated-text>
+          </button>
+        </div>
+        <textarea
+          #inputTextarea
+          id="input-text"
+          [value]="inputText()"
+          (input)="onInputChange($event)"
+          [placeholder]="translationService.translate('text-analyzer.input-placeholder')"
+          class="w-full h-64 p-4 border border-gray-300 dark:border-gray-700 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+        ></textarea>
+      </div>
+
+      <!-- Output Text -->
+      <div>
+        <div class="flex justify-between items-center mb-4">
+          <label
+            for="output-text"
+            class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300"
+          >
+            <app-translated-text key="text-analyzer.output-label"></app-translated-text>
+          </label>
+          <button
+            (click)="copyToClipboard()"
+            [disabled]="!outputText()"
+            class="text-sm text-white px-3 py-1 rounded transition-colors"
+            [class.bg-blue-600]="outputText()"
+            [class.hover:bg-blue-700]="outputText()"
+            [class.bg-gray-400]="!outputText()"
+            [class.cursor-not-allowed]="!outputText()"
+            [class.cursor-pointer]="outputText()"
+            aria-label="Copy output text to clipboard"
+          >
+            <app-translated-text key="text-analyzer.copy-button"></app-translated-text>
+          </button>
+        </div>
+        <textarea
+          id="output-text"
+          [value]="outputText()"
+          readonly
+          [placeholder]="translationService.translate('text-analyzer.output-placeholder')"
+          class="w-full h-64 p-4 border border-gray-300 dark:border-gray-700 rounded-lg resize-none bg-gray-50 dark:bg-gray-800 font-mono text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Text Statistics - Full Width -->
+    <div class="mt-8">
+      <app-text-statistics [text]="inputText()"></app-text-statistics>
+    </div>
+
+    <!-- Match Results -->
+    <div *ngIf="matchResults().length > 0" class="mt-8">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        Match Results ({{ matchResults().length }} found)
+      </h2>
+      <div
+        class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-4 max-h-64 overflow-y-auto transition-all duration-300"
+      >
+        <div
+          *ngFor="let result of matchResults(); let i = index"
+          class="mb-3 p-3 bg-gray-50 dark:bg-gray-800 rounded border-l-4 border-blue-500 dark:border-blue-400 transition-all duration-300"
+        >
+          <div class="text-sm text-gray-600 dark:text-gray-300 mb-1 transition-colors duration-300">
+            Line {{ result.lineNumber }}, Position {{ result.index }}
+          </div>
+          <div class="font-mono text-sm">
+            <span class="text-gray-600 dark:text-slate-400">...</span>{{ result.context
+            }}<span class="text-gray-600 dark:text-slate-400">...</span>
+          </div>
+          <div class="text-blue-600 dark:text-blue-400 font-semibold mt-1 transition-colors duration-300">
+            Match: "{{ result.match }}"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Word Frequency Results -->
+    <div *ngIf="wordFrequency().length > 0" class="mt-8">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="text-analyzer.word-frequency-title"></app-translated-text>
+      </h2>
+      <div
+        class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-4 transition-all duration-300"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            *ngFor="let item of wordFrequency(); let i = index"
+            class="p-3 bg-gray-50 dark:bg-gray-800 rounded transition-all duration-300"
+          >
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 dark:text-white transition-colors duration-300">{{
+                item.item
+              }}</span>
+              <span class="text-blue-600 dark:text-blue-400 font-bold transition-colors duration-300">{{
+                item.count
+              }}</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2 mt-2 transition-colors duration-300">
+              <div
+                class="bg-blue-600 dark:bg-blue-400 h-2 rounded-full transition-colors duration-300"
+                [style.width.%]="item.percentage"
+              ></div>
+            </div>
+            <div class="text-xs text-gray-600 dark:text-gray-300 mt-1 transition-colors duration-300">
+              {{ item.percentage.toFixed(1) }}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Character Frequency Results -->
+    <div *ngIf="charFrequency().length > 0" class="mt-8">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="text-analyzer.char-frequency-title"></app-translated-text>
+      </h2>
+      <div
+        class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-4 transition-all duration-300"
+      >
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div
+            *ngFor="let item of charFrequency(); let i = index"
+            class="p-3 bg-gray-50 dark:bg-gray-800 rounded text-center transition-all duration-300"
+          >
+            <div class="text-2xl font-bold text-gray-900 dark:text-white mb-1 transition-colors duration-300">
+              {{ item.item }}
+            </div>
+            <div class="text-blue-600 dark:text-blue-400 font-bold transition-colors duration-300">
+              {{ item.count }}
+            </div>
+            <div class="text-xs text-gray-600 dark:text-gray-300 transition-colors duration-300">
+              {{ item.percentage.toFixed(1) }}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features List -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center transition-colors duration-300">
+        <app-translated-text key="text-analyzer.features-title"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.find-replace"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.find-replace-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.find-matches"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.find-matches-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.remove-punctuation"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.remove-punctuation-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.remove-numbers"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.remove-numbers-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.keep-numbers-only"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.keep-numbers-only-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.remove-duplicate-words"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.remove-duplicate-words-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.word-frequency"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.word-frequency-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.char-frequency"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="text-analyzer.feature.char-frequency-desc"></app-translated-text>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-16">
+      <app-faq-display toolName="text-analyzer" [showTitle]="true"></app-faq-display>
+    </div>
+  </main>
+</div>

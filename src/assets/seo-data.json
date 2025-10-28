@@ -1,0 +1,338 @@
+{
+  "metaTags": {
+    "home": {
+      "title": "Free Online Text Converter & Formatter - SmartTextConverter",
+      "description": "Free online text converter and formatter. Convert text case, format text, encode/decode, analyze text, and more. No registration required. Fast and secure.",
+      "keywords": "text converter, case converter, text formatter, online text tools, free text utilities, text case changer, uppercase lowercase converter",
+      "h1": "Free Online Text Converter & Formatter",
+      "h2": "Transform Your Text with Powerful Tools"
+    },
+    "caseConverter": {
+      "title": "Case Converter - Convert Text Case Online Free",
+      "description": "Free online case converter. Convert text to uppercase, lowercase, title case, camelCase, PascalCase, snake_case, kebab-case instantly. No download required.",
+      "keywords": "case converter, uppercase converter, lowercase converter, title case converter, camelCase converter, PascalCase converter, snake case converter, kebab case converter",
+      "h1": "Case Converter - Transform Text Case Instantly",
+      "h2": "Convert Between Different Text Cases"
+    },
+    "textFormatter": {
+      "title": "Text Formatter - Format Text Online Free",
+      "description": "Free online text formatter. Remove extra spaces, format lines, normalize text, trim whitespace, and clean up text formatting instantly.",
+      "keywords": "text formatter, format text online, remove spaces, trim text, normalize text, clean text, text formatting tools, whitespace formatter",
+      "h1": "Text Formatter - Clean and Format Your Text",
+      "h2": "Professional Text Formatting Tools"
+    },
+    "lineTools": {
+      "title": "Line Tools - Sort & Manipulate Text Lines",
+      "description": "Free online line tools. Sort lines, remove duplicates, number lines, reverse order, shuffle lines, and manipulate text line by line.",
+      "keywords": "line tools, sort lines, remove duplicate lines, number lines, reverse lines, shuffle lines, line manipulator, text line tools",
+      "h1": "Line Tools - Manipulate Text Line by Line",
+      "h2": "Powerful Line Processing Utilities"
+    },
+    "encodeDecode": {
+      "title": "Encode Decode - URL, Base64, HTML, JSON Encoding Online Free",
+      "description": "Free online encode decode tools. URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON encode/decode, and character encoding.",
+      "keywords": "encode decode, URL encode, Base64 encode, HTML encode, JSON encode, character encoding, text encoding, decode online",
+      "h1": "Encode Decode - Character Encoding Tools",
+      "h2": "Secure Text Encoding and Decoding"
+    },
+    "textAnalyzer": {
+      "title": "Text Analyzer - Analyze Text & Word Count Online",
+      "description": "Free online text analyzer. Analyze text, find and replace, word frequency, character count, text statistics, and advanced text processing.",
+      "keywords": "text analyzer, analyze text, find and replace, word frequency, text statistics, character count, text analysis tools, regex find replace",
+      "h1": "Text Analyzer - Advanced Text Analysis Tools",
+      "h2": "Comprehensive Text Processing and Analysis"
+    },
+    "textGenerator": {
+      "title": "Text Generator - Lorem Ipsum & Random Text Online",
+      "description": "Free online text generator. Generate Lorem Ipsum, random text, UUIDs, extract emails, URLs, phone numbers, and create test data.",
+      "keywords": "text generator, lorem ipsum generator, random text generator, UUID generator, text generator online, test data generator, placeholder text",
+      "h1": "Text Generator - Create and Extract Text Data",
+      "h2": "Generate Text Content and Extract Information"
+    },
+    "xmlFormatter": {
+      "title": "XML Formatter - Format, Validate, Minify XML Online Free",
+      "description": "Free online XML formatter. Format, validate, minify, and beautify XML documents. Convert XML to JSON, HTML. No registration required.",
+      "keywords": "XML formatter, XML validator, XML minifier, XML beautifier, XML to JSON, XML to HTML, XML tools, online XML editor, XML parser",
+      "h1": "XML Formatter - Format and Validate XML Documents",
+      "h2": "Professional XML Processing Tools"
+    },
+    "jsFormatter": {
+      "title": "JavaScript Formatter - Format & Minify JS Code Online",
+      "description": "Free online JavaScript formatter. Format, beautify, minify, and validate JavaScript code. Convert ES6, fix syntax errors. No registration required.",
+      "keywords": "JavaScript formatter, JS beautifier, JS minifier, JavaScript validator, code formatter, JS prettifier, ES6 converter, JavaScript tools, online JS editor, JS parser",
+      "h1": "JavaScript Formatter - Format and Beautify JS Code",
+      "h2": "Professional JavaScript Code Processing Tools"
+    },
+    "htmlFormatter": {
+      "title": "HTML Formatter - Format & Minify HTML Code Online",
+      "description": "Free online HTML formatter. Format, beautify, minify, and validate HTML code. Convert to XHTML, fix syntax errors. No registration required.",
+      "keywords": "HTML formatter, HTML beautifier, HTML minifier, HTML validator, code formatter, HTML prettifier, XHTML converter, HTML tools, online HTML editor, HTML parser",
+      "h1": "HTML Formatter - Format and Beautify HTML Code",
+      "h2": "Professional HTML Code Processing Tools"
+    }
+  },
+  "keywords": {
+    "primary": [
+      "text converter",
+      "case converter",
+      "text formatter",
+      "online text tools",
+      "text utilities",
+      "free text converter",
+      "text case changer",
+      "uppercase lowercase converter",
+      "multi language text converter",
+      "international text tools",
+      "global text converter",
+      "XML formatter",
+      "XML validator",
+      "XML tools",
+      "JavaScript formatter",
+      "JS beautifier",
+      "JS minifier",
+      "JavaScript validator",
+      "code formatter",
+      "JS prettifier"
+    ],
+    "longTail": [
+      "convert text to uppercase online free",
+      "change text case online",
+      "text formatter online free",
+      "online text case converter",
+      "free text formatting tools",
+      "text case converter uppercase lowercase",
+      "online text utilities free",
+      "text manipulation tools online",
+      "multi language text converter online",
+      "international text case converter",
+      "global text formatting tools",
+      "text converter in multiple languages",
+      "free multilingual text tools",
+      "XML formatter online free",
+      "XML validator online",
+      "XML minifier online",
+      "XML beautifier online",
+      "XML to JSON converter online",
+      "XML to HTML converter online",
+      "JavaScript formatter online free",
+      "JS beautifier online",
+      "JavaScript minifier online",
+      "JS code formatter online",
+      "JavaScript validator online",
+      "ES6 converter online",
+      "JavaScript prettifier online",
+      "format JavaScript code online",
+      "beautify JS code online free"
+    ],
+    "semantic": [
+      "text processing",
+      "string manipulation",
+      "text editing",
+      "case transformation",
+      "text formatting",
+      "character encoding",
+      "text analysis",
+      "text generation",
+      "internationalization",
+      "localization",
+      "multi language support",
+      "global text processing",
+      "XML processing",
+      "XML validation",
+      "XML formatting",
+      "data formatting",
+      "markup language tools",
+      "JavaScript processing",
+      "code formatting",
+      "code beautification",
+      "code minification",
+      "syntax validation",
+      "ES6 conversion",
+      "JavaScript tools",
+      "web development tools",
+      "programming utilities"
+    ],
+    "multilang": {
+      "spanish": [
+        "convertidor de texto",
+        "convertidor de mayúsculas",
+        "formateador de texto",
+        "herramientas de texto online"
+      ],
+      "french": [
+        "convertisseur de texte",
+        "convertisseur de casse",
+        "formateur de texte",
+        "outils de texte en ligne"
+      ],
+      "german": [
+        "text konverter",
+        "groß-/kleinschreibung konverter",
+        "text formatierer",
+        "online text tools"
+      ],
+      "chinese": ["文本转换器", "大小写转换器", "文本格式化器", "在线文本工具"],
+      "japanese": [
+        "テキストコンバーター",
+        "大文字小文字コンバーター",
+        "テキストフォーマッター",
+        "オンラインテキストツール"
+      ],
+      "arabic": ["محول النص", "محول الحالة", "منسق النص", "أدوات النص على الإنترنت"],
+      "hindi": ["टेक्स्ट कन्वर्टर", "केस कन्वर्टर", "टेक्स्ट फॉर्मेटर", "ऑनलाइन टेक्स्ट टूल्स"],
+      "russian": [
+        "конвертер текста",
+        "конвертер регистра",
+        "форматировщик текста",
+        "онлайн инструменты текста"
+      ]
+    }
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SmartTextConverter",
+    "description": "Free online text converter and formatter with multiple text processing tools supporting 20 languages",
+    "url": "https://smarttextconverter.com",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "availableLanguage": [
+      "en",
+      "es",
+      "fr",
+      "de",
+      "it",
+      "pt",
+      "pt-br",
+      "ru",
+      "zh",
+      "ja",
+      "ar",
+      "hi",
+      "bn",
+      "ur",
+      "id",
+      "tr",
+      "nl",
+      "pl",
+      "sw",
+      "fil"
+    ],
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Case Converter",
+      "Text Formatter",
+      "Line Tools",
+      "Encode/Decode",
+      "Text Analyzer",
+      "Text Generator",
+      "JSON Formatter",
+      "JSON Parser",
+      "XML Formatter",
+      "JavaScript Formatter",
+      "HTML Formatter"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Global users requiring text processing tools"
+    },
+    "keywords": "text converter, case converter, text formatter, multi language, international, global, online tools, free utilities"
+  },
+  "contentSuggestions": {
+    "blogPosts": [
+      "How to Convert Text Case: Complete Guide to Uppercase, Lowercase, and Title Case",
+      "Text Formatting Best Practices: Clean and Professional Text",
+      "Understanding Character Encoding: URL, Base64, HTML, and JSON",
+      "Text Analysis Tools: Word Frequency and Text Statistics",
+      "Line Processing: Sort, Remove Duplicates, and Manipulate Text Lines",
+      "Text Generation: Lorem Ipsum, Random Text, and Test Data",
+      "Multi-Language Text Processing: Supporting 20 Languages Globally",
+      "International Text Converter: Breaking Language Barriers",
+      "Global Text Tools: Why Multi-Language Support Matters",
+      "Text Processing for International Users: Best Practices",
+      "JavaScript Formatter Guide: Best Practices for Code Formatting and Beautification in 2025",
+      "JavaScript Code Formatting: Tools and Techniques for Clean Code",
+      "ES6 Conversion: Modernizing JavaScript Code with Online Tools",
+      "JavaScript Minification: Optimizing Code for Production",
+      "JavaScript Validation: Finding and Fixing Syntax Errors"
+    ],
+    "faqContent": [
+      "What is a text converter?",
+      "How do I convert text to uppercase?",
+      "What is the difference between camelCase and PascalCase?",
+      "How do I remove extra spaces from text?",
+      "What is Base64 encoding?",
+      "How do I generate Lorem Ipsum text?",
+      "What languages does the text converter support?",
+      "How do I switch to a different language?",
+      "Is the text converter available in my language?",
+      "Can I use the text converter in multiple languages?",
+      "What is JavaScript formatting?",
+      "How do I format JavaScript code?",
+      "What is the difference between minify and beautify?",
+      "How do I validate JavaScript syntax?",
+      "What is ES6 conversion?",
+      "How do I fix JavaScript syntax errors?",
+      "Can I format JavaScript code online?",
+      "What are JavaScript formatting best practices?"
+    ],
+    "landingPages": [
+      "text-converter-online",
+      "case-converter-free",
+      "text-formatter-tools",
+      "online-text-utilities",
+      "multi-language-text-converter",
+      "international-text-tools",
+      "global-text-processing",
+      "multilingual-text-utilities",
+      "javascript-formatter-online",
+      "js-beautifier-free",
+      "javascript-minifier-tools",
+      "js-code-formatter-utilities",
+      "javascript-validator-online",
+      "es6-converter-tools"
+    ],
+    "multilangContent": {
+      "spanish": [
+        "Convertidor de Texto Online Gratis",
+        "Herramientas de Formateo de Texto",
+        "Procesamiento de Texto Multilingüe",
+        "Formateador de JavaScript Online",
+        "Herramientas de Código JavaScript"
+      ],
+      "french": [
+        "Convertisseur de Texte en Ligne Gratuit",
+        "Outils de Formatage de Texte",
+        "Traitement de Texte Multilingue",
+        "Formateur JavaScript en Ligne",
+        "Outils de Code JavaScript"
+      ],
+      "german": [
+        "Kostenloser Online-Text-Konverter",
+        "Text-Formatierungs-Tools",
+        "Mehrsprachige Textverarbeitung",
+        "JavaScript-Formatierer Online",
+        "JavaScript-Code-Tools"
+      ],
+      "chinese": [
+        "免费在线文本转换器",
+        "文本格式化工具",
+        "多语言文本处理",
+        "JavaScript格式化器在线",
+        "JavaScript代码工具"
+      ],
+      "japanese": [
+        "無料オンラインテキストコンバーター",
+        "テキストフォーマットツール",
+        "多言語テキスト処理",
+        "JavaScriptフォーマッターオンライン",
+        "JavaScriptコードツール"
+      ]
+    }
+  }
+}

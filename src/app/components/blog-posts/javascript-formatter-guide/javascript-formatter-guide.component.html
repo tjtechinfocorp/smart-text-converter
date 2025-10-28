@@ -1,0 +1,534 @@
+<div class="bg-white dark:bg-gray-950 transition-colors duration-300">
+  <main class="pt-8 pb-16">
+    <!-- JavaScript Formatter Guide Blog Post -->
+    <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <a
+          (click)="goBackToBlog()"
+          class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-300 cursor-pointer"
+        >
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+      </nav>
+      <!-- Header -->
+      <header class="mb-8">
+        <!-- Title -->
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-8 leading-tight tracking-tight"
+        >
+          JavaScript Formatter Guide: Best Practices for Code Formatting and Beautification in 2025
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+          Master JavaScript formatting with our comprehensive guide covering best practices, tools, and techniques.
+          Learn how to format, beautify, minify, and validate JavaScript code effectively.
+        </p>
+        <!-- Meta Information -->
+        <div class="mb-2 flex items-center gap-8 text-sm text-gray-600 dark:text-gray-400">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            October 3, 2025
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            10 min read
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+            SmartTextConverter Team
+          </div>
+          <div class="flex items-center">
+            <span
+              class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs font-medium"
+            >
+              Programming
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="mb-12">
+        <img
+          src="blog-images/javascript-formatter-complete-guide.png"
+          alt="JavaScript code formatting and beautification guide showing clean, well-structured code examples"
+          class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-12">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Table of Contents</h2>
+        <nav class="space-y-2">
+          <a
+            (click)="scrollToSection('introduction', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Introduction to JavaScript Formatting</a
+          >
+          <a
+            (click)="scrollToSection('benefits', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Benefits of Proper Code Formatting</a
+          >
+          <a
+            (click)="scrollToSection('best-practices', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >JavaScript Formatting Best Practices</a
+          >
+          <a
+            (click)="scrollToSection('tools', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Popular JavaScript Formatting Tools</a
+          >
+          <a
+            (click)="scrollToSection('common-issues', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Common Formatting Issues and Solutions</a
+          >
+          <a
+            (click)="scrollToSection('performance', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Performance Considerations</a
+          >
+          <a
+            (click)="scrollToSection('team-collaboration', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Team Collaboration and Code Standards</a
+          >
+          <a
+            (click)="scrollToSection('future-trends', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Future Trends in JavaScript Formatting</a
+          >
+          <a
+            (click)="scrollToSection('conclusion', $event)"
+            class="block text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+            >Conclusion</a
+          >
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Introduction to JavaScript Formatting</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            JavaScript formatting is the process of organizing and structuring your code to make it more readable,
+            maintainable, and consistent. In today's fast-paced development environment, properly formatted code is not
+            just a nice-to-have—it's essential for productivity, collaboration, and code quality.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            Whether you're working on a small personal project or a large enterprise application, consistent code
+            formatting helps reduce cognitive load, makes debugging easier, and improves overall code quality. This
+            comprehensive guide will walk you through everything you need to know about JavaScript formatting in 2025.
+          </p>
+        </section>
+
+        <!-- Benefits -->
+        <section id="benefits" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Benefits of Proper Code Formatting</h2>
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Improved Readability</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Well-formatted code is easier to read and understand, reducing the time needed to comprehend complex
+                logic and making it easier for new team members to get up to speed.
+              </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Better Collaboration</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Consistent formatting across a team ensures that everyone can easily read and modify each other's code,
+                leading to more efficient code reviews and reduced merge conflicts.
+              </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Easier Debugging</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Properly formatted code makes it easier to spot syntax errors, logical issues, and potential bugs,
+                significantly reducing debugging time.
+              </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Professional Standards</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Well-formatted code demonstrates professionalism and attention to detail, which is crucial for
+                maintaining high-quality codebases and impressing clients or employers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section id="best-practices" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">JavaScript Formatting Best Practices</h2>
+
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">1. Consistent Indentation</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              Use consistent indentation throughout your codebase. Most JavaScript projects use either 2 spaces or 4
+              spaces per indentation level.
+            </p>
+            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto mb-4">
+              <pre><code>// Good: Consistent 2-space indentation
+function processData(data) &#123;
+  if (data && data.length > 0) &#123;
+    return data.map(item => &#123;
+      return &#123;
+        id: item.id,
+        name: item.name,
+        processed: true
+      &#125;;
+    &#125;);
+  &#125;
+  return [];
+&#125;</code></pre>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">2. Proper Spacing and Line Breaks</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              Use appropriate spacing around operators, after commas, and before function declarations. Add line breaks
+              to separate logical sections of code.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-sm font-medium text-red-600 dark:text-red-400 mb-2">Bad</h4>
+                <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                  <pre><code>if(condition&&otherCondition)&#123;
+  doSomething();
+&#125;</code></pre>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-medium text-green-600 dark:text-green-400 mb-2">Good</h4>
+                <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                  <pre><code>if (condition && otherCondition) &#123;
+  doSomething();
+&#125;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">3. Function and Variable Naming</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              Use descriptive names for functions and variables. Follow camelCase convention for JavaScript identifiers.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-sm font-medium text-red-600 dark:text-red-400 mb-2">Bad</h4>
+                <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                  <pre><code>function myFunction() &#123;
+  if (condition) &#123;
+    return x + y;
+  &#125;
+&#125;</code></pre>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-medium text-green-600 dark:text-green-400 mb-2">Good</h4>
+                <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                  <pre><code>function calculateTotal(price, quantity) &#123;
+  if (price > 0 && quantity > 0) &#123;
+    return price * quantity;
+  &#125;
+  return 0;
+&#125;</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tools -->
+        <section id="tools" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Popular JavaScript Formatting Tools</h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Prettier</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Prettier is an opinionated code formatter that supports JavaScript, TypeScript, and many other
+                languages. It automatically formats your code according to a consistent style.
+              </p>
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                <pre><code>// Install Prettier
+npm install --save-dev prettier
+
+// Format all files
+npx prettier --write .</code></pre>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">ESLint</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                ESLint is a static analysis tool that helps identify and fix problems in JavaScript code, including
+                formatting issues and code quality problems.
+              </p>
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                <pre><code>// Install ESLint
+npm install --save-dev eslint
+
+// Run ESLint
+npx eslint .</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg px-6">
+            <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-4">Try Our JavaScript Formatter</h3>
+            <p class="text-blue-800 dark:text-blue-200 mb-4">
+              Experience the power of professional JavaScript formatting with our free online tool. Format, beautify,
+              minify, and validate your JavaScript code instantly.
+            </p>
+            <a
+              href="/js/formatter"
+              class="inline-flex items-center mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+              Use JavaScript Formatter
+            </a>
+          </div>
+        </section>
+
+        <!-- Common Issues -->
+        <section id="common-issues" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Common Formatting Issues and Solutions</h2>
+
+          <div class="space-y-8">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">1. Inconsistent Indentation</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Mixing tabs and spaces or using different indentation sizes can make code hard to read and maintain.
+              </p>
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                <pre><code>// Problem: Mixed indentation
+function myFunction() &#123;
+  if (condition &#123;
+    return value;
+  &#125;
+&#125;</code></pre>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300 mt-4">
+                <strong>Solution:</strong> Use a consistent indentation style (2 or 4 spaces) and configure your editor
+                to show whitespace characters.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">2. Missing Semicolons</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                While JavaScript has automatic semicolon insertion, it's best practice to include semicolons explicitly.
+              </p>
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                <pre><code>// Good: Explicit semicolons
+const name = 'John';
+const age = 30;
+const message = `Hello, $&#123;name&#125;! You are $&#123;age&#125; years old.`;</code></pre>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">3. Long Lines</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Lines that are too long can be hard to read and may cause horizontal scrolling in code editors.
+              </p>
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                <pre><code>// Break long lines appropriately
+const result = someVeryLongFunctionName(
+  parameter1,
+  parameter2,
+  parameter3
+);</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Performance -->
+        <section id="performance" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Performance Considerations</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            While code formatting doesn't directly impact runtime performance, it can affect development performance and
+            build times. Here are some considerations:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Build Time Impact</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Formatting tools like Prettier can add a few seconds to your build process, but the benefits of
+                consistent code far outweigh this minimal overhead.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Development Speed</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Well-formatted code reduces the time spent reading and understanding code, leading to faster development
+                cycles and fewer bugs.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Team Collaboration -->
+        <section id="team-collaboration" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Team Collaboration and Code Standards</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            Establishing consistent formatting standards across your team is crucial for maintaining code quality and
+            reducing friction in collaborative development.
+          </p>
+
+          <div class="space-y-6">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">1. Create a Style Guide</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Document your team's formatting preferences in a style guide. Include examples of good and bad
+                formatting practices.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">2. Use Pre-commit Hooks</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Set up pre-commit hooks to automatically format code before it's committed to version control, ensuring
+                consistency across all contributions.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">3. Code Review Guidelines</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Include formatting checks in your code review process. Use automated tools to catch formatting issues
+                before they reach the main branch.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Future Trends -->
+        <section id="future-trends" class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Future Trends in JavaScript Formatting</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            The JavaScript ecosystem continues to evolve, and so do the tools and practices for code formatting. Here
+            are some trends to watch:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">AI-Powered Formatting</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                AI tools are becoming more sophisticated at understanding code context and suggesting better formatting
+                and refactoring options.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Real-time Collaboration</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Tools like VS Code Live Share and similar platforms are making real-time collaborative formatting and
+                code review more seamless.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Enhanced IDE Integration</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Modern IDEs are integrating formatting tools more deeply, providing instant feedback and suggestions as
+                you type.
+              </p>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Performance Optimization</h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                Formatting tools are becoming faster and more efficient, with better caching and incremental formatting
+                capabilities.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Conclusion</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            JavaScript formatting is an essential skill for any developer working with JavaScript. By following the best
+            practices outlined in this guide and using the right tools, you can significantly improve your code quality,
+            team collaboration, and development efficiency.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            Remember that consistency is key—whether you choose 2 spaces or 4 spaces for indentation, or prefer
+            semicolons or not, the most important thing is to be consistent across your entire codebase and team.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-8">
+            Start implementing these practices today, and you'll see immediate improvements in your code quality and
+            development workflow. Don't forget to try our free JavaScript formatter tool to experience
+            professional-grade formatting in action!
+          </p>
+
+          <div
+            class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-800 rounded-lg px-8 text-center"
+          >
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Ready to Format Your JavaScript Code?</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+              Try our free JavaScript formatter tool and see the difference professional formatting can make to your
+              code.
+            </p>
+            <a
+              href="/js/formatter"
+              class="inline-flex items-center px-6 py-3 mb-10 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+              Start Formatting Now
+            </a>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</div>

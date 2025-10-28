@@ -1,0 +1,125 @@
+// JSON Formatting Guide Component Styles
+.prose {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  p {
+    @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+  }
+
+  ul,
+  ol {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  li {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  code {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded text-sm;
+  }
+
+  pre {
+    @apply bg-gray-900 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto;
+  }
+
+  pre code {
+    @apply bg-transparent text-green-400 p-0;
+  }
+
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+
+  blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-400;
+  }
+}
+
+// Custom styles for the article
+.article-content {
+  line-height: 1.7;
+
+  h2 {
+    @apply border-b border-gray-200 dark:border-gray-700 pb-2 mb-6;
+  }
+
+  h3 {
+    @apply mt-8 mb-4;
+  }
+
+  .code-block {
+    @apply bg-gray-900 dark:bg-gray-800 rounded-lg p-4 mb-4 overflow-x-auto;
+
+    code {
+      @apply text-green-400 text-sm;
+    }
+  }
+
+  .highlight-box {
+    @apply bg-blue-50 dark:bg-blue-900 rounded-lg p-6 border-l-4 border-blue-500;
+  }
+
+  .warning-box {
+    @apply bg-yellow-50 dark:bg-yellow-900 rounded-lg p-6 border-l-4 border-yellow-500;
+  }
+
+  .error-box {
+    @apply bg-red-50 dark:bg-red-900 rounded-lg p-6 border-l-4 border-red-500;
+  }
+}
+
+// Smooth scrolling for the entire page
+html {
+  scroll-behavior: smooth;
+}
+
+// Section styling with scroll offset
+section {
+  scroll-margin-top: 2rem;
+
+  // Add a subtle border when section is in view
+  &:target {
+    @apply border-l-4 border-blue-500 pl-4;
+  }
+}
+
+// Table of contents styling
+.toc-link {
+  @apply transition-colors duration-200;
+
+  &:hover {
+    @apply text-blue-700 dark:text-blue-300;
+  }
+
+  // Active state when section is in view
+  &.active {
+    @apply text-blue-800 dark:text-blue-200 font-semibold;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .prose {
+    @apply text-base;
+  }
+
+  .prose h1 {
+    @apply text-3xl;
+  }
+
+  .prose h2 {
+    @apply text-2xl;
+  }
+
+  .prose h3 {
+    @apply text-xl;
+  }
+}

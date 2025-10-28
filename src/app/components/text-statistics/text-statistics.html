@@ -1,0 +1,102 @@
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-10 gap-4">
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().characters }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.characters"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().charactersNoSpaces }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.no-spaces"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().words }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.words"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().sentences }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.sentences"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().averageWordLength }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.avg-word"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().averageSentenceLength }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.avg-sentence"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().paragraphs }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.paragraphs"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().lines }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.lines"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().readingTime }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.min-read"></app-translated-text>
+    </div>
+  </div>
+  <div
+    class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center transition-all duration-300"
+  >
+    <div class="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+      {{ textStats().speakingTime }}
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+      <app-translated-text key="text-statistics.min-speak"></app-translated-text>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,268 @@
+<div class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="encode-decode.title"></app-translated-text>
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
+        <app-translated-text key="encode-decode.description"></app-translated-text>
+      </p>
+    </div>
+
+    <!-- Utility Options -->
+    <div
+      class="bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-6 mb-6 transition-all duration-300"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Utility Type Selection -->
+        <div>
+          <label
+            for="utility-type"
+            class="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2 transition-colors duration-300"
+          >
+            <app-translated-text key="encode-decode.utility-type"></app-translated-text>
+          </label>
+          <select
+            id="utility-type"
+            [value]="selectedUtility()"
+            (change)="onUtilityChange($event)"
+            class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+          >
+            @for (type of utilityTypes; track type.value) {
+              <option [value]="type.value">{{ translationService.translate(type.labelKey) }}</option>
+            }
+          </select>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 transition-colors duration-300">
+            {{ getCurrentDescription() }}
+          </p>
+        </div>
+
+        <!-- Info Panel -->
+        <div
+          class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-4 transition-all duration-300"
+        >
+          <h3 class="text-sm font-medium text-blue-900 dark:text-blue-300 mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.quick-tips"></app-translated-text>
+          </h3>
+          <ul class="text-sm text-blue-800 dark:text-blue-200 space-y-1 transition-colors duration-300">
+            <li>• <app-translated-text key="encode-decode.tip-url"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.tip-base64"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.tip-html"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.tip-unicode"></app-translated-text></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Areas -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Input Text -->
+      <div>
+        <div class="flex justify-between items-center mb-4">
+          <label
+            for="input-text"
+            class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300"
+          >
+            <app-translated-text key="encode-decode.input-label"></app-translated-text>
+          </label>
+          <button
+            (click)="clearText()"
+            [disabled]="!inputText()"
+            class="text-sm text-white px-3 py-1 rounded transition-colors"
+            [class.bg-red-500]="inputText()"
+            [class.hover:bg-red-600]="inputText()"
+            [class.bg-gray-400]="!inputText()"
+            [class.cursor-not-allowed]="!inputText()"
+            [class.cursor-pointer]="inputText()"
+            aria-label="Clear input text"
+          >
+            <app-translated-text key="encode-decode.clear-button"></app-translated-text>
+          </button>
+        </div>
+        <textarea
+          #inputTextarea
+          id="input-text"
+          [value]="inputText()"
+          (input)="onInputChange($event)"
+          [placeholder]="translationService.translate('encode-decode.input-placeholder')"
+          class="w-full h-64 p-4 border border-gray-300 dark:border-gray-700 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+        ></textarea>
+      </div>
+
+      <!-- Output Text -->
+      <div>
+        <div class="flex justify-between items-center mb-4">
+          <label
+            for="output-text"
+            class="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300"
+          >
+            <app-translated-text key="encode-decode.output-label"></app-translated-text>
+          </label>
+          <button
+            (click)="copyToClipboard()"
+            [disabled]="!outputText()"
+            class="text-sm text-white px-3 py-1 rounded transition-colors"
+            [class.bg-blue-600]="outputText()"
+            [class.hover:bg-blue-700]="outputText()"
+            [class.bg-gray-400]="!outputText()"
+            [class.cursor-not-allowed]="!outputText()"
+            [class.cursor-pointer]="outputText()"
+            aria-label="Copy output text to clipboard"
+          >
+            <app-translated-text key="encode-decode.copy-button"></app-translated-text>
+          </button>
+        </div>
+        <textarea
+          id="output-text"
+          [value]="outputText()"
+          readonly
+          [placeholder]="translationService.translate('encode-decode.output-placeholder')"
+          class="w-full h-64 p-4 border border-gray-300 dark:border-gray-700 rounded-lg resize-none bg-gray-50 dark:bg-gray-800 font-mono text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Text Statistics - Full Width -->
+    <div class="mt-8">
+      <app-text-statistics [text]="inputText()"></app-text-statistics>
+    </div>
+
+    <!-- Features List -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center transition-colors duration-300">
+        <app-translated-text key="encode-decode.features-title"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.url-encode-decode"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.url-encode-decode-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.base64-encode-decode"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.base64-encode-decode-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.html-escape-unescape"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.html-escape-unescape-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.json-escape-unescape"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.json-escape-unescape-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.html-to-text"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.html-to-text-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.ascii-transliterate"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.ascii-transliterate-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.smart-quotes"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.smart-quotes-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.unicode-nfc"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.unicode-nfc-desc"></app-translated-text>
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+        >
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.unicode-nfd"></app-translated-text>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+            <app-translated-text key="encode-decode.feature.unicode-nfd-desc"></app-translated-text>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Examples Section -->
+    <div
+      class="mt-12 bg-white dark:bg-gray-900 rounded-lg shadow-sm dark:shadow-2xl border border-gray-200 dark:border-gray-800 p-6 transition-all duration-300"
+    >
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+        <app-translated-text key="encode-decode.examples-title"></app-translated-text>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.examples-web-dev"></app-translated-text>
+          </h3>
+          <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 transition-colors duration-300">
+            <li>• <app-translated-text key="encode-decode.examples-web-dev-1"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.examples-web-dev-2"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.examples-web-dev-3"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.examples-web-dev-4"></app-translated-text></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+            <app-translated-text key="encode-decode.examples-data-processing"></app-translated-text>
+          </h3>
+          <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 transition-colors duration-300">
+            <li>• <app-translated-text key="encode-decode.examples-data-processing-1"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.examples-data-processing-2"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.examples-data-processing-3"></app-translated-text></li>
+            <li>• <app-translated-text key="encode-decode.examples-data-processing-4"></app-translated-text></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-16">
+      <app-faq-display toolName="encode-decode" [showTitle]="true"></app-faq-display>
+    </div>
+  </main>
+</div>

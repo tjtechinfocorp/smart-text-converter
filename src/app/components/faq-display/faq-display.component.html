@@ -1,0 +1,47 @@
+<div class="faq-display" *ngIf="faqItems.length > 0">
+  <!-- FAQ Title -->
+  <div class="mb-8" *ngIf="showTitle">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">
+      {{ getFAQTitle() }}
+    </h2>
+    <p class="text-gray-600">
+      {{ getFAQSubtitle() }}
+    </p>
+  </div>
+
+  <!-- FAQ Items -->
+  <div class="space-y-4">
+    <div *ngFor="let item of faqItems; let i = index"
+      class="bg-white rounded-lg border border-gray-200 transition-all duration-300 hover:shadow-sm">
+      <!-- Question -->
+      <button (click)="toggleExpanded(i); onFAQExpand(item.question)"
+        class="w-full px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded-lg transition-colors duration-200"
+        [class.bg-gray-50]="isExpanded(i)" [class.dark:bg-gray-700]="isExpanded(i)" [attr.aria-expanded]="isExpanded(i)"
+        [attr.aria-controls]="'faq-answer-' + i">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white pr-4 transition-colors duration-300">
+            {{ item.question }}
+          </h3>
+          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 flex-shrink-0"
+            [class.rotate-180]="isExpanded(i)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+      </button>
+
+      <!-- Answer -->
+      <div *ngIf="isExpanded(i)" [id]="'faq-answer-' + i" class="px-6 pb-4 transition-all duration-300" role="region"
+        [attr.aria-labelledby]="'faq-question-' + i">
+        <div class="pt-4">
+          <div class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300"
+            [innerHTML]="getFormattedAnswer(item)" (click)="onFAQClick(item.question)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Schema Markup (Hidden) -->
+  <script type="application/ld+json" [attr.data-faq-schema]="toolName" style="display: none">
+    {{ getFAQSchemaJSON() }}
+  </script>
+</div>

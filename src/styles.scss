@@ -1,0 +1,366 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JSON editor styles will be loaded dynamically when needed */
+
+/* Additional styling for JSON editor toolbar integration */
+.jse-theme-dark {
+  /* Ensure proper integration with our design system */
+  font-family:
+    ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.jse-main {
+  /* Smooth borders and shadows */
+  border-radius: 0.5rem;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode enhancements */
+.dark .jse-main {
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.3),
+    0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Global Dark Theme Support */
+:root {
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-secondary: rgba(0, 0, 0, 0.05);
+
+  /* Active link colors */
+  --active-link-color: #2563eb; /* blue-600 for light mode */
+  --active-link-color-dark: rgb(
+    168 255 83 / var(--tw-bg-opacity, 1)
+  ); /* custom emerald for dark mode */
+}
+
+.dark {
+  /* Trigger.dev inspired dark theme colors */
+  --bg-primary: #030712; /* Deep black - main background (gray-950) */
+  --bg-secondary: #111827; /* Dark gray - card backgrounds (gray-900) */
+  --bg-tertiary: #1f2937; /* Slightly lighter - input backgrounds (gray-800) */
+  --bg-quaternary: #374151; /* Hover states (gray-700) */
+  --text-primary: #ffffff; /* Pure white - primary text */
+  --text-secondary: #d1d5db; /* Light gray - secondary text (gray-300) */
+  --text-tertiary: #9ca3af; /* Medium gray - tertiary text (gray-400) */
+  --text-quaternary: #6b7280; /* Darker gray - disabled text (gray-500) */
+  --border-primary: #374151; /* Subtle borders (gray-700) */
+  --border-secondary: #4b5563; /* Secondary borders (gray-600) */
+  --border-accent: #3b82f6; /* Bright blue - accent borders */
+  --shadow-primary: rgba(0, 0, 0, 0.6);
+  --shadow-secondary: rgba(0, 0, 0, 0.4);
+  --shadow-accent: rgba(59, 130, 246, 0.2);
+}
+
+/* Base styles with theme support */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Remove unwanted focus borders in dark mode */
+.dark *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.dark button:focus,
+.dark a:focus,
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Force dark mode active link colors with maximum specificity */
+html.dark .active-link,
+body.dark .active-link,
+.dark .active-link {
+  color: rgb(168 255 83 / var(--tw-bg-opacity, 1)) !important; /* custom emerald for dark mode */
+}
+
+html.dark .text-transformation-active,
+body.dark .text-transformation-active,
+.dark .text-transformation-active {
+  color: rgb(168 255 83 / var(--tw-bg-opacity, 1)) !important; /* custom emerald for dark mode */
+}
+
+html.dark .analysis-utilities-active,
+body.dark .analysis-utilities-active,
+.dark .analysis-utilities-active {
+  color: rgb(168 255 83 / var(--tw-bg-opacity, 1)) !important; /* custom emerald for dark mode */
+}
+
+/* Custom scrollbar for dark theme */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Light theme scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.dark *:focus {
+  outline-color: #60a5fa;
+}
+
+/* Selection styles */
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark ::selection {
+  background-color: #60a5fa;
+  color: #111827;
+}
+
+/* Core Web Vitals Optimization Styles */
+
+/* Prevent layout shifts with aspect ratio containers */
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.aspect-ratio-container > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Image loading states to prevent CLS */
+img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+img[data-src] {
+  opacity: 0;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+/* Advanced image optimization styles */
+.lazy-image {
+  background-color: #f3f4f6;
+  background-image: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: image-loading 1.5s infinite;
+}
+
+.dark .lazy-image {
+  background-color: #374151;
+  background-image: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+}
+
+@keyframes image-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+img.loading {
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+img.error {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+/* Responsive image optimization */
+img[data-optimized] {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* High priority images */
+img[fetchpriority='high'] {
+  will-change: transform;
+}
+
+/* Skeleton loading for better perceived performance */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Lazy loading states */
+[data-lazy-faq],
+[data-lazy-blog] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+[data-lazy-faq].loading,
+[data-lazy-blog].loading {
+  opacity: 0.5;
+  transform: translateY(10px);
+}
+
+[data-lazy-faq].loaded,
+[data-lazy-blog].loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Critical resource loading optimization */
+.critical-resource {
+  font-display: swap; /* For web fonts */
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce paint complexity */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize animations for 60fps */
+@media (prefers-reduced-motion: no-preference) {
+  .smooth-animation {
+    transition: transform 0.2s ease-out;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize for mobile performance */
+@media (max-width: 768px) {
+  /* Reduce complexity on mobile */
+  .mobile-optimized {
+    transform: none;
+    will-change: auto;
+  }
+
+  /* Optimize touch interactions */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Print styles for better performance */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,87 @@
+# Cloudflare Pages SPA routing
+# Simplified redirects to prevent infinite loops
+
+# Main tool routes
+/case-converter    /index.html   200
+/text-formatter    /index.html   200
+/line-tools        /index.html   200
+/encode-decode     /index.html   200
+/text-analyzer     /index.html   200
+/text-generator    /index.html   200
+
+# Legal pages
+/privacy           /index.html   200
+/terms             /index.html   200
+/contact           /index.html   200
+
+# Blog routes
+/blog              /index.html   200
+
+# Specific blog post routes
+/blog/complete-guide-text-case-conversion    /index.html   200
+/blog/programming-case-conventions-camelcase-vs-snake-case    /index.html   200
+/blog/seo-best-practices-title-case-vs-sentence-case    /index.html   200
+/blog/text-formatting-best-practices-inclusive-design    /index.html   200
+/blog/case-conversion-best-practices-when-how-use-different-case-styles    /index.html   200
+/blog/ecommerce-case-conversion    /index.html   200
+/blog/social-media-case-conversion    /index.html   200
+/blog/email-marketing-case-conversion    /index.html   200
+/blog/technical-documentation-case-conversion    /index.html   200
+/blog/cms-case-conversion    /index.html   200
+/blog/text-analysis-beyond-case-conversion    /index.html   200
+/blog/json-formatting-complete-guide    /index.html   200
+/blog/json-validation-developer-guide    /index.html   200
+/blog/json-performance-optimization    /index.html   200
+/blog/css-formatter-complete-guide    /index.html   200
+/blog/xml-best-practices-guide    /index.html   200
+/blog/javascript-formatter-complete-guide    /index.html   200
+/blog/html-formatter-complete-guide    /index.html   200
+/blog/sql-formatter-complete-guide    /index.html   200
+
+# JSON tools
+/json/formatter     /index.html   200
+/json/parser       /index.html   200
+/json-utility      /index.html   200
+
+# Other formatters
+/xml/formatter     /index.html   200
+/js/formatter      /index.html   200
+/html/formatter    /index.html   200
+/css/formatter     /index.html   200
+/sql/formatter     /index.html   200
+
+# Specific comparison pages
+/comparison/caseconverter-org    /index.html   200
+/comparison/convertcase-net    /index.html   200
+/comparison/textcase-org    /index.html   200
+/comparison/best-case-converters-2024    /index.html   200
+
+# Landing pages
+/tools             /index.html   200
+/developer-tools   /index.html   200
+/text-processing   /index.html   200
+
+# SEO dashboard
+/seo-dashboard     /index.html   200
+
+# Handle common SEO issues
+/index.html        /              301
+/index            /              301
+
+# Handle trailing slashes
+/case-converter/   /case-converter   301
+/text-formatter/  /text-formatter  301
+/blog/            /blog             301
+/json/formatter/  /json/formatter  301
+/xml/formatter/   /xml/formatter   301
+/js/formatter/    /js/formatter    301
+/html/formatter/  /html/formatter  301
+/css/formatter/   /css/formatter   301
+/sql/formatter/   /sql/formatter   301
+
+# Language query parameters are handled by the Angular app
+# No redirect rules needed for ?lang=* parameters
+
+# Safe fallback for SPA routing - exclude files with extensions
+# This pattern only matches routes without file extensions
+/!(*.*)    /index.html   200

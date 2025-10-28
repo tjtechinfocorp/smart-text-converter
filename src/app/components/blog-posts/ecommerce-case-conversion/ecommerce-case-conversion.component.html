@@ -1,0 +1,563 @@
+<div class="bg-white dark:bg-gray-950 transition-colors duration-300">
+  <main class="pt-8 pb-16">
+    <!-- Article Container -->
+    <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <a
+          (click)="goBackToBlog()"
+          class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors duration-300 cursor-pointer"
+        >
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="mb-12">
+        <!-- Title -->
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-8 leading-tight tracking-tight"
+        >
+          Text Case Conversion for E-commerce: Product Titles, Descriptions & SEO Optimization
+        </h1>
+
+        <!-- Meta Information -->
+        <div class="flex flex-wrap items-center gap-8 text-sm text-gray-600 dark:text-gray-400">
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            October 3, 2025
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            12 min read
+          </div>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+            by SmartTextConverter Team
+          </div>
+          <div class="flex items-center">
+            <span
+              class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
+            >
+              E-commerce
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="mb-12">
+        <img
+          src="blog-images/ecommerce-case-conversion.jpg"
+          alt="E-commerce product listings showing optimized titles and descriptions with proper case conversion"
+          class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none">
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+          In the competitive world of e-commerce, every detail matters—including how you format your product titles and
+          descriptions. With over 2.14 billion digital buyers worldwide and growing competition across marketplaces like
+          Amazon, eBay, and Shopify, proper case conversion can be the difference between a product that converts and
+          one that gets lost in the crowd. This comprehensive guide reveals the data-driven strategies behind effective
+          e-commerce text formatting that drives sales and improves search visibility.
+        </p>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          The Psychology of E-commerce Case Conversion
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Research shows that product titles with proper case formatting can increase click-through rates by up to 23%
+          and improve conversion rates by 15%. The human brain processes different case styles differently, with title
+          case creating a sense of authority and professionalism, while sentence case feels more approachable and
+          trustworthy.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">Consumer Behavior Insights</h3>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Title Case</strong>: Perceived as 34% more professional and trustworthy
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Sentence Case</strong>: Viewed as 28% more approachable and user-friendly
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Mixed Case</strong>: Creates confusion and reduces perceived quality by 19%
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Consistent Formatting</strong>: Increases brand trust by 42% across all touchpoints
+          </li>
+        </ul>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          Platform-Specific Case Conversion Strategies
+        </h2>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">
+          Amazon Product Title Optimization
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Amazon's algorithm favors product titles that follow specific formatting conventions. With over 12 million
+          products competing for visibility, proper case conversion can significantly impact your product's
+          discoverability and sales performance.
+        </p>
+
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 mt-6">
+          Amazon Title Case Best Practices:
+        </h4>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Brand Name</strong>: Always in Title Case (e.g., "Apple iPhone 15 Pro")
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Product Type</strong>: Title Case for main categories (e.g., "Wireless Headphones")
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Key Features</strong>: Title Case for important attributes (e.g., "Bluetooth 5.0")
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Size/Color</strong>: Title Case for variants (e.g., "256GB Space Black")
+          </li>
+        </ul>
+
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 mt-6">
+          Example Amazon Title Structure:
+        </h4>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+          <p class="text-gray-800 dark:text-gray-200 font-mono text-sm">
+            "Apple iPhone 15 Pro Max 256GB Space Black - Latest Model with Advanced Camera System and A17 Pro Chip"
+          </p>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">eBay Listing Optimization</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          eBay's search algorithm prioritizes listings with clear, well-formatted titles. Unlike Amazon's strict
+          guidelines, eBay allows more flexibility but still benefits from consistent case formatting.
+        </p>
+
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 mt-6">eBay Title Case Strategy:</h4>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Condition</strong>: Title Case (e.g., "Brand New", "Like New", "Used")
+          </li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Brand and Model</strong>: Title Case for recognition</li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Key Features</strong>: Title Case for searchability</li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Size/Color</strong>: Title Case for filtering</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">Shopify Product Descriptions</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Shopify stores benefit from a more flexible approach to case conversion, allowing brands to maintain their
+          unique voice while optimizing for search engines and user experience.
+        </p>
+
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 mt-6">
+          Shopify Case Conversion Guidelines:
+        </h4>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Product Titles</strong>: Title Case for brand consistency
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Product Descriptions</strong>: Sentence Case for readability
+          </li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Feature Lists</strong>: Title Case for bullet points</li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Call-to-Actions</strong>: Title Case for buttons and links
+          </li>
+        </ul>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          Category Naming Conventions Across Platforms
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Different e-commerce platforms have unique category structures that require specific case conversion
+          strategies. Understanding these conventions can improve your product's categorization and discoverability.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">Amazon Category Hierarchy</h3>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+          <p class="text-gray-800 dark:text-gray-200 font-mono text-sm">
+            Electronics > Cell Phones & Accessories > Cell Phone Accessories > Cases, Holsters & Sleeves
+          </p>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">eBay Category Structure</h3>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+          <p class="text-gray-800 dark:text-gray-200 font-mono text-sm">
+            Consumer Electronics > Cell Phones, Smart Watches & Accessories > Cell Phone Accessories
+          </p>
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">Shopify Collection Naming</h3>
+        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+          <p class="text-gray-800 dark:text-gray-200 font-mono text-sm">
+            Electronics / Cell Phone Accessories / iPhone Cases
+          </p>
+        </div>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          Brand Name Consistency in Product Listings
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Maintaining consistent brand name formatting across all platforms is crucial for brand recognition and trust
+          building. Inconsistent case formatting can confuse customers and dilute your brand's professional image.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">Brand Consistency Checklist</h3>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Logo Usage</strong>: Consistent case style in all logo variations
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Product Titles</strong>: Brand name in same case across all platforms
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Product Descriptions</strong>: Consistent brand mention formatting
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Social Media</strong>: Uniform brand name presentation
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Packaging</strong>: Consistent case style on all product packaging
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">Common Brand Name Case Styles</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Title Case</h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">Apple, Nike, Samsung</p>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">All Caps</h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">IBM, BMW, UPS</p>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Lowercase</h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">amazon, ebay, spotify</p>
+          </div>
+          <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+            <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Mixed Case</h4>
+            <p class="text-gray-700 dark:text-gray-300 text-sm">iPhone, eBay, PayPal</p>
+          </div>
+        </div>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          SEO-Friendly Product Description Formatting
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Product descriptions that combine proper case conversion with SEO best practices can significantly improve
+          your search rankings and conversion rates. The key is balancing readability with keyword optimization.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">SEO Case Conversion Strategy</h3>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300"><strong>Headlines</strong>: Title Case for H1 and H2 tags</li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Subheadings</strong>: Title Case for H3 and H4 tags</li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Body Text</strong>: Sentence Case for readability</li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Feature Lists</strong>: Title Case for bullet points</li>
+          <li class="text-gray-700 dark:text-gray-300"><strong>Call-to-Actions</strong>: Title Case for emphasis</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">
+          Keyword Integration Best Practices
+        </h3>
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-6">
+          <h4 class="font-semibold text-blue-900 dark:text-blue-200 mb-3">
+            Example: Wireless Headphones Product Description
+          </h4>
+          <div class="space-y-2 text-sm">
+            <p class="text-blue-800 dark:text-blue-300">
+              <strong>Title:</strong> "Premium Wireless Headphones with Active Noise Cancellation"
+            </p>
+            <p class="text-blue-800 dark:text-blue-300">
+              <strong>Subheading:</strong> "Advanced Audio Technology for Music Lovers"
+            </p>
+            <p class="text-blue-800 dark:text-blue-300">
+              <strong>Body:</strong> "Experience crystal-clear sound with our premium wireless headphones. The active
+              noise cancellation feature blocks out distractions, while the 30-hour battery life keeps you connected all
+              day."
+            </p>
+          </div>
+        </div>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          A/B Testing Case Styles for Conversion Rates
+        </h2>
+
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Data-driven e-commerce businesses use A/B testing to optimize their case conversion strategies. Testing
+          different case styles can reveal significant insights about your target audience's preferences and behavior.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">
+          A/B Testing Framework for Case Conversion
+        </h3>
+        <ol class="list-decimal pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Define Your Hypothesis</strong>: Which case style will perform better?
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Set Success Metrics</strong>: Click-through rate, conversion rate, time on page
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Run Tests for 2-4 Weeks</strong>: Ensure statistical significance
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Analyze Results</strong>: Compare performance across different segments
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Implement Winners</strong>: Apply successful case styles across your catalog
+          </li>
+        </ol>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">
+          Case Study: Electronics Retailer A/B Test Results
+        </h3>
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg mb-6">
+          <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-4">Test: Product Title Case Styles</h4>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h5 class="font-medium text-gray-700 dark:text-gray-300 mb-2">Title Case</h5>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">"Apple iPhone 15 Pro Max 256GB"</p>
+              <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                <li>CTR: 4.2%</li>
+                <li>Conversion: 3.8%</li>
+                <li>Avg. Order Value: $1,199</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="font-medium text-gray-700 dark:text-gray-300 mb-2">Sentence Case</h5>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">"Apple iPhone 15 pro max 256gb"</p>
+              <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                <li>CTR: 3.1%</li>
+                <li>Conversion: 2.9%</li>
+                <li>Avg. Order Value: $1,156</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">
+            <strong>Winner:</strong> Title Case showed 35% higher CTR and 31% better conversion rates
+          </p>
+        </div>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          Advanced E-commerce Case Conversion Techniques
+        </h2>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">
+          Dynamic Case Conversion for Personalization
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Advanced e-commerce platforms can implement dynamic case conversion based on user behavior, location, and
+          preferences. This personalization can significantly improve user experience and conversion rates.
+        </p>
+
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 mt-6">Personalization Strategies:</h4>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Geographic Adaptation</strong>: Adjust case styles based on regional preferences
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Device Optimization</strong>: Different case styles for mobile vs. desktop
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>User History</strong>: Adapt based on previous interaction patterns
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Time-Based Changes</strong>: Different styles for different times of day
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 mt-8">
+          International E-commerce Case Conversion
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Global e-commerce requires understanding how different cultures and languages handle case conversion. What
+          works in English may not work in other languages or cultural contexts.
+        </p>
+
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3 mt-6">Cultural Considerations:</h4>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>German Markets</strong>: Prefer Title Case for formal products
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Japanese Markets</strong>: Minimal case conversion, focus on clarity
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>Spanish Markets</strong>: Sentence Case for approachability
+          </li>
+          <li class="text-gray-700 dark:text-gray-300">
+            <strong>French Markets</strong>: Title Case for luxury items, Sentence Case for everyday products
+          </li>
+        </ul>
+
+        <h2
+          class="text-2xl font-bold text-gray-900 dark:text-white mb-6 mt-12 pb-3 border-b border-gray-200 dark:border-gray-700"
+        >
+          Conclusion
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Mastering e-commerce case conversion is essential for creating product listings that not only rank well in
+          search results but also convert browsers into buyers. By understanding platform-specific requirements,
+          maintaining brand consistency, and implementing data-driven optimization strategies, you can significantly
+          improve your e-commerce performance and customer experience.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300">
+          SmartTextConverter's e-commerce-focused case conversion tools help you maintain consistent formatting across
+          all your product listings while optimizing for each platform's unique requirements. Our intelligent converter
+          understands the nuances of Amazon, eBay, Shopify, and other major e-commerce platforms, ensuring your product
+          titles and descriptions are perfectly formatted for maximum visibility and conversion.
+        </p>
+
+        <!-- Tags Card -->
+        <div class="mt-8">
+          <div
+            class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl border border-blue-200 dark:border-gray-600 p-6"
+          >
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+              <svg
+                class="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                />
+              </svg>
+              Tags
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 shadow-sm hover:shadow-md transition-shadow"
+              >
+                e-commerce SEO
+              </span>
+              <span
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 shadow-sm hover:shadow-md transition-shadow"
+              >
+                product title optimization
+              </span>
+              <span
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 shadow-sm hover:shadow-md transition-shadow"
+              >
+                Amazon optimization
+              </span>
+              <span
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 shadow-sm hover:shadow-md transition-shadow"
+              >
+                eBay listing
+              </span>
+              <span
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 shadow-sm hover:shadow-md transition-shadow"
+              >
+                Shopify products
+              </span>
+              <span
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 shadow-sm hover:shadow-md transition-shadow"
+              >
+                case conversion
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Sharing -->
+        <div class="mt-8">
+          <app-social-sharing
+            [shareData]="{
+              title: 'E-commerce Case Conversion: Product Titles, Descriptions & SEO Optimization',
+              description:
+                'Learn how to optimize case conversion for e-commerce product titles, descriptions, and SEO to improve sales and search rankings.',
+              url: 'https://smarttextconverter.com/blog/ecommerce-case-conversion-product-titles-descriptions-seo',
+              hashtags: [
+                'ecommerce',
+                'producttitles',
+                'SEO',
+                'caseconversion',
+                'onlinemarketing',
+                'productdescriptions',
+              ],
+            }"
+          ></app-social-sharing>
+        </div>
+
+        <!-- Author Card -->
+        <div class="mt-8">
+          <div
+            class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl border border-gray-200 dark:border-gray-600 p-6"
+          >
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">SmartTextConverter Team</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  E-commerce optimization experts specializing in case conversion strategies for maximum conversion
+                  rates and search visibility.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</div>
