@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Free Text Converter & Formatter - SmartTextConverter</title>
+  <title>Free Text Converter & Formatter - SmartTextConverter | Convert Case, Format Text, Encode/Decode Online</title>
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Free online text converter and formatter. Convert case, format text, encode/decode, and analyze text instantly. No registration required." />
-  <meta name="keywords" content="text converter, case converter, uppercase, lowercase, slugify, SEO tools" />
+    content="Free online text converter and formatter. Convert text case (uppercase, lowercase, title case), format text, encode/decode (Base64, URL, HTML), analyze text, and more. Supports 20 languages. No registration required." />
+  <meta name="keywords" content="text converter, case converter, uppercase, lowercase, title case, camelCase, snake_case, kebab-case, text formatter, Base64 encoder, URL encoder, HTML encoder, JSON formatter, XML formatter, JavaScript formatter, CSS formatter, SQL formatter, text analyzer, line tools, encode decode, online tools, free utilities, multi-language, international" />
 
   <!-- Critical SEO Meta Tags -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -993,6 +993,57 @@
   <!-- Privacy-Compliant Analytics - No Third-Party Cookies -->
   <!-- Google Tag Manager noscript removed to eliminate third-party cookies -->
 
+  <!-- Critical content for SEO - visible before JavaScript loads -->
+  <div id="seo-content" style="display: none;">
+    <h1>Free Text Converter & Formatter - SmartTextConverter</h1>
+    <p>Convert text case (uppercase, lowercase, title case, camelCase, snake_case, kebab-case), format text, encode/decode
+      (Base64, URL, HTML), analyze text, and more. Supports 20 languages including English, Spanish, French, German,
+      Italian, Portuguese, Russian, Chinese, Japanese, Arabic, Hindi, Bengali, Urdu, Indonesian, Turkish, Dutch, Polish,
+      Kiswahili, and Filipino.</p>
+  
+    <h2>Text Processing Tools</h2>
+    <ul>
+      <li><strong>Case Converter</strong> - Convert between uppercase, lowercase, title case, camelCase, snake_case,
+        kebab-case</li>
+      <li><strong>Text Formatter</strong> - Trim whitespace, collapse spaces, remove line breaks, normalize text</li>
+      <li><strong>Line Tools</strong> - Sort lines, remove duplicates, number lines, reverse order, shuffle lines</li>
+      <li><strong>Encode/Decode</strong> - URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON encode</li>
+      <li><strong>Text Analyzer</strong> - Analyze text, find and replace, word frequency, text statistics</li>
+      <li><strong>Text Generator</strong> - Generate Lorem Ipsum, random text, UUIDs, extract emails and URLs</li>
+      <li><strong>JSON Formatter</strong> - Format, validate, and beautify JSON data with syntax highlighting</li>
+      <li><strong>JSON Parser</strong> - Parse, analyze, and understand JSON data structure with detailed statistics</li>
+      <li><strong>XML Formatter</strong> - Format, validate, and beautify XML documents</li>
+      <li><strong>JavaScript Formatter</strong> - Format, beautify, minify, and validate JavaScript code</li>
+      <li><strong>CSS Formatter</strong> - Format, beautify, minify, and validate CSS stylesheets</li>
+      <li><strong>SQL Formatter</strong> - Format, beautify, minify, and validate SQL queries</li>
+      <li><strong>HTML Formatter</strong> - Format, beautify, minify, and validate HTML documents</li>
+    </ul>
+  
+    <h2>Key Features</h2>
+    <ul>
+      <li>✅ <strong>Free to use</strong> - No registration required</li>
+      <li>✅ <strong>Multi-language support</strong> - 20 languages available</li>
+      <li>✅ <strong>Real-time processing</strong> - Instant text conversion</li>
+      <li>✅ <strong>Secure & private</strong> - All processing done in your browser</li>
+      <li>✅ <strong>Mobile-friendly</strong> - Works on all devices</li>
+      <li>✅ <strong>Developer tools</strong> - JSON, XML, JavaScript, CSS, SQL formatters</li>
+      <li>✅ <strong>Text analysis</strong> - Word count, character count, readability metrics</li>
+      <li>✅ <strong>Batch processing</strong> - Process multiple texts at once</li>
+    </ul>
+  
+    <h2>Popular Use Cases</h2>
+    <ul>
+      <li>Convert text case for programming (camelCase, snake_case, kebab-case)</li>
+      <li>Format and beautify JSON, XML, JavaScript, CSS, SQL code</li>
+      <li>Encode/decode text for web development (Base64, URL, HTML)</li>
+      <li>Analyze text content and generate statistics</li>
+      <li>Sort and organize text lines</li>
+      <li>Generate Lorem Ipsum and random text for testing</li>
+      <li>Extract emails, URLs, and other patterns from text</li>
+      <li>Clean and normalize text data</li>
+    </ul>
+  </div>
+
   <app-root>
     <!-- Enhanced loading fallback with accessibility -->
     <div id="loading-fallback" role="status" aria-label="Loading SmartTextConverter" style="
@@ -1036,6 +1087,33 @@
   </app-root>
 
   <!-- All styles are now inlined - no render blocking CSS -->
+<!-- SEO Content Visibility Script -->
+<script>
+  // Show SEO content to search engines but hide from users
+  (function () {
+    const seoContent = document.getElementById('seo-content');
+    if (seoContent) {
+      // Check if it's a search engine bot
+      const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent) ||
+        /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator/i.test(navigator.userAgent);
+
+      if (isBot) {
+        seoContent.style.display = 'block';
+        seoContent.style.position = 'absolute';
+        seoContent.style.left = '-9999px';
+        seoContent.style.top = '-9999px';
+        seoContent.style.width = '1px';
+        seoContent.style.height = '1px';
+        seoContent.style.overflow = 'hidden';
+      } else {
+        // Hide from users after a short delay to ensure it's indexed
+        setTimeout(function () {
+          seoContent.style.display = 'none';
+        }, 1000);
+      }
+    }
+  })();
+</script>
 </body>
 
 </html>
