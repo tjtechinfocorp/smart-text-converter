@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node ./node_modules/@angular/cli/bin/ng.js build && npm run prepare:cloudflare",
+    "build": "npm install -g @angular/cli@19.2.13 && ng build && npm run prepare:cloudflare",
     "build:cloudflare": "npm run build",
     "prepare:cloudflare": "cp -r dist/cloudflare/browser/* dist/cloudflare/ && cp dist/cloudflare/server/server.mjs dist/cloudflare/",
     "watch": "ng build --watch --configuration development",
