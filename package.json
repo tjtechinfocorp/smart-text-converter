@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:cloudflare": "npm run build && npm run prepare:cloudflare",
+    "build": "ng build && npm run prepare:cloudflare",
+    "build:cloudflare": "npm run build",
     "prepare:cloudflare": "cp -r dist/smarttext-ssr/browser/* dist/smarttext-ssr/ && cp dist/smarttext-ssr/server/server.mjs dist/smarttext-ssr/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
