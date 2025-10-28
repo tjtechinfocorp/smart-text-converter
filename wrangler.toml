@@ -1,2 +1,0 @@
-# Cloudflare Pages Configuration
-pages_build_output_dir = "dist/smarttext-ssr"
