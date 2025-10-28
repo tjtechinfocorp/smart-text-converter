@@ -41,13 +41,15 @@
     </style>
   </head>
   <body>
-    <div class="loading">
-      <div>
-        <div class="spinner"></div>
-        <h1>SmartTextConverter</h1>
-        <p>Loading your text conversion tools...</p>
+    <app-root>
+      <div class="loading">
+        <div>
+          <div class="spinner"></div>
+          <h1>SmartTextConverter</h1>
+          <p>Loading your text conversion tools...</p>
+        </div>
       </div>
-    </div>
+    </app-root>
 
     <script>
         // Load the main Angular app for SPA routing
@@ -75,12 +77,6 @@
             const script = document.createElement('script');
             script.src = src;
             script.type = 'module';
-            if (index === scripts.length - 1) {
-              // On the last script, update the body
-              script.onload = function () {
-                document.body.innerHTML = '<app-root></app-root>';
-              };
-            }
             document.head.appendChild(script);
           });
         })();
