@@ -4,14 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm install -g @angular/cli && ng build --output-path=dist/cloudflare && npm run prepare:cloudflare",
-    "build:cloudflare": "npm run build",
-    "prepare:cloudflare": "cp -r dist/cloudflare/browser/* dist/cloudflare/ && cp dist/cloudflare/server/server.mjs dist/cloudflare/",
+    "build": "ng build --configuration=production",
+    "build:cloudflare": "ng build --configuration=production --output-path=dist/cloudflare",
+    "build:cloudflare-ssr": "ng build --configuration=production --output-path=dist/cloudflare && npm run prepare:cloudflare-ssr",
+    "prepare:cloudflare-ssr": "cp -r dist/cloudflare/browser/* dist/cloudflare/ && cp dist/cloudflare/server/server.mjs dist/cloudflare/ && cp functions/_worker.js dist/cloudflare/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:smarttext-ssr": "node dist/cloudflare/server/server.mjs",
-    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist/cloudflare",
-    "preview:cloudflare": "npm run build:cloudflare && wrangler pages dev dist/cloudflare"
+    "serve:ssr": "node dist/cloudflare/server/server.mjs",
+    "deploy:cloudflare": "npm run build:cloudflare-ssr && wrangler pages deploy dist/cloudflare",
+    "preview:cloudflare": "npm run build:cloudflare-ssr && wrangler pages dev dist/cloudflare"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.13",
+    "@cloudflare/kv-asset-handler": "^0.3.1",
     "@emailjs/browser": "^4.4.1",
     "@types/compression": "^1.8.1",
     "compression": "^1.8.1",
