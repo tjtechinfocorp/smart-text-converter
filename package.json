@@ -4,14 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm install -g @angular/cli@19.2.13 && ng build && npm run prepare:cloudflare",
+    "build": "npx ng build && npm run prepare:cloudflare",
     "build:cloudflare": "npm run build",
-    "prepare:cloudflare": "cp -r dist/smarttext-ssr/browser/* dist/smarttext-ssr/ && cp dist/smarttext-ssr/server/server.mjs dist/smarttext-ssr/",
+    "prepare:cloudflare": "cp -r dist/cloudflare/browser/* dist/cloudflare/ && cp dist/cloudflare/server/server.mjs dist/cloudflare/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:smarttext-ssr": "node dist/smarttext-ssr/server/server.mjs",
-    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist/smarttext-ssr",
-    "preview:cloudflare": "npm run build:cloudflare && wrangler pages dev dist/smarttext-ssr"
+    "serve:ssr:smarttext-ssr": "node dist/cloudflare/server/server.mjs",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist/cloudflare",
+    "preview:cloudflare": "npm run build:cloudflare && wrangler pages dev dist/cloudflare"
   },
   "private": true,
   "dependencies": {

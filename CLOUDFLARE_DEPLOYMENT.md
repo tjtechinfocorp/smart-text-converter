@@ -33,7 +33,7 @@ npm install
 2. **Build Settings**:
    ```
    Build command: npm run build:cloudflare
-   Build output directory: dist/smarttext-ssr
+   Build output directory: dist/cloudflare
    Root directory: (leave empty)
    ```
 
