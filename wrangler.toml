@@ -1,17 +1,1 @@
-name = "smarttext-ssr"
-compatibility_date = "2024-01-01"
-
-[build]
-command = "npm run build:cloudflare-ssr"
-cwd = "."
-
-[build.upload]
-format = "modules"
-main = "dist/cloudflare/server.mjs"
-
-[[build.upload.rules]]
-type = "ESModule"
-globs = ["**/*.mjs"]
-
-[env.production]
-name = "smarttext-ssr"
+pages_build_output_dir = "dist/cloudflare"
