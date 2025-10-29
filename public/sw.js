@@ -1,7 +1,7 @@
 // Service Worker for SmartTextConverter
 // Version: 2.1.0 - Enhanced with compression support
 
-const CACHE_VERSION = '2.0.1761755249292';
+const CACHE_VERSION = '2.0.1761755567836';
 const CACHE_NAME = `smarttextconverter-v${CACHE_VERSION}`;
 const STATIC_CACHE = `static-v${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `dynamic-v${CACHE_VERSION}`;
