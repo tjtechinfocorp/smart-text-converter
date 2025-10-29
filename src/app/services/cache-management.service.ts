@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 export class CacheManagementService {
   private isBrowser: boolean;
   private readonly CACHE_VERSION_KEY = 'app_cache_version';
-  private readonly CURRENT_VERSION = '2.0.1761755567836'; // Update this with each deployment
+  private readonly CURRENT_VERSION = '2.0.1761755931245'; // Update this with each deployment
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private ngZone: NgZone) {
     this.isBrowser = isPlatformBrowser(this.platformId);
