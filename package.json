@@ -1,6 +1,6 @@
 {
   "name": "smarttext-ssr",
-  "version": "2.0.1761754973393",
+  "version": "2.0.1761755249292",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
