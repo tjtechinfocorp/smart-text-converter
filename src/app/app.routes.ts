@@ -5,14 +5,14 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
-    title: 'Text Converter — Free Online Text Case Converter & Formatter',
+    title: 'Text Converter | Free Online Case Converter & Formatter',
   },
 
   // Home route (default) - Using test home page
   {
     path: '',
     loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
-    title: 'Text Converter — Free Online Text Case Converter & Formatter',
+    title: 'Text Converter | Free Online Case Converter & Formatter',
   },
 
   // Text Transformation Tools
@@ -22,7 +22,7 @@ export const routes: Routes = [
       import('./components/case-converter/case-converter.component').then(
         m => m.CaseConverterComponent
       ),
-    title: 'Case Converter - Convert Text Case Online',
+    title: 'Case Converter | Free Online Text Case Tool',
   },
   {
     path: 'text-formatter',
@@ -30,7 +30,7 @@ export const routes: Routes = [
       import('./components/text-formatter/text-formatter.component').then(
         m => m.TextFormatterComponent
       ),
-    title: 'Text Formatter - Format Your Text Online',
+    title: 'Text Formatter | Free Online Text Formatting Tool',
   },
   {
     path: 'encode-decode',
@@ -38,7 +38,7 @@ export const routes: Routes = [
       import('./components/encode-decode/encode-decode.component').then(
         m => m.EncodeDecodeComponent
       ),
-    title: 'Encode/Decode - Text Encoding & Decoding Tool',
+    title: 'Encode Decode | Free Online Text Encoding Tool',
   },
 
   // Analysis & Utilities
@@ -48,7 +48,7 @@ export const routes: Routes = [
       import('./components/text-analyzer/text-analyzer.component').then(
         m => m.TextAnalyzerComponent
       ),
-    title: 'Text Analyzer - Analyze Your Text',
+    title: 'Text Analyzer | Free Online Text Analysis Tool',
   },
   {
     path: 'text-generator',
@@ -56,13 +56,13 @@ export const routes: Routes = [
       import('./components/text-generator/text-generator.component').then(
         m => m.TextGeneratorComponent
       ),
-    title: 'Text Generator - Generate Lorem Ipsum & More',
+    title: 'Text Generator | Free Lorem Ipsum Generator',
   },
   {
     path: 'line-tools',
     loadComponent: () =>
       import('./components/line-tools/line-tools.component').then(m => m.LineToolsComponent),
-    title: 'Line Tools - List & Line Utilities',
+    title: 'Line Tools | Free Online Line Processing Utilities',
   },
 
   // JSON Tools
@@ -72,13 +72,13 @@ export const routes: Routes = [
       import('./components/json-formatter/json-formatter.component').then(
         m => m.JsonFormatterComponent
       ),
-    title: 'JSON Formatter - Format & Beautify JSON',
+    title: 'JSON Formatter | Free Online JSON Beautifier',
   },
   {
     path: 'json/parser',
     loadComponent: () =>
       import('./components/json-parser/json-parser.component').then(m => m.JsonParserComponent),
-    title: 'JSON Parser - Parse & Validate JSON',
+    title: 'JSON Parser | Free Online JSON Validator Tool',
   },
 
   // Code Formatters
@@ -86,7 +86,7 @@ export const routes: Routes = [
     path: 'js/formatter',
     loadComponent: () =>
       import('./components/js-formatter/js-formatter.component').then(m => m.JsFormatterComponent),
-    title: 'JavaScript Formatter - Format JS Code',
+    title: 'JavaScript Formatter | Free Online JS Beautifier',
   },
   {
     path: 'html/formatter',
@@ -94,7 +94,7 @@ export const routes: Routes = [
       import('./components/html-formatter/html-formatter.component').then(
         m => m.HtmlFormatterComponent
       ),
-    title: 'HTML Formatter - Format & Beautify HTML',
+    title: 'HTML Formatter | Free Online HTML Beautifier',
   },
   {
     path: 'css/formatter',
@@ -102,7 +102,7 @@ export const routes: Routes = [
       import('./components/css-formatter/css-formatter.component').then(
         m => m.CssFormatterComponent
       ),
-    title: 'CSS Formatter - Format & Beautify CSS',
+    title: 'CSS Formatter | Free Online CSS Beautifier',
   },
   {
     path: 'sql/formatter',
@@ -110,7 +110,7 @@ export const routes: Routes = [
       import('./components/sql-formatter/sql-formatter.component').then(
         m => m.SqlFormatterComponent
       ),
-    title: 'SQL Formatter - Format SQL Queries',
+    title: 'SQL Formatter | Free Online SQL Beautifier',
   },
   {
     path: 'xml/formatter',
@@ -118,14 +118,14 @@ export const routes: Routes = [
       import('./components/xml-formatter/xml-formatter.component').then(
         m => m.XmlFormatterComponent
       ),
-    title: 'XML Formatter - Format & Beautify XML',
+    title: 'XML Formatter | Free Online XML Beautifier',
   },
 
   // Blog
   {
     path: 'blog',
     loadComponent: () => import('./components/blog/blog').then(m => m.Blog),
-    title: 'Blog - Text Converter Tips & Guides',
+    title: 'Text Converter Blog | Tips & Guides',
   },
 
   // Blog Posts
@@ -135,7 +135,7 @@ export const routes: Routes = [
       import('./components/blog-posts/case-conversion-guide/case-conversion-guide.component').then(
         m => m.CaseConversionGuideComponent
       ),
-    title: 'Case Conversion Guide - Complete Tutorial',
+    title: 'Case Conversion Guide | Complete Tutorial',
   },
   {
     path: 'blog/case-conversion-best-practices-when-how-use-different-case-styles',
@@ -143,7 +143,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/case-conversion-best-practices/case-conversion-best-practices.component'
       ).then(m => m.CaseConversionBestPracticesComponent),
-    title: 'Case Conversion Best Practices',
+    title: 'Case Conversion Best Practices | Guide',
   },
   {
     path: 'blog/json-formatting-complete-guide',
@@ -151,7 +151,7 @@ export const routes: Routes = [
       import('./components/blog-posts/json-formatting-guide/json-formatting-guide.component').then(
         m => m.JsonFormattingGuideComponent
       ),
-    title: 'JSON Formatting Guide',
+    title: 'JSON Formatting Guide | Complete Tutorial',
   },
   {
     path: 'blog/json-validation-developer-guide',
@@ -159,7 +159,7 @@ export const routes: Routes = [
       import('./components/blog-posts/json-validation-guide/json-validation-guide.component').then(
         m => m.JsonValidationGuideComponent
       ),
-    title: 'JSON Validation Guide',
+    title: 'JSON Validation Guide | Developer Tutorial',
   },
   {
     path: 'blog/json-performance-optimization',
@@ -167,7 +167,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/json-performance-optimization/json-performance-optimization.component'
       ).then(m => m.JsonPerformanceOptimizationComponent),
-    title: 'JSON Performance Optimization',
+    title: 'JSON Performance Optimization | Guide',
   },
   {
     path: 'blog/javascript-formatter-complete-guide',
@@ -175,7 +175,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/javascript-formatter-guide/javascript-formatter-guide.component'
       ).then(m => m.JavascriptFormatterGuideComponent),
-    title: 'JavaScript Formatter Guide',
+    title: 'JavaScript Formatter Guide | Complete Tutorial',
   },
   {
     path: 'blog/html-formatter-complete-guide',
@@ -183,7 +183,7 @@ export const routes: Routes = [
       import('./components/blog-posts/html-formatter-guide/html-formatter-guide.component').then(
         m => m.HtmlFormatterGuideComponent
       ),
-    title: 'HTML Formatter Guide',
+    title: 'HTML Formatter Guide | Complete Tutorial',
   },
   {
     path: 'blog/xml-best-practices-guide',
@@ -191,7 +191,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/xml-best-practices-guide/xml-best-practices-guide.component'
       ).then(m => m.XmlBestPracticesGuideComponent),
-    title: 'XML Best Practices Guide',
+    title: 'XML Best Practices Guide | Tutorial',
   },
   {
     path: 'blog/css-formatter-complete-guide',
@@ -199,7 +199,7 @@ export const routes: Routes = [
       import('./components/blog-posts/css-formatter-guide/css-formatter-guide.component').then(
         m => m.CssFormatterGuideComponent
       ),
-    title: 'CSS Formatter Guide',
+    title: 'CSS Formatter Guide | Complete Tutorial',
   },
   {
     path: 'blog/sql-formatter-guide',
@@ -207,7 +207,7 @@ export const routes: Routes = [
       import('./components/blog-posts/sql-formatter-guide/sql-formatter-guide.component').then(
         m => m.SqlFormatterGuideComponent
       ),
-    title: 'SQL Formatter Guide',
+    title: 'SQL Formatter Guide | Complete Tutorial',
   },
   {
     path: 'blog/programming-case-conventions-camelcase-vs-snake-case',
@@ -215,7 +215,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/programming-conventions/programming-conventions.component'
       ).then(m => m.ProgrammingConventionsComponent),
-    title: 'Programming Conventions Guide',
+    title: 'Programming Conventions | Case Styles Guide',
   },
   {
     path: 'blog/text-analysis-beyond-case-conversion',
@@ -223,7 +223,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/text-analysis-beyond-case-conversion/text-analysis-beyond-case-conversion.component'
       ).then(m => m.TextAnalysisBeyondCaseConversionComponent),
-    title: 'Text Analysis Beyond Case Conversion',
+    title: 'Text Analysis Guide | Beyond Case Conversion',
   },
   {
     path: 'blog/technical-documentation-case-conversion',
@@ -231,7 +231,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/technical-documentation-case-conversion/technical-documentation-case-conversion.component'
       ).then(m => m.TechnicalDocumentationCaseConversionComponent),
-    title: 'Technical Documentation Case Conversion',
+    title: 'Technical Documentation | Case Conversion',
   },
   {
     path: 'blog/social-media-case-conversion',
@@ -239,7 +239,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/social-media-case-conversion/social-media-case-conversion.component'
       ).then(m => m.SocialMediaCaseConversionComponent),
-    title: 'Social Media Case Conversion',
+    title: 'Social Media | Case Conversion Guide',
   },
   {
     path: 'blog/email-marketing-case-conversion',
@@ -247,7 +247,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/email-marketing-case-conversion/email-marketing-case-conversion.component'
       ).then(m => m.EmailMarketingCaseConversionComponent),
-    title: 'Email Marketing Case Conversion',
+    title: 'Email Marketing | Case Conversion Guide',
   },
   {
     path: 'blog/ecommerce-case-conversion',
@@ -255,7 +255,7 @@ export const routes: Routes = [
       import(
         './components/blog-posts/ecommerce-case-conversion/ecommerce-case-conversion.component'
       ).then(m => m.EcommerceCaseConversionComponent),
-    title: 'E-commerce Case Conversion',
+    title: 'E-commerce | Case Conversion Guide',
   },
   {
     path: 'blog/cms-case-conversion',
@@ -263,13 +263,13 @@ export const routes: Routes = [
       import('./components/blog-posts/cms-case-conversion/cms-case-conversion.component').then(
         m => m.CmsCaseConversionComponent
       ),
-    title: 'CMS Case Conversion',
+    title: 'CMS | Case Conversion Guide',
   },
   {
     path: 'blog/seo-best-practices-title-case-vs-sentence-case',
     loadComponent: () =>
       import('./components/blog-posts/seo-blog/seo-blog.component').then(m => m.SeoBlogComponent),
-    title: 'SEO Best Practices',
+    title: 'SEO Best Practices | Title Case vs Sentence',
   },
   {
     path: 'blog/accessibility-best-practices',
@@ -277,7 +277,7 @@ export const routes: Routes = [
       import('./components/blog-posts/accessibility-blog/accessibility-blog.component').then(
         m => m.AccessibilityBlogComponent
       ),
-    title: 'Accessibility Best Practices',
+    title: 'Accessibility Best Practices | Guide',
   },
 
   // Comparison Pages
@@ -287,7 +287,7 @@ export const routes: Routes = [
       import(
         './components/comparison-pages/best-case-converters-2024/best-case-converters-2024.component'
       ).then(m => m.BestCaseConverters2024Component),
-    title: 'Best Case Converters 2024 - Comparison',
+    title: 'Best Case Converters 2024 | Comparison',
   },
   {
     path: 'comparison/convertcase-net',
@@ -295,7 +295,7 @@ export const routes: Routes = [
       import(
         './components/comparison-pages/convertcase-net-comparison/convertcase-net-comparison.component'
       ).then(m => m.ConvertcaseNetComparisonComponent),
-    title: 'ConvertCase.net vs Smart Text Converter',
+    title: 'ConvertCase.net vs SmartTextConverter',
   },
   {
     path: 'comparison/caseconverter-org',
@@ -303,7 +303,7 @@ export const routes: Routes = [
       import(
         './components/comparison-pages/caseconverter-org-comparison/caseconverter-org-comparison.component'
       ).then(m => m.CaseconverterOrgComparisonComponent),
-    title: 'CaseConverter.org vs Smart Text Converter',
+    title: 'CaseConverter.org vs SmartTextConverter',
   },
   {
     path: 'comparison/textcase-org',
@@ -311,7 +311,7 @@ export const routes: Routes = [
       import(
         './components/comparison-pages/textcase-org-comparison/textcase-org-comparison.component'
       ).then(m => m.TextcaseOrgComparisonComponent),
-    title: 'TextCase.org vs Smart Text Converter',
+    title: 'TextCase.org vs SmartTextConverter',
   },
 
   // Landing Pages
@@ -321,7 +321,7 @@ export const routes: Routes = [
       import(
         './components/landing-pages/text-processing-landing/text-processing-landing.component'
       ).then(m => m.TextProcessingLandingComponent),
-    title: 'Text Processing Tools - Smart Text Converter',
+    title: 'Text Processing Tools | SmartTextConverter',
   },
   {
     path: 'landing/developer-tools',
@@ -329,7 +329,7 @@ export const routes: Routes = [
       import(
         './components/landing-pages/developer-tools-landing/developer-tools-landing.component'
       ).then(m => m.DeveloperToolsLandingComponent),
-    title: 'Developer Tools - Smart Text Converter',
+    title: 'Developer Tools | SmartTextConverter',
   },
   {
     path: 'landing/tools',
@@ -337,7 +337,7 @@ export const routes: Routes = [
       import('./components/landing-pages/tools-landing/tools-landing.component').then(
         m => m.ToolsLandingComponent
       ),
-    title: 'Free Online Text Tools',
+    title: 'Free Online Text Tools | SmartTextConverter',
   },
 
   // Legal & Info Pages
@@ -345,24 +345,24 @@ export const routes: Routes = [
     path: 'privacy',
     loadComponent: () =>
       import('./components/privacy/privacy.component').then(m => m.PrivacyComponent),
-    title: 'Privacy Policy - Smart Text Converter',
+    title: 'Privacy Policy | SmartTextConverter',
   },
   {
     path: 'terms',
     loadComponent: () => import('./components/terms/terms.component').then(m => m.TermsComponent),
-    title: 'Terms of Service - Smart Text Converter',
+    title: 'Terms of Service | SmartTextConverter',
   },
   {
     path: 'contact',
     loadComponent: () =>
       import('./components/contact/contact.component').then(m => m.ContactComponent),
-    title: 'Contact Us - Smart Text Converter',
+    title: 'Contact Us | SmartTextConverter',
   },
 
   // Wildcard route - 404 (no redirect to avoid SEO issues)
   {
     path: '**',
     loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
-    title: 'Page Not Found - SmartTextConverter',
+    title: 'Page Not Found | SmartTextConverter',
   },
 ];

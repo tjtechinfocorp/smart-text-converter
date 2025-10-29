@@ -25,6 +25,7 @@ import { UserExperienceSignalsService } from './services/user-experience-signals
 import { GoogleAnalyticsService } from './services/google-analytics.service';
 import { SEOAuditService } from './services/seo-audit.service';
 import { TranslationService } from './services/translation.service';
+import { RouteSEOService } from './services/route-seo.service';
 import { PerformanceMonitorComponent } from './components/performance-monitor/performance-monitor.component';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
@@ -55,6 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     @Optional() private googleAnalytics: GoogleAnalyticsService,
     @Optional() private seoAuditService: SEOAuditService,
     @Optional() private translationService: TranslationService,
+    @Optional() private routeSEOService: RouteSEOService,
     private router: Router,
     private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -102,6 +104,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // Only run browser-specific services on the client
     if (isPlatformBrowser(this.platformId)) {
+      // Initialize route-based SEO service
+      if (this.routeSEOService) {
+        this.routeSEOService.ngOnInit();
+      }
+
       // Defer heavy initializations to improve TTFB and initial render
       this.initializeCriticalServices();
       this.deferNonCriticalServices();

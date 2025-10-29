@@ -36,9 +36,6 @@ export class SwRegistrationService {
         const response = await fetch('/sw.js', { method: 'HEAD' });
         if (response.ok) {
           const registration = await navigator.serviceWorker.register('/sw.js');
-
-          console.log('✅ Service Worker registered successfully (Production)');
-
           // Handle updates
           registration.addEventListener('updatefound', () => {
             const newWorker = registration.installing;
