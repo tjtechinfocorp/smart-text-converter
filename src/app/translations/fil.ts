@@ -355,9 +355,6 @@ export const fil = {
   'json-parser.download-result': 'I-download ang Resulta',
   'json-parser.user-friendly': 'User-Friendly na Interface',
   'json-parser.faq-title': 'Mga Madalas Itanong',
-  'json-parser.faq-1-question': 'Ano ang pagkakaiba sa pagitan ng JSON parser at formatter?',
-  'json-parser.faq-1-answer':
-    'Ang JSON formatter ay nakatuon sa pag-beautify at pag-format ng JSON data, habang ang JSON parser ay nag-aanalyze ng structure, nag-validate ng syntax, at nagbibigay ng detailed insights tungkol sa data.',
   'json-parser.faq-2-question': 'Maaari ba akong mag-parse ng malalaking JSON files?',
   'json-parser.faq-2-answer':
     'Oo, ang aming JSON parser ay maaaring mag-handle ng malalaking JSON files nang efficiently. Nagbibigay ito ng real-time analysis at detailed statistics tungkol sa inyong data structure.',

@@ -352,9 +352,6 @@ export const ur = {
   'json-parser.download-result': 'نتیجہ ڈاؤن لوڈ کریں',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'اکثر پوچھے جانے والے سوالات',
-  'json-parser.faq-1-question': 'JSON پارسر اور فارمیٹر میں کیا فرق ہے؟',
-  'json-parser.faq-1-answer':
-    'JSON فارمیٹر JSON ڈیٹا کو خوبصورت اور فارمیٹ کرنے پر توجہ دیتا ہے، جبکہ JSON پارسر ساخت کا تجزیہ کرتا ہے، سینٹیکس کو تصدیق کرتا ہے اور ڈیٹا کے بارے میں تفصیلی بصیرت فراہم کرتا ہے۔',
   'json-parser.faq-2-question': 'کیا میں بڑی JSON فائلز پارس کر سکتا ہوں؟',
   'json-parser.faq-2-answer':
     'جی ہاں، ہمارا JSON پارسر بڑی JSON فائلز کو مؤثر طریقے سے ہینڈل کر سکتا ہے۔ یہ آپ کی ڈیٹا کی ساخت کے بارے میں ریئل ٹائم تجزیہ اور تفصیلی اعداد و شمار فراہم کرتا ہے۔',

@@ -340,9 +340,6 @@ export const zh = {
   'json-parser.download-result': '下载结果',
   'json-parser.user-friendly': '用户友好界面',
   'json-parser.faq-title': '常见问题',
-  'json-parser.faq-1-question': 'JSON 解析器和格式化器有什么区别？',
-  'json-parser.faq-1-answer':
-    'JSON格式化器专注于美化和格式化JSON数据，而JSON解析器分析结构、验证语法并提供关于数据的详细洞察。',
   'json-parser.faq-2-question': '我可以解析大型 JSON 文件吗？',
   'json-parser.faq-2-answer':
     '是的，我们的JSON解析器可以高效处理大型JSON文件。它提供实时分析和关于您数据结构的详细统计信息。',

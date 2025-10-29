@@ -345,9 +345,6 @@ export const ar = {
   'json-parser.download-result': 'تحميل النتيجة',
   'json-parser.user-friendly': 'واجهة سهلة الاستخدام',
   'json-parser.faq-title': 'الأسئلة الشائعة',
-  'json-parser.faq-1-question': 'ما الفرق بين محلل JSON ومنسق JSON؟',
-  'json-parser.faq-1-answer':
-    'يركز منسق JSON على تجميل وتنسيق بيانات JSON، بينما يحلل محلل JSON البنية ويقوم بالتحقق من صحة بناء الجملة ويوفر رؤى مفصلة حول البيانات.',
   'json-parser.faq-2-question': 'هل يمكنني تحليل ملفات JSON كبيرة؟',
   'json-parser.faq-2-answer':
     'نعم، يمكن لمحلل JSON الخاص بنا التعامل مع ملفات JSON كبيرة بكفاءة. يوفر تحليلاً في الوقت الفعلي وإحصائيات مفصلة حول بنية البيانات الخاصة بك.',

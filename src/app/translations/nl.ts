@@ -352,9 +352,6 @@ export const nl = {
   'json-parser.download-result': 'Download Resultaat',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Veelgestelde Vragen',
-  'json-parser.faq-1-question': 'Wat is het verschil tussen een JSON parser en formatter?',
-  'json-parser.faq-1-answer':
-    'Een JSON formatter richt zich op het verfraaien en formatteren van JSON-gegevens, terwijl een JSON parser de structuur analyseert, de syntaxis valideert en gedetailleerde inzichten over de gegevens biedt.',
   'json-parser.faq-2-question': 'Kan ik grote JSON-bestanden parsen?',
   'json-parser.faq-2-answer':
     'Ja, onze JSON parser kan grote JSON-bestanden efficiënt verwerken. Het biedt real-time analyse en gedetailleerde statistieken over je gegevensstructuur.',

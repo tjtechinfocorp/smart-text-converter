@@ -347,9 +347,6 @@ export const ja = {
   'json-parser.download-result': '結果をダウンロード',
   'json-parser.user-friendly': 'ユーザーフレンドリーなインターフェース',
   'json-parser.faq-title': 'よくある質問',
-  'json-parser.faq-1-question': 'JSON パーサーとフォーマッターの違いは何ですか？',
-  'json-parser.faq-1-answer':
-    'JSONフォーマッターはJSONデータの美化とフォーマットに焦点を当てますが、JSONパーサーは構造を分析し、構文を検証し、データに関する詳細な洞察を提供します。',
   'json-parser.faq-2-question': '大きな JSON ファイルを解析できますか？',
   'json-parser.faq-2-answer':
     'はい、当社のJSONパーサーは大きなJSONファイルを効率的に処理できます。データ構造に関するリアルタイム分析と詳細な統計を提供します。',

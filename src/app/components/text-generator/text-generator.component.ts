@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SEOService } from '../../services/seo.service';
 import { TranslationService } from '../../services/translation.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { TranslatedTextComponent } from '../translated-text/translated-text.component';
@@ -110,7 +109,6 @@ export class TextGeneratorComponent implements OnInit, AfterViewInit {
   constructor(
     private seoService: SEOService,
     public translationService: TranslationService,
-    private faqSchemaService: FAQSchemaService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -148,9 +146,6 @@ export class TextGeneratorComponent implements OnInit, AfterViewInit {
 
     // Add structured data for text generator page
     this.addStructuredData();
-
-    // Add FAQ schema markup
-    this.faqSchemaService.addFAQSchemaToPage('text-generator');
   }
 
   private addStructuredData() {

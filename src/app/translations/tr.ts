@@ -354,9 +354,6 @@ export const tr = {
   'json-parser.download-result': 'Sonucu İndir',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Sık Sorulan Sorular',
-  'json-parser.faq-1-question': 'JSON parser ile formatter arasındaki fark nedir?',
-  'json-parser.faq-1-answer':
-    'JSON formatter, JSON verilerini güzelleştirmeye ve formatlamaya odaklanırken, JSON parser yapıyı analiz eder, sözdizimini doğrular ve veriler hakkında ayrıntılı bilgiler sağlar.',
   'json-parser.faq-2-question': 'Büyük JSON dosyalarını ayrıştırabilir miyim?',
   'json-parser.faq-2-answer':
     'Evet, JSON parserımız büyük JSON dosyalarını verimli bir şekilde işleyebilir. Veri yapınız hakkında gerçek zamanlı analiz ve ayrıntılı istatistikler sağlar.',

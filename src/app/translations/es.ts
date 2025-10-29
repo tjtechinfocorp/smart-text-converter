@@ -356,9 +356,6 @@ export const es = {
   'json-parser.download-result': 'Descargar Resultado',
   'json-parser.user-friendly': 'Interfaz Amigable',
   'json-parser.faq-title': 'Preguntas Frecuentes',
-  'json-parser.faq-1-question': '¿Cuál es la diferencia entre un analizador JSON y un formateador?',
-  'json-parser.faq-1-answer':
-    'Un formateador JSON se enfoca en embellecer y formatear datos JSON, mientras que un analizador JSON analiza la estructura, valida la sintaxis y proporciona información detallada sobre los datos.',
   'json-parser.faq-2-question': '¿Puedo analizar archivos JSON grandes?',
   'json-parser.faq-2-answer':
     'Sí, nuestro analizador JSON puede manejar archivos JSON grandes de manera eficiente. Proporciona análisis en tiempo real y estadísticas detalladas sobre la estructura de tus datos.',

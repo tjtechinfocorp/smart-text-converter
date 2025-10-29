@@ -354,9 +354,6 @@ export const pl = {
   'json-parser.download-result': 'Pobierz Wynik',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Często Zadawane Pytania',
-  'json-parser.faq-1-question': 'Jaka jest różnica między parserem JSON a formatorem?',
-  'json-parser.faq-1-answer':
-    'Formator JSON koncentruje się na upiększaniu i formatowaniu danych JSON, podczas gdy parser JSON analizuje strukturę, weryfikuje składnię i dostarcza szczegółowe informacje o danych.',
   'json-parser.faq-2-question': 'Czy mogę parsować duże pliki JSON?',
   'json-parser.faq-2-answer':
     'Tak, nasz parser JSON może efektywnie obsługiwać duże pliki JSON. Zapewnia analizę w czasie rzeczywistym i szczegółowe statystyki o strukturze Twoich danych.',

@@ -353,9 +353,6 @@ export const sw = {
   'json-parser.download-result': 'Pakua Matokeo',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Maswali Yanayoulizwa Mara Nyingi',
-  'json-parser.faq-1-question': 'Tofauti gani kati ya parser ya JSON na mfumo wa kuunda?',
-  'json-parser.faq-1-answer':
-    'Mfumo wa kuunda JSON unalenga kukuboresha na kuunda data za JSON, wakati parser ya JSON inachanganua muundo, inathibitisha sintaksia, na inatoa maarifa ya kina kuhusu data.',
   'json-parser.faq-2-question': 'Je, naweza kuchanganua faili kubwa za JSON?',
   'json-parser.faq-2-answer':
     'Ndiyo, parser yetu ya JSON inaweza kushughulikia faili kubwa za JSON kwa ufanisi. Inatoa uchanganuzi wa wakati halisi na takwimu za kina kuhusu muundo wa data yako.',

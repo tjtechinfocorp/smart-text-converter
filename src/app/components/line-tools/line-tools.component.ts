@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SEOService } from '../../services/seo.service';
 import { TranslationService } from '../../services/translation.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 import { TextStatistics } from '../text-statistics/text-statistics';
 import { TranslatedTextComponent } from '../translated-text/translated-text.component';
 import { FAQDisplayComponent } from '../faq-display/faq-display.component';
@@ -91,7 +90,6 @@ export class LineToolsComponent implements OnInit, AfterViewInit {
   constructor(
     private seoService: SEOService,
     public translationService: TranslationService,
-    private faqSchemaService: FAQSchemaService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -106,8 +104,6 @@ export class LineToolsComponent implements OnInit, AfterViewInit {
     );
     this.seoService.setCanonicalURL('https://smarttextconverter.com/line-tools');
 
-    // Add FAQ schema markup
-    this.faqSchemaService.addFAQSchemaToPage('line-tools');
 
     this.seoService.setOpenGraphTags({
       title: 'line Tools — Free Online Line Utilities',

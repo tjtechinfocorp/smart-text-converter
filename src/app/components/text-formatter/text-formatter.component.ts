@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SEOService } from '../../services/seo.service';
 import { TranslationService } from '../../services/translation.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { TextStatistics } from '../text-statistics/text-statistics';
@@ -91,7 +90,6 @@ export class TextFormatterComponent implements OnInit, AfterViewInit {
   constructor(
     private seoService: SEOService,
     public translationService: TranslationService,
-    private faqSchemaService: FAQSchemaService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -106,8 +104,6 @@ export class TextFormatterComponent implements OnInit, AfterViewInit {
     );
     this.seoService.setCanonicalURL('https://smarttextconverter.com/text-formatter');
 
-    // Add FAQ schema markup
-    this.faqSchemaService.addFAQSchemaToPage('text-formatter');
 
     this.seoService.setOpenGraphTags({
       title: 'Text Formatter — Free Online Text Formatting Tool',

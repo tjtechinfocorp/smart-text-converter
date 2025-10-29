@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SEOService } from '../../services/seo.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 import { TranslatedTextComponent } from '../translated-text/translated-text.component';
 import { FAQDisplayComponent } from '../faq-display/faq-display.component';
 import { createJSONEditor, Mode } from 'vanilla-jsoneditor';
@@ -59,18 +58,11 @@ export class JsonParserComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }`;
 
-  constructor(
-    private seoService: SEOService,
-    private faqSchemaService: FAQSchemaService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  constructor(private seoService: SEOService, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     this.setSEO();
     this.addStructuredData();
-
-    // Add FAQ schema markup
-    this.faqSchemaService.addFAQSchemaToPage('json-parser');
 
     this.loadSampleJson();
     this.addKeyboardShortcuts();

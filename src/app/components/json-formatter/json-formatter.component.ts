@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SEOService } from '../../services/seo.service';
 import { JsonUtilityService, JsonFormatOptions } from '../../services/json-utility.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 import { TranslatedTextComponent } from '../translated-text/translated-text.component';
 import { FAQDisplayComponent } from '../faq-display/faq-display.component';
 import { createJSONEditor, Mode } from 'vanilla-jsoneditor';
@@ -62,7 +61,6 @@ export class JsonFormatterComponent implements OnInit, OnDestroy, AfterViewInit 
   constructor(
     private seoService: SEOService,
     private jsonUtilityService: JsonUtilityService,
-    private faqSchemaService: FAQSchemaService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -74,8 +72,6 @@ export class JsonFormatterComponent implements OnInit, OnDestroy, AfterViewInit 
     this.setSEO();
     this.addStructuredData();
 
-    // Add FAQ schema markup
-    this.faqSchemaService.addFAQSchemaToPage('json-formatter');
 
     // Load sample JSON on first visit
     if (!this.jsonInput) {

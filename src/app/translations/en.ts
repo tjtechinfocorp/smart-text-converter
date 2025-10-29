@@ -362,9 +362,6 @@ export const en = {
   'json-parser.download-result': 'Download Result',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Frequently Asked Questions',
-  'json-parser.faq-1-question': 'What is the difference between a JSON parser and formatter?',
-  'json-parser.faq-1-answer':
-    'A JSON formatter focuses on beautifying and formatting JSON data, while a JSON parser analyzes the structure, validates syntax, and provides detailed insights about the data.',
   'json-parser.faq-2-question': 'Can I parse large JSON files?',
   'json-parser.faq-2-answer':
     'Yes, our JSON parser can handle large JSON files efficiently. It provides real-time analysis and detailed statistics about your data structure.',

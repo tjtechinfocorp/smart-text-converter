@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslatedTextComponent } from '../translated-text/translated-text.component';
 import { SEOService } from '../../services/seo.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 
 interface SqlFormatOptions {
   indentSize: number;
@@ -67,14 +66,12 @@ export class SqlFormatterComponent implements OnInit {
 
   constructor(
     private seoService: SEOService,
-    private faqSchemaService: FAQSchemaService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
     this.setSEO();
     this.addStructuredData();
-    this.faqSchemaService.addFAQSchemaToPage('sql-formatter');
   }
 
   private setSEO(): void {

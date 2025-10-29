@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SEOService } from '../../services/seo.service';
 import { TranslationService } from '../../services/translation.service';
-import { FAQSchemaService } from '../../services/faq-schema.service';
 import { TextStatistics } from '../text-statistics/text-statistics';
 import { TranslatedTextComponent } from '../translated-text/translated-text.component';
 import { FAQDisplayComponent } from '../faq-display/faq-display.component';
@@ -108,7 +107,6 @@ export class EncodeDecodeComponent implements OnInit, AfterViewInit {
   constructor(
     private seoService: SEOService,
     public translationService: TranslationService,
-    private faqSchemaService: FAQSchemaService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -143,8 +141,6 @@ export class EncodeDecodeComponent implements OnInit, AfterViewInit {
     // Add structured data for encode/decode page
     this.addStructuredData();
 
-    // Add FAQ schema markup
-    this.faqSchemaService.addFAQSchemaToPage('encode-decode');
   }
 
   private addStructuredData() {

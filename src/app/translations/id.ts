@@ -334,9 +334,6 @@ export const id = {
   'json-parser.download-result': 'Unduh Hasil',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Pertanyaan yang Sering Diajukan',
-  'json-parser.faq-1-question': 'Apa perbedaan antara parser JSON dan formatter?',
-  'json-parser.faq-1-answer':
-    'Formatter JSON fokus pada mempercantik dan memformat data JSON, sementara parser JSON menganalisis struktur, memvalidasi sintaks, dan memberikan wawasan detail tentang data.',
   'json-parser.faq-2-question': 'Bisakah saya memparse file JSON besar?',
   'json-parser.faq-2-answer':
     'Ya, parser JSON kami dapat menangani file JSON besar dengan efisien. Ini memberikan analisis real-time dan statistik detail tentang struktur data Anda.',

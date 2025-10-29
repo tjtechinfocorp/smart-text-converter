@@ -352,9 +352,6 @@ export const ru = {
   'json-parser.download-result': 'Download Result',
   'json-parser.user-friendly': 'User-Friendly Interface',
   'json-parser.faq-title': 'Frequently Asked Questions',
-  'json-parser.faq-1-question': 'В чем разница между JSON парсером и форматтером?',
-  'json-parser.faq-1-answer':
-    'JSON форматтер фокусируется на украшении и форматировании JSON данных, в то время как JSON парсер анализирует структуру, проверяет синтаксис и предоставляет подробную информацию о данных.',
   'json-parser.faq-2-question': 'Могу ли я парсить большие JSON файлы?',
   'json-parser.faq-2-answer':
     'Да, наш JSON парсер может эффективно обрабатывать большие JSON файлы. Он предоставляет анализ в реальном времени и подробную статистику о структуре ваших данных.',
