@@ -23,7 +23,12 @@ export class SEOAuditService {
     // Check for critical SEO issues
     this.checkTitleTag();
     this.checkMetaDescription();
-    this.checkCanonicalURL();
+
+    // Delay canonical URL check to allow dynamic SEO updates
+    setTimeout(() => {
+      this.checkCanonicalURL();
+    }, 100);
+
     this.checkStructuredData();
     this.checkImageAltTags();
     this.checkInternalLinks();
@@ -51,12 +56,17 @@ export class SEOAuditService {
   }
 
   private checkCanonicalURL(): void {
-    const canonical = this.meta.getTag('rel="canonical"')?.content;
+    // Check for canonical URL using multiple methods
+    const canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    const canonical = canonicalLink?.href;
+
     // Skip warning for localhost/development
     const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 
     if (!canonical && !isLocalhost) {
-      console.warn('⚠️ SEO Issue: Missing canonical URL');
+      console.warn('⚠️ SEO Issue: Missing canonical URL for route:', location.pathname);
+    } else if (canonical) {
+      console.log('✅ Canonical URL found:', canonical);
     }
   }
 
