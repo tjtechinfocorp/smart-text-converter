@@ -123,6 +123,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         return s;
       };
 
+      // Load Vercel Speed Insights
+      const speedInsights = loadScript('/_vercel/speed-insights/script.js');
+
+      // Load Vercel Analytics
       const vercel = loadScript('/_vercel/insights/script.js');
       vercel.onerror = () => {
         if (environment.cloudflareAnalyticsToken) {
