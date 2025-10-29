@@ -1,24 +1,2 @@
-# Handle SPA routing - serve index.html for all non-asset routes
-/case-converter    /index.html    200!
-/text-formatter    /index.html    200!
-/encode-decode     /index.html    200!
-/text-analyzer     /index.html    200!
-/text-generator    /index.html    200!
-/line-tools        /index.html    200!
-/json/formatter    /index.html    200!
-/json/parser       /index.html    200!
-/js/formatter      /index.html    200!
-/html/formatter    /index.html    200!
-/css/formatter     /index.html    200!
-/sql/formatter     /index.html    200!
-/xml/formatter     /index.html    200!
-/blog              /index.html    200!
-/blog/*            /index.html    200!
-/comparison/*      /index.html    200!
-/landing/*         /index.html    200!
-/privacy           /index.html    200!
-/terms             /index.html    200!
-/contact           /index.html    200!
-
-# Catch-all for any other routes
-/*                 /index.html    200!
+# SPA fallback - serve index.html for all routes
+/*    /index.html   200
