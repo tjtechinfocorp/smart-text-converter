@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>SmartTextConverter</title>
-  <base href="/" />
+  <title>SmartTextConverter - Redirecting...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Free online text converter and formatter" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -14,9 +13,6 @@
       font-family: system-ui, sans-serif;
       background-color: #f9fafb;
       color: #111827;
-    }
-
-    .loading {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -47,54 +43,15 @@
 </head>
 
 <body>
-  <app-root>
-    <div class="loading">
-      <div>
-        <div class="spinner"></div>
-        <h1>SmartTextConverter</h1>
-        <p>Loading your text conversion tools...</p>
-      </div>
-    </div>
-  </app-root>
+  <div>
+    <div class="spinner"></div>
+    <h1>SmartTextConverter</h1>
+    <p>Redirecting to home page...</p>
+  </div>
 
   <script>
-    // Load the main Angular app for SPA routing
-    (function () {
-      // Load the main app scripts and styles
-      const scripts = [
-        '/chunk-BWU4MLEA.js',
-        '/chunk-4OY7MPPR.js',
-        '/chunk-SXMHTT7O.js',
-        '/chunk-S6FFI24H.js',
-        '/chunk-S3PSAHFF.js',
-        '/chunk-DLF6QIKA.js',
-        '/chunk-NXML6DHV.js',
-        '/chunk-M5B6B2DY.js',
-        '/chunk-EQDQRRRY.js',
-        '/polyfills-B6TNHZQ6.js',
-        '/main-L4THVRZC.js'
-      ];
-
-      const styles = [
-        '/styles-LHHVGYM3.css'
-      ];
-
-      // Load styles
-      styles.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
-      });
-
-      // Load scripts
-      scripts.forEach((src, index) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.type = 'module';
-        document.head.appendChild(script);
-      });
-    })();
+    // Redirect to home page immediately
+    window.location.replace('/');
   </script>
 </body>
 
