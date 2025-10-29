@@ -8,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Free online text converter and formatter. Convert case, format text, encode/decode, analyze text. Supports 20 languages. No registration required." />
-  <meta name="keywords" content="text converter, case converter, uppercase, lowercase, title case, camelCase, snake_case, kebab-case, text formatter, Base64 encoder, URL encoder, HTML encoder, JSON formatter, XML formatter, JavaScript formatter, CSS formatter, SQL formatter, text analyzer, line tools, encode decode, online tools, free utilities, multi-language, international" />
+  <meta name="keywords"
+    content="text converter, case converter, uppercase, lowercase, title case, camelCase, snake_case, kebab-case, text formatter, Base64 encoder, URL encoder, HTML encoder, JSON formatter, XML formatter, JavaScript formatter, CSS formatter, SQL formatter, text analyzer, line tools, encode decode, online tools, free utilities, multi-language, international" />
 
   <!-- Critical SEO Meta Tags -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -231,7 +232,7 @@
   <!-- Enhanced OpenGraph Meta Tags -->
   <meta property="og:title" content="SmartTextConverter — Free Online Text Case Converter & Formatter" />
   <meta property="og:description"
-    content="Free online text converter and formatter. Convert text case, format text, encode/decode, analyze text, and more. Supports 20 languages. No registration required." />
+    content="Free online text converter and formatter. Convert case, format text, encode/decode, analyze text. Supports 20 languages. No registration required." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://smarttextconverter.com/" />
   <meta property="og:image" content="https://smarttextconverter.com/og-image.png" />
@@ -265,7 +266,7 @@
   <meta name="twitter:creator" content="@smarttextconverter" />
   <meta name="twitter:title" content="SmartTextConverter — Free Online Text Case Converter & Formatter" />
   <meta name="twitter:description"
-    content="Free online text converter and formatter. Convert text case, format text, encode/decode, analyze text, and more. Supports 20 languages. No registration required." />
+    content="Free online text converter and formatter. Convert case, format text, encode/decode, analyze text. Supports 20 languages. No registration required." />
   <meta name="twitter:image" content="https://smarttextconverter.com/og-image.png" />
   <meta name="twitter:image:alt" content="SmartTextConverter - Free Online Text Tools" />
   <meta name="twitter:domain" content="smarttextconverter.com" />
@@ -996,7 +997,8 @@
   <!-- Critical content for SEO - visible before JavaScript loads -->
   <div id="seo-content" style="display: none;">
     <h1>Free Text Converter & Formatter - SmartTextConverter</h1>
-    <p>Convert text case (uppercase, lowercase, title case, camelCase, snake_case, kebab-case), format text, encode/decode
+    <p>Convert text case (uppercase, lowercase, title case, camelCase, snake_case, kebab-case), format text,
+      encode/decode
       (Base64, URL, HTML), analyze text, and more. Supports 20 languages including English, Spanish, French, German,
       Italian, Portuguese, Russian, Chinese, Japanese, Arabic, Hindi, Bengali, Urdu, Indonesian, Turkish, Dutch, Polish,
       Kiswahili, and Filipino.</p>
@@ -1007,11 +1009,13 @@
         kebab-case</li>
       <li><strong>Text Formatter</strong> - Trim whitespace, collapse spaces, remove line breaks, normalize text</li>
       <li><strong>Line Tools</strong> - Sort lines, remove duplicates, number lines, reverse order, shuffle lines</li>
-      <li><strong>Encode/Decode</strong> - URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON encode</li>
+      <li><strong>Encode/Decode</strong> - URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON encode
+      </li>
       <li><strong>Text Analyzer</strong> - Analyze text, find and replace, word frequency, text statistics</li>
       <li><strong>Text Generator</strong> - Generate Lorem Ipsum, random text, UUIDs, extract emails and URLs</li>
       <li><strong>JSON Formatter</strong> - Format, validate, and beautify JSON data with syntax highlighting</li>
-      <li><strong>JSON Parser</strong> - Parse, analyze, and understand JSON data structure with detailed statistics</li>
+      <li><strong>JSON Parser</strong> - Parse, analyze, and understand JSON data structure with detailed statistics
+      </li>
       <li><strong>XML Formatter</strong> - Format, validate, and beautify XML documents</li>
       <li><strong>JavaScript Formatter</strong> - Format, beautify, minify, and validate JavaScript code</li>
       <li><strong>CSS Formatter</strong> - Format, beautify, minify, and validate CSS stylesheets</li>
@@ -1087,33 +1091,33 @@
   </app-root>
 
   <!-- All styles are now inlined - no render blocking CSS -->
-<!-- SEO Content Visibility Script -->
-<script>
-  // Show SEO content to search engines but hide from users
-  (function () {
-    const seoContent = document.getElementById('seo-content');
-    if (seoContent) {
-      // Check if it's a search engine bot
-      const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent) ||
-        /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator/i.test(navigator.userAgent);
+  <!-- SEO Content Visibility Script -->
+  <script>
+    // Show SEO content to search engines but hide from users
+    (function () {
+      const seoContent = document.getElementById('seo-content');
+      if (seoContent) {
+        // Check if it's a search engine bot
+        const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent) ||
+          /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator/i.test(navigator.userAgent);
 
-      if (isBot) {
-        seoContent.style.display = 'block';
-        seoContent.style.position = 'absolute';
-        seoContent.style.left = '-9999px';
-        seoContent.style.top = '-9999px';
-        seoContent.style.width = '1px';
-        seoContent.style.height = '1px';
-        seoContent.style.overflow = 'hidden';
-      } else {
-        // Hide from users after a short delay to ensure it's indexed
-        setTimeout(function () {
-          seoContent.style.display = 'none';
-        }, 1000);
+        if (isBot) {
+          seoContent.style.display = 'block';
+          seoContent.style.position = 'absolute';
+          seoContent.style.left = '-9999px';
+          seoContent.style.top = '-9999px';
+          seoContent.style.width = '1px';
+          seoContent.style.height = '1px';
+          seoContent.style.overflow = 'hidden';
+        } else {
+          // Hide from users after a short delay to ensure it's indexed
+          setTimeout(function () {
+            seoContent.style.display = 'none';
+          }, 1000);
+        }
       }
-    }
-  })();
-</script>
+    })();
+  </script>
 </body>
 
 </html>
