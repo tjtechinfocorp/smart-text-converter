@@ -49,10 +49,70 @@
     <p>Redirecting to home page...</p>
   </div>
 
-  <script>
-    // Redirect to home page immediately
-    window.location.replace('/');
-  </script>
+    <script>
+          // Only redirect if we're not already on the home page
+          if (window.location.pathname !== '/') {
+            // Check if this is a valid SPA route
+            const validRoutes = [
+              '/case-converter',
+              '/text-formatter',
+              '/encode-decode',
+              '/text-analyzer',
+              '/text-generator',
+              '/line-tools',
+              '/json/formatter',
+              '/json/parser',
+              '/js/formatter',
+              '/html/formatter',
+              '/css/formatter',
+              '/sql/formatter',
+              '/xml/formatter',
+              '/blog',
+              '/privacy',
+              '/terms',
+              '/contact'
+            ];
+
+            const currentPath = window.location.pathname;
+            const isValidRoute = validRoutes.some(route =>
+              currentPath === route || currentPath.startsWith(route + '/')
+            );
+
+            if (isValidRoute) {
+              // Load the main Angular app for SPA routing
+              const loadScript = (src) => {
+                return new Promise((resolve, reject) => {
+                  const script = document.createElement('script');
+                  script.src = src;
+                  script.type = 'module';
+                  script.onload = resolve;
+                  script.onerror = reject;
+                  document.head.appendChild(script);
+                });
+              };
+
+              const loadStyle = (href) => {
+                return new Promise((resolve, reject) => {
+                  const link = document.createElement('link');
+                  link.rel = 'stylesheet';
+                  link.href = href;
+                  link.onload = resolve;
+                  link.onerror = reject;
+                  document.head.appendChild(link);
+                });
+              };
+
+              // Load styles and scripts
+              loadStyle('/styles-LHHVGYM3.css')
+                .then(() => loadScript('/polyfills-B6TNHZQ6.js'))
+                .then(() => loadScript('/main-L4THVRZC.js'))
+                .catch(() => window.location.replace('/'));
+            } else {
+              // Invalid route, redirect to home
+              window.location.replace('/');
+          }
+        }
+</script>
 </body>
 
 </html>
