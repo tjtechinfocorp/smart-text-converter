@@ -65,8 +65,6 @@ export class SEOAuditService {
 
     if (!canonical && !isLocalhost) {
       console.warn('⚠️ SEO Issue: Missing canonical URL for route:', location.pathname);
-    } else if (canonical) {
-      console.log('✅ Canonical URL found:', canonical);
     }
   }
 

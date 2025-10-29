@@ -66,8 +66,6 @@ export class ResourcePreloadingService {
     criticalResources.forEach(resource => {
       this.preloadResource(resource);
     });
-
-    console.log(`🔄 Production mode: Preloaded ${criticalResources.length} critical resources`);
   }
 
   /**

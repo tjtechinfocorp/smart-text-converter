@@ -202,19 +202,6 @@
       }
     }
   </style>
-
-  <!-- Optimized resource hints for critical resources only -->
-  <script>
-    // Only preload critical resources in production mode
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-      // Note: Logo preloading removed as it's not used immediately after page load
-      // The logo loads with the header component after Angular initializes
-      console.log('🔄 Production mode: Critical resources optimized');
-    } else {
-      console.log('🔄 Development mode: Skipping production resource preloads');
-    }
-  </script>
-
   <!-- Critical font preloading with optimization -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />

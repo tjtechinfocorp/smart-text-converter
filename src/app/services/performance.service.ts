@@ -892,10 +892,6 @@ export class PerformanceService {
         timestamp: Date.now(),
       });
     }
-
-    if (!environment.production) {
-      console.log('📊 Advanced performance metrics collected');
-    }
   }
 
   /**
