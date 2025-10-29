@@ -1,6 +1,6 @@
 {
   "name": "smarttext-ssr",
-  "version": "2.0.1761755931245",
+  "version": "2.0.1761764245529",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -30,6 +30,7 @@
     "@cloudflare/kv-asset-handler": "^0.3.1",
     "@emailjs/browser": "^4.4.1",
     "@types/compression": "^1.8.1",
+    "@vercel/analytics": "^1.5.0",
     "compression": "^1.8.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",

@@ -112,6 +112,31 @@ export class AppComponent implements OnInit, AfterViewInit {
       // Defer heavy initializations to improve TTFB and initial render
       this.initializeCriticalServices();
       this.deferNonCriticalServices();
+
+      // Analytics: try Vercel Insights; fallback to Cloudflare Web Analytics if token provided
+      const loadScript = (src: string, attrs: Record<string, string> = {}) => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        Object.entries(attrs).forEach(([k, v]) => s.setAttribute(k, v));
+        document.head.appendChild(s);
+        return s;
+      };
+
+      const vercel = loadScript('/_vercel/insights/script.js');
+      vercel.onerror = () => {
+        if (environment.cloudflareAnalyticsToken) {
+          loadScript('https://static.cloudflareinsights.com/beacon.min.js', {
+            'data-cf-beacon': JSON.stringify({ token: environment.cloudflareAnalyticsToken }),
+          });
+        }
+      };
+      // Also load Cloudflare when token is provided (covers non-Vercel hosts without waiting for error)
+      if (environment.cloudflareAnalyticsToken) {
+        loadScript('https://static.cloudflareinsights.com/beacon.min.js', {
+          'data-cf-beacon': JSON.stringify({ token: environment.cloudflareAnalyticsToken }),
+        });
+      }
     }
 
     // Handle language parameter after initial render (non-blocking)
