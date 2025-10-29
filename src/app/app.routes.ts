@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  // Redirect /home to root
+  // Home route alias (no redirect to avoid SEO issues)
   {
     path: 'home',
-    redirectTo: '',
-    pathMatch: 'full',
+    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
+    title: 'Text Converter — Free Online Text Case Converter & Formatter',
   },
 
   // Home route (default) - Using test home page
@@ -359,10 +359,10 @@ export const routes: Routes = [
     title: 'Contact Us - Smart Text Converter',
   },
 
-  // Wildcard route - 404
+  // Wildcard route - 404 (no redirect to avoid SEO issues)
   {
     path: '**',
-    redirectTo: '',
-    pathMatch: 'full',
+    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
+    title: 'Page Not Found - SmartTextConverter',
   },
 ];
