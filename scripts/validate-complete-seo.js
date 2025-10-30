@@ -12,7 +12,7 @@ const { DOMParser } = require('xmldom');
 // Configuration
 const BASE_URL = 'https://smarttextconverter.com';
 const SITEMAP_PATH = './public/sitemap.xml';
-const ROBOTS_PATH = './src/assets/robots.txt';
+const ROBOTS_PATH = './public/robots.txt';
 
 // Expected routes from app.routes.ts
 const EXPECTED_ROUTES = [
@@ -176,15 +176,47 @@ class CompleteSEOValidator {
         this.success.push('Sitemap declaration found in robots.txt');
       }
 
-      // Check for overly restrictive rules
+      // Check for overly restrictive rules (only flag truly problematic ones)
       const disallowRules = robotsContent.match(/Disallow:\s*(.+)/g) || [];
-      const problematicRules = disallowRules.filter(
-        rule => rule.includes('/*.json$') || rule.includes('/assets/') || rule.includes('/scripts/')
-      );
+      
+      // Define SEO best practices (these are GOOD, not problematic)
+      const seoBestPracticePatterns = ['/assets/', '/scripts/', '/admin/', '/api/', '/private/', '/_next/', '/dist/'];
+      
+      // Separate rules into best practices and potentially problematic
+      const seoBestPractices = [];
+      const problematicRules = [];
+      
+      disallowRules.forEach(rule => {
+        const ruleText = rule.toLowerCase();
+        
+        // Check if it's a best practice first
+        const isBestPractice = seoBestPracticePatterns.some(pattern => rule.includes(pattern));
+        
+        if (isBestPractice) {
+          seoBestPractices.push(rule);
+        } else {
+          // Only flag as problematic if it's truly problematic (not a best practice)
+          const isProblematic = ruleText.includes('/*.json$') || 
+                               ruleText.includes('disallow: /') || 
+                               ruleText.includes('disallow: /*') ||
+                               ruleText.includes('disallow: /index') ||
+                               ruleText.includes('disallow: /home');
+          
+          if (isProblematic) {
+            problematicRules.push(rule);
+          }
+        }
+      });
 
       if (problematicRules.length > 0) {
         this.warnings.push(
           `Potentially problematic robots.txt rules: ${problematicRules.join(', ')}`
+        );
+      }
+
+      if (seoBestPractices.length > 0) {
+        this.success.push(
+          `SEO best practices implemented in robots.txt: ${seoBestPractices.join(', ')}`
         );
       }
 

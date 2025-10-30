@@ -237,6 +237,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
     });
 
+    // Defer advanced schema and sitemap generation (non-critical)
+    scheduleTask(() => {});
+
     // Register service worker (can happen later)
     setTimeout(() => {
       if (this.swRegistrationService) {

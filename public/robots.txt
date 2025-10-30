@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://smarttextconverter.com/sitemap.xml
+Sitemap: https://smarttextconverter.com/sitemap-index.xml
+Sitemap: https://smarttextconverter.com/sitemap-tools.xml
+Sitemap: https://smarttextconverter.com/sitemap-blog.xml
+Sitemap: https://smarttextconverter.com/sitemap-guides.xml
+Sitemap: https://smarttextconverter.com/sitemap-images.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /dist/
+Disallow: /scripts/
+
+# Allow important files
+Allow: /assets/
+Allow: /images/
+Allow: /videos/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.woff
+Allow: /*.woff2
+Allow: /*.ttf
+Allow: /*.eot
+
+# Host
+Host: https://smarttextconverter.com

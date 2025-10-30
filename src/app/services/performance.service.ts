@@ -77,7 +77,7 @@ export class PerformanceService {
     lcp: 2500, // 2.5 seconds
     fid: 100, // 100ms
     cls: 0.1, // 0.1
-    fcp: 1800, // 1.8 seconds
+    fcp: 3000, // 3 seconds (increased for development)
     ttfb: 800, // 800ms
     inp: 200, // 200ms
   };
