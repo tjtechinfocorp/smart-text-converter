@@ -123,23 +123,26 @@ export class AppComponent implements OnInit, AfterViewInit {
         return s;
       };
 
-      // Load Vercel Speed Insights
-      const speedInsights = loadScript('/_vercel/speed-insights/script.js');
+      // Only load third-party analytics in production to avoid dev server issues
+      if (environment.production) {
+        // Load Vercel Speed Insights
+        const speedInsights = loadScript('/_vercel/speed-insights/script.js');
 
-      // Load Vercel Analytics
-      const vercel = loadScript('/_vercel/insights/script.js');
-      vercel.onerror = () => {
+        // Load Vercel Analytics
+        const vercel = loadScript('/_vercel/insights/script.js');
+        vercel.onerror = () => {
+          if (environment.cloudflareAnalyticsToken) {
+            loadScript('https://static.cloudflareinsights.com/beacon.min.js', {
+              'data-cf-beacon': JSON.stringify({ token: environment.cloudflareAnalyticsToken }),
+            });
+          }
+        };
+        // Also load Cloudflare when token is provided (covers non-Vercel hosts without waiting for error)
         if (environment.cloudflareAnalyticsToken) {
           loadScript('https://static.cloudflareinsights.com/beacon.min.js', {
             'data-cf-beacon': JSON.stringify({ token: environment.cloudflareAnalyticsToken }),
           });
         }
-      };
-      // Also load Cloudflare when token is provided (covers non-Vercel hosts without waiting for error)
-      if (environment.cloudflareAnalyticsToken) {
-        loadScript('https://static.cloudflareinsights.com/beacon.min.js', {
-          'data-cf-beacon': JSON.stringify({ token: environment.cloudflareAnalyticsToken }),
-        });
       }
     }
 
