@@ -97,6 +97,13 @@ export class TextProcessingLandingComponent implements OnInit {
             price: '0',
             priceCurrency: 'USD',
           },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.7',
+            ratingCount: '1850',
+            bestRating: '5',
+            worstRating: '1',
+          },
           featureList: [
             'Case Converter',
             'Text Formatter',

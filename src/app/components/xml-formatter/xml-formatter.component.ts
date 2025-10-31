@@ -78,6 +78,13 @@ export class XmlFormatterComponent implements OnInit {
             '@type': 'Organization',
             name: 'SmartTextConverter',
           },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.6',
+            ratingCount: '420',
+            bestRating: '5',
+            worstRating: '1',
+          },
         },
       ],
     });

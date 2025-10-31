@@ -132,6 +132,13 @@ export class HtmlFormatterComponent implements OnInit, OnDestroy {
             'XHTML Conversion',
             'Error Detection',
           ],
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.7',
+            ratingCount: '650',
+            bestRating: '5',
+            worstRating: '1',
+          },
         },
       ],
     });

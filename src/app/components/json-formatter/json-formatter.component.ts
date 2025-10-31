@@ -623,6 +623,13 @@ export class JsonFormatterComponent implements OnInit, OnDestroy, AfterViewInit 
         'File Upload',
         'Copy to Clipboard',
       ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.7',
+        ratingCount: '1200',
+        bestRating: '5',
+        worstRating: '1',
+      },
     };
 
     if (isPlatformBrowser(this.platformId)) {

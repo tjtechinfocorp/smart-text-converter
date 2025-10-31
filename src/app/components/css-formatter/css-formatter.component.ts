@@ -181,6 +181,13 @@ export class CssFormatterComponent implements OnInit, OnDestroy {
         'Multi-language Support',
         'Free Online Tool',
       ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.6',
+        ratingCount: '510',
+        bestRating: '5',
+        worstRating: '1',
+      },
       screenshot: 'https://smarttextconverter.com/main-logo-80x80.png',
       softwareVersion: '2.0',
       datePublished: '2025-01-07',

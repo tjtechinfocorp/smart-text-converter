@@ -140,6 +140,13 @@ export class TextGeneratorComponent implements OnInit, AfterViewInit {
             price: '0',
             priceCurrency: 'USD',
           },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.6',
+            ratingCount: '423',
+            bestRating: '5',
+            worstRating: '1',
+          },
         },
       ],
     });

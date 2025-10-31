@@ -118,6 +118,13 @@ console.log("Total:", grandTotal);`;
             'ES6 Conversion',
             'Error Detection',
           ],
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.8',
+            ratingCount: '850',
+            bestRating: '5',
+            worstRating: '1',
+          },
         },
       ],
     });

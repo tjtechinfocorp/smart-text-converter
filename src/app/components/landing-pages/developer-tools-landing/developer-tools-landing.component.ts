@@ -80,6 +80,13 @@ export class DeveloperToolsLandingComponent implements OnInit {
             price: '0',
             priceCurrency: 'USD',
           },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.7',
+            ratingCount: '2150',
+            bestRating: '5',
+            worstRating: '1',
+          },
           featureList: [
             'JSON Formatter',
             'JSON Parser',

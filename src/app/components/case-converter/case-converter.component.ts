@@ -184,6 +184,13 @@ export class CaseConverterComponent implements OnInit, AfterViewInit {
             price: '0',
             priceCurrency: 'USD',
           },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.8',
+            ratingCount: '1250',
+            bestRating: '5',
+            worstRating: '1',
+          },
         },
       ],
     });
@@ -674,6 +681,8 @@ export class CaseConverterComponent implements OnInit, AfterViewInit {
           '@type': 'AggregateRating',
           ratingValue: '4.8',
           ratingCount: '1250',
+          bestRating: '5',
+          worstRating: '1',
         },
       };
 
