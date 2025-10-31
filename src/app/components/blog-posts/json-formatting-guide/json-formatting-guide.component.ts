@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { SEOService } from '../../../services/seo.service';
+import { BlogPostSchemaService } from '../../../services/blog-post-schema.service';
 
 @Component({
   selector: 'app-json-formatting-guide',
@@ -13,6 +14,7 @@ import { SEOService } from '../../../services/seo.service';
 export class JsonFormattingGuideComponent implements OnInit {
   constructor(
     private seoService: SEOService,
+    private blogPostSchemaService: BlogPostSchemaService,
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}

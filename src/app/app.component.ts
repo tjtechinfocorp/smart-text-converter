@@ -104,6 +104,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // Only run browser-specific services on the client
     if (isPlatformBrowser(this.platformId)) {
+      // Add global Organization, WebSite, SiteNavigationElement, and SearchAction schemas once
+      this.addGlobalSchemas();
       // Initialize route-based SEO service
       if (this.routeSEOService) {
         this.routeSEOService.ngOnInit();
@@ -149,6 +151,63 @@ export class AppComponent implements OnInit, AfterViewInit {
     // Handle language parameter after initial render (non-blocking)
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => this.handleLanguageParameter(), 0);
+    }
+  }
+
+  private addGlobalSchemas(): void {
+    try {
+      // Organization
+      this.seoService?.addStructuredData({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'SmartTextConverter',
+        url: 'https://smarttextconverter.com',
+        logo: 'https://smarttextconverter.com/main-logo-80x80.png',
+        sameAs: [
+          'https://twitter.com/SmartTextConvert',
+          'https://linkedin.com/company/smarttextconverter',
+          'https://github.com/SmartTextConverter',
+        ],
+      });
+
+      // WebSite with Sitelinks SearchBox
+      this.seoService?.addStructuredData({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'SmartTextConverter',
+        url: 'https://smarttextconverter.com',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://smarttextconverter.com/?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      });
+
+      // SiteNavigationElement
+      this.seoService?.addStructuredData({
+        '@context': 'https://schema.org',
+        '@type': 'SiteNavigationElement',
+        name: [
+          'Case Converter',
+          'Text Formatter',
+          'Encode/Decode',
+          'Text Analyzer',
+          'JSON Formatter',
+          'JSON Parser',
+          'Blog',
+        ],
+        url: [
+          'https://smarttextconverter.com/case-converter',
+          'https://smarttextconverter.com/text-formatter',
+          'https://smarttextconverter.com/encode-decode',
+          'https://smarttextconverter.com/text-analyzer',
+          'https://smarttextconverter.com/json/formatter',
+          'https://smarttextconverter.com/json/parser',
+          'https://smarttextconverter.com/blog',
+        ],
+      });
+    } catch {
+      // ignore
     }
   }
 

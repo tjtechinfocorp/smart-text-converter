@@ -197,8 +197,12 @@ export class SEOService {
     // Set HTML lang attribute
     this.document.documentElement.setAttribute('lang', data.locale || 'en');
 
-    // Set hreflang tags for multi-language support
-    if (data.alternateLocales) {
+    // Remove existing hreflang alternates to avoid duplicates
+    const existingAlternates = this.document.querySelectorAll('link[rel="alternate"][hreflang]');
+    existingAlternates.forEach(link => link.remove());
+
+    // If alternates provided explicitly, honor them; otherwise auto-generate for all supported languages
+    if (data.alternateLocales && Object.keys(data.alternateLocales).length > 0) {
       Object.entries(data.alternateLocales).forEach(([locale, url]) => {
         const link = this.document.createElement('link');
         link.setAttribute('rel', 'alternate');
@@ -206,6 +210,22 @@ export class SEOService {
         link.setAttribute('href', url);
         this.document.head.appendChild(link);
       });
+    } else {
+      const currentPath = this.router.url.split('?')[0];
+      this.supportedLanguages.forEach(lang => {
+        const href = lang === 'en' ? `${this.baseUrl}${currentPath}` : `${this.baseUrl}/${lang}${currentPath}`;
+        const link = this.document.createElement('link');
+        link.setAttribute('rel', 'alternate');
+        link.setAttribute('hreflang', lang);
+        link.setAttribute('href', href);
+        this.document.head.appendChild(link);
+      });
+      // x-default to English
+      const xDefault = this.document.createElement('link');
+      xDefault.setAttribute('rel', 'alternate');
+      xDefault.setAttribute('hreflang', 'x-default');
+      xDefault.setAttribute('href', `${this.baseUrl}${currentPath}`);
+      this.document.head.appendChild(xDefault);
     }
   }
 

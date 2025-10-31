@@ -1,26 +1,25 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://smarttextconverter.com/sitemap.xml
+# Primary sitemap index (references all sectional sitemaps)
 Sitemap: https://smarttextconverter.com/sitemap-index.xml
-Sitemap: https://smarttextconverter.com/sitemap-tools.xml
-Sitemap: https://smarttextconverter.com/sitemap-blog.xml
-Sitemap: https://smarttextconverter.com/sitemap-guides.xml
-Sitemap: https://smarttextconverter.com/sitemap-images.xml
+
+# Legacy sitemap (for backward compatibility)
+Sitemap: https://smarttextconverter.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
 
-# Disallow admin and private areas
+# Disallow admin, private, and development areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /dist/
 Disallow: /scripts/
+Disallow: /node_modules/
 
-# Allow important files
+# Allow important resources
 Allow: /assets/
 Allow: /images/
 Allow: /videos/
@@ -37,5 +36,5 @@ Allow: /*.woff2
 Allow: /*.ttf
 Allow: /*.eot
 
-# Host
+# Host (helps search engines identify preferred domain)
 Host: https://smarttextconverter.com

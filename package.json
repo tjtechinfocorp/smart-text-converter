@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "sitemaps:generate": "node scripts/generate-sitemaps.js",
     "build": "npm run update-version && npx ng build --configuration=production",
     "build:cloudflare": "npm run update-version && npx ng build --configuration=production --output-path=dist/cloudflare",
     "build:cloudflare-ssr": "npm run update-version && npx ng build --configuration=production --output-path=dist/cloudflare && npm run prepare:cloudflare-ssr",
