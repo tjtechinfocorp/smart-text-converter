@@ -442,6 +442,13 @@ export class XmlFormatterComponent implements OnInit {
           '@type': 'Audience',
           audienceType: 'Developers and data analysts',
         },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.6',
+          ratingCount: '420',
+          bestRating: '5',
+          worstRating: '1',
+        },
         keywords:
           'XML formatter, XML beautifier, XML validator, XML minifier, XML to HTML, XML to JSON, XML tools, online XML editor',
         screenshot: '/main-logo-80x80.png',
