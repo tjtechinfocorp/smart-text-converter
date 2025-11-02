@@ -123,7 +123,11 @@ export class TextGeneratorComponent implements OnInit, AfterViewInit {
       url: 'https://smarttextconverter.com/text-generator',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-26T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['text generator', 'text utilities', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/text-generator',
       structuredData: [

@@ -26,6 +26,7 @@ import { GoogleAnalyticsService } from './services/google-analytics.service';
 import { SEOAuditService } from './services/seo-audit.service';
 import { TranslationService } from './services/translation.service';
 import { RouteSEOService } from './services/route-seo.service';
+import { SEOValidationService } from './services/seo-validation.service';
 import { PerformanceMonitorComponent } from './components/performance-monitor/performance-monitor.component';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
@@ -57,6 +58,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     @Optional() private seoAuditService: SEOAuditService,
     @Optional() private translationService: TranslationService,
     @Optional() private routeSEOService: RouteSEOService,
+    @Optional() private seoValidationService: SEOValidationService,
     private router: Router,
     private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -72,6 +74,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     // Set default SEO with comprehensive data (only if service is available)
     // This is critical for SSR and should happen immediately
     if (this.seoService) {
+      // Detect initial language
+      const initialLang = this.detectInitialLanguage();
+
+      // Set HTML lang attribute immediately
+      if (isPlatformBrowser(this.platformId)) {
+        const htmlElement = document.documentElement;
+        htmlElement.setAttribute('lang', initialLang);
+      }
+
       this.seoService.updateSEO({
         title: 'SmartTextConverter - Free Online Text Tools',
         description:
@@ -80,8 +91,18 @@ export class AppComponent implements OnInit, AfterViewInit {
         url: 'https://smarttextconverter.com',
         type: 'website',
         image: '/main-logo-80x80.png',
-        author: 'SmartTextConverter',
-        locale: 'en',
+        author: 'SmartTextConverter Team',
+        publishedTime: '2024-01-01T00:00:00Z',
+        modifiedTime: new Date().toISOString(),
+        section: 'Text Processing Tools',
+        tags: [
+          'text converter',
+          'case converter',
+          'online tools',
+          'developer tools',
+          'text utilities',
+        ],
+        locale: initialLang,
         canonicalUrl: 'https://smarttextconverter.com',
         structuredData: [
           {
@@ -99,6 +120,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             },
           },
         ],
+        googleSiteVerification: environment.googleSiteVerification,
       });
     }
 
@@ -151,6 +173,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     // Handle language parameter after initial render (non-blocking)
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => this.handleLanguageParameter(), 0);
+
+      // Run SEO validation in development mode
+      if (!environment.production && this.seoValidationService) {
+        setTimeout(() => {
+          this.seoValidationService.logValidationReport();
+        }, 2000);
+      }
     }
   }
 
@@ -375,6 +404,11 @@ export class AppComponent implements OnInit, AfterViewInit {
               });
             }
 
+            // Update HTML lang attribute directly
+            if (isPlatformBrowser(this.platformId)) {
+              document.documentElement.setAttribute('lang', langParam);
+            }
+
             // Clean up the URL by removing the lang parameter
             // This prevents the parameter from staying in the URL after language switch
             // Preserve the current route by using the current URL without query parameters
@@ -392,6 +426,38 @@ export class AppComponent implements OnInit, AfterViewInit {
         }
       });
     }
+  }
+
+  /**
+   * Detect initial language from URL, query params, or default to 'en'
+   */
+  private detectInitialLanguage(): string {
+    if (!isPlatformBrowser(this.platformId)) {
+      return this.serverLanguageParam || 'en';
+    }
+
+    // Check query parameter first
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam && this.isValidLanguage(langParam)) {
+      return langParam;
+    }
+
+    // Check URL path (e.g., /es/case-converter)
+    const pathSegments = window.location.pathname.split('/').filter(s => s);
+    if (pathSegments.length > 0 && this.isValidLanguage(pathSegments[0])) {
+      return pathSegments[0];
+    }
+
+    // Check browser language
+    if (this.translationService) {
+      const browserLang = navigator.language.split('-')[0];
+      if (this.isValidLanguage(browserLang)) {
+        return browserLang;
+      }
+    }
+
+    return 'en';
   }
 
   /**

@@ -115,30 +115,22 @@ export class TextAnalyzerComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Set SEO meta tags for text analyzer page
-    this.seoService.setTitle('Text Analyzer — Free Online Text Analysis Tools');
-    this.seoService.setMetaDescription(
-      'Free online text analysis tools. Find and replace with regex, analyze word frequency, character count, and advanced text processing features.'
-    );
-    this.seoService.setMetaKeywords(
-      'text analyzer, text analysis, find replace, regex, word frequency, character frequency, remove punctuation, remove numbers, text manipulation tools'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/text-analyzer');
-
-    this.seoService.setOpenGraphTags({
+    this.seoService.updateSEO({
       title: 'Text Analyzer — Free Online Text Analysis Tools',
       description:
-        'Free online text analysis tools. Find and replace with regex, remove punctuation, analyze word frequency, character frequency, and more.',
-      type: 'website',
+        'Free online text analysis tools. Find and replace with regex, analyze word frequency, character count, and advanced text processing features.',
+      keywords:
+        'text analyzer, text analysis, find replace, regex, word frequency, character frequency, remove punctuation, remove numbers, text manipulation tools',
       url: 'https://smarttextconverter.com/text-analyzer',
+      type: 'website',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'Text Analyzer — Free Online Text Analysis Tools',
-      description:
-        'Free online text analysis tools. Find and replace with regex, remove punctuation, analyze word frequency, character frequency, and more.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['text analyzer', 'text analysis', 'find replace', 'regex', 'text utilities'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/text-analyzer',
     });
 
     // Add structured data for text analyzer page

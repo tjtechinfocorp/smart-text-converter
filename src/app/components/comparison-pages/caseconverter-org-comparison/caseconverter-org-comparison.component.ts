@@ -105,32 +105,22 @@ export class CaseconverterOrgComparisonComponent implements OnInit {
   }
 
   private setSEO(): void {
-    this.seoService.setTitle(
-      'SmartTextConverter vs CaseConverter.org: Complete Comparison 2024 | Which is Better?'
-    );
-    this.seoService.setMetaDescription(
-      'Detailed comparison of SmartTextConverter vs CaseConverter.org. Compare features, performance, languages, and user experience. See why SmartTextConverter is the better choice.'
-    );
-    this.seoService.setMetaKeywords(
-      'caseconverter.org vs smarttextconverter, case converter comparison, best case converter tool, caseconverter.org alternative, text case converter comparison, case converter features, case converter performance, multi language case converter, case converter review, case converter tool comparison'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/comparison/caseconverter-org');
-
-    this.seoService.setOpenGraphTags({
+    this.seoService.updateSEO({
       title: 'SmartTextConverter vs CaseConverter.org: Complete Comparison 2024 | Which is Better?',
       description:
         'Detailed comparison of SmartTextConverter vs CaseConverter.org. Compare features, performance, languages, and user experience. See why SmartTextConverter is the better choice.',
-      type: 'article',
+      keywords:
+        'caseconverter.org vs smarttextconverter, case converter comparison, best case converter tool, caseconverter.org alternative, text case converter comparison, case converter features, case converter performance, multi language case converter, case converter review, case converter tool comparison',
       url: 'https://smarttextconverter.com/comparison/caseconverter-org',
+      type: 'article',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'SmartTextConverter vs CaseConverter.org: Complete Comparison 2024 | Which is Better?',
-      description:
-        'Detailed comparison of SmartTextConverter vs CaseConverter.org. Compare features, performance, languages, and user experience. See why SmartTextConverter is the better choice.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2024-12-15T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Comparisons',
+      tags: ['case converter comparison', 'text case converter', 'tool comparison', 'caseconverter.org'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/comparison/caseconverter-org',
     });
   }
 

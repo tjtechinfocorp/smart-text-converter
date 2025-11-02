@@ -112,30 +112,22 @@ export class EncodeDecodeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Set SEO meta tags for encode/decode page
-    this.seoService.setTitle('Encode Decode — Free Online Character Encoding Tools');
-    this.seoService.setMetaDescription(
-      'Free online character encoding and decoding tools. URL encode/decode, Base64 encode/decode, HTML escape/unescape, and JSON escape. No registration required.'
-    );
-    this.seoService.setMetaKeywords(
-      'encode decode, character encoding, URL encode, Base64 encode, HTML escape, JSON escape, ASCII transliteration, Unicode normalization, text encoding tools, online utilities'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/encode-decode');
-
-    this.seoService.setOpenGraphTags({
+    this.seoService.updateSEO({
       title: 'Encode Decode — Free Online Character Encoding Tools',
       description:
-        'Free online character encoding and decoding tools. URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON escape, ASCII transliteration, Unicode normalization.',
-      type: 'website',
+        'Free online character encoding and decoding tools. URL encode/decode, Base64 encode/decode, HTML escape/unescape, and JSON escape. No registration required.',
+      keywords:
+        'encode decode, character encoding, URL encode, Base64 encode, HTML escape, JSON escape, ASCII transliteration, Unicode normalization, text encoding tools, online utilities',
       url: 'https://smarttextconverter.com/encode-decode',
+      type: 'website',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'Encode Decode — Free Online Character Encoding Tools',
-      description:
-        'Free online character encoding and decoding tools. URL encode/decode, Base64 encode/decode, HTML escape/unescape, JSON escape, ASCII transliteration, Unicode normalization.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-27T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['encode decode', 'character encoding', 'URL encode', 'Base64 encode', 'text encoding tools'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/encode-decode',
     });
 
     // Add structured data for encode/decode page

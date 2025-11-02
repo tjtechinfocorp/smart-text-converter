@@ -38,6 +38,8 @@ export class FAQDisplayComponent implements OnInit {
   ngOnInit(): void {
     if (this.toolName) {
       this.loadFAQItems();
+      // Add FAQ schema to page for SEO
+      this.faqSchemaService.addFAQSchemaToPage(this.toolName);
     }
   }
 

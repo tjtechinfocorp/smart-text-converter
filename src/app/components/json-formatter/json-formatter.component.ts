@@ -557,32 +557,22 @@ export class JsonFormatterComponent implements OnInit, OnDestroy, AfterViewInit 
    * Set SEO meta tags
    */
   private setSEO(): void {
-    this.seoService.setTitle(
-      'JSON Formatter & Validator - Free Online JSON Tool | SmartTextConverter'
-    );
-    this.seoService.setMetaDescription(
-      'Free online JSON formatter, validator, and beautifier. Format, validate, minify, and analyze JSON data instantly. No registration required.'
-    );
-    this.seoService.setMetaKeywords(
-      'JSON formatter, JSON validator, JSON beautifier, JSON minifier, JSON parser, JSON viewer, JSON editor, online JSON tool, JSON converter, JSON analyzer'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/json/formatter');
-
-    this.seoService.setOpenGraphTags({
-      title: 'JSON Formatter & Validator - Free Online JSON Tool',
+    this.seoService.updateSEO({
+      title: 'JSON Formatter & Validator - Free Online JSON Tool | SmartTextConverter',
       description:
-        'Format, validate, and beautify JSON data instantly. Professional JSON tool for developers.',
-      type: 'website',
+        'Free online JSON formatter, validator, and beautifier. Format, validate, minify, and analyze JSON data instantly. No registration required.',
+      keywords:
+        'JSON formatter, JSON validator, JSON beautifier, JSON minifier, JSON parser, JSON viewer, JSON editor, online JSON tool, JSON converter, JSON analyzer',
       url: 'https://smarttextconverter.com/json/formatter',
+      type: 'website',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'JSON Formatter & Validator - Free Online JSON Tool',
-      description:
-        'Format, validate, and beautify JSON data instantly. Professional JSON tool for developers.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['json formatter', 'json validator', 'json beautifier', 'developer tools'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/json/formatter',
     });
   }
 

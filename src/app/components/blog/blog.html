@@ -64,7 +64,7 @@
                 >
                   <!-- Use actual image if available, otherwise show placeholder -->
                   @if (post.image?.url) {
-                    <img [src]="post.image!.url" [alt]="post.image!.alt" class="w-full h-full object-cover" />
+                    <img [src]="post.image!.url" [alt]="post.image!.alt || post.title" class="w-full h-full object-cover" />
                   }
                   @if (!post.image?.url) {
                     <div class="text-center p-6">

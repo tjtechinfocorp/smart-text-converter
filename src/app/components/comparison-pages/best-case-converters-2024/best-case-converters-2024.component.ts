@@ -23,34 +23,22 @@ export class BestCaseConverters2024Component implements OnInit {
   }
 
   private setSEO(): void {
-    this.seoService.setTitle(
-      'Best Case Converter Tools 2024: Complete Comparison & Reviews | SmartTextConverter'
-    );
-    this.seoService.setMetaDescription(
-      'Discover the best case converter tools in 2024. Compare SmartTextConverter, CaseConverter.org, ConvertCase.net, and TextCase.org. Find the perfect text case converter for your needs.'
-    );
-    this.seoService.setMetaKeywords(
-      'best case converter tools 2024, case converter comparison, text case converter review, case converter tools ranking, best text formatting tools, case converter features comparison, text case converter performance, case converter user experience, case converter tool review, text formatting tools 2024'
-    );
-    this.seoService.setCanonicalURL(
-      'https://smarttextconverter.com/comparison/best-case-converters-2024'
-    );
-
-    this.seoService.setOpenGraphTags({
+    this.seoService.updateSEO({
       title: 'Best Case Converter Tools 2024: Complete Comparison & Reviews | SmartTextConverter',
       description:
         'Discover the best case converter tools in 2024. Compare SmartTextConverter, CaseConverter.org, ConvertCase.net, and TextCase.org. Find the perfect text case converter for your needs.',
-      type: 'article',
+      keywords:
+        'best case converter tools 2024, case converter comparison, text case converter review, case converter tools ranking, best text formatting tools, case converter features comparison, text case converter performance, case converter user experience, case converter tool review, text formatting tools 2024',
       url: 'https://smarttextconverter.com/comparison/best-case-converters-2024',
+      type: 'article',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'Best Case Converter Tools 2024: Complete Comparison & Reviews | SmartTextConverter',
-      description:
-        'Discover the best case converter tools in 2024. Compare SmartTextConverter, CaseConverter.org, ConvertCase.net, and TextCase.org. Find the perfect text case converter for your needs.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2024-12-15T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Comparisons',
+      tags: ['case converter comparison', 'best case converter', 'tool comparison', 'text case converter'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/comparison/best-case-converters-2024',
     });
   }
 

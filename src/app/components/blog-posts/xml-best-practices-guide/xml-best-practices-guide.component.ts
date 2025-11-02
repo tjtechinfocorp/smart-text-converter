@@ -53,7 +53,7 @@ import { CommonModule } from '@angular/common';
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                October 6, 2025
+                <time datetime="2025-10-06" pubdate>October 6, 2025</time>
               </div>
               <div class="flex items-center">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -263,7 +263,7 @@ import { CommonModule } from '@angular/common';
                 <div
                   class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
                 >
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-2">XML Declaration</h4>
+                  <div class="font-semibold text-gray-900 dark:text-white mb-2">XML Declaration</div>
                   <p class="text-sm text-gray-600 dark:text-gray-300">
                     Defines XML version and encoding
                   </p>
@@ -271,7 +271,7 @@ import { CommonModule } from '@angular/common';
                 <div
                   class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
                 >
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Root Element</h4>
+                  <div class="font-semibold text-gray-900 dark:text-white mb-2">Root Element</div>
                   <p class="text-sm text-gray-600 dark:text-gray-300">
                     Single top-level element containing all content
                   </p>
@@ -279,7 +279,7 @@ import { CommonModule } from '@angular/common';
                 <div
                   class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
                 >
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Child Elements</h4>
+                  <div class="font-semibold text-gray-900 dark:text-white mb-2">Child Elements</div>
                   <p class="text-sm text-gray-600 dark:text-gray-300">
                     Nested elements within the root
                   </p>
@@ -287,7 +287,7 @@ import { CommonModule } from '@angular/common';
                 <div
                   class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
                 >
-                  <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Attributes</h4>
+                  <div class="font-semibold text-gray-900 dark:text-white mb-2">Attributes</div>
                   <p class="text-sm text-gray-600 dark:text-gray-300">
                     Name-value pairs within element tags
                   </p>

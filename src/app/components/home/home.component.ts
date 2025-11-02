@@ -51,7 +51,11 @@ export class HomeComponent implements OnInit {
       url: 'https://smarttextconverter.com/',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2024-01-01T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['text converter', 'case converter', 'online tools', 'developer tools', 'text utilities'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/',
       structuredData: [

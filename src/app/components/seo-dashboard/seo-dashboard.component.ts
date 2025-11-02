@@ -93,7 +93,7 @@ import { PrivacyAnalyticsService } from '../../services/privacy-analytics.servic
 
             <!-- Issues -->
             <div *ngIf="result.issues.length > 0" class="mb-4">
-              <h5 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Issues:</h5>
+              <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Issues:</div>
               <div class="space-y-2">
                 <div *ngFor="let issue of result.issues.slice(0, 3)" class="flex items-start">
                   <div class="w-2 h-2 rounded-full mr-2 mt-2 flex-shrink-0 bg-red-500"></div>

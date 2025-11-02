@@ -167,7 +167,11 @@ export class CaseConverterComponent implements OnInit, AfterViewInit {
       url: 'https://smarttextconverter.com/case-converter',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2024-01-01T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['case converter', 'text converter', 'text utilities', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/case-converter',
       structuredData: [

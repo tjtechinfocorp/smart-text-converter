@@ -706,30 +706,22 @@ export class JsonParserComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private setSEO(): void {
-    this.seoService.setTitle('JSON Parser - Free Online JSON Parsing Tool | SmartTextConverter');
-    this.seoService.setMetaDescription(
-      'Free online JSON parser and analyzer. Parse, analyze, and understand JSON data structure instantly. Get detailed statistics and insights about your JSON data.'
-    );
-    this.seoService.setMetaKeywords(
-      'JSON parser, JSON analyzer, JSON statistics, JSON structure, JSON viewer, JSON editor, online JSON tool, JSON data analysis'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/json/parser');
-
-    this.seoService.setOpenGraphTags({
-      title: 'JSON Parser - Free Online JSON Parsing Tool',
+    this.seoService.updateSEO({
+      title: 'JSON Parser - Free Online JSON Parsing Tool | SmartTextConverter',
       description:
-        'Parse, analyze, and understand JSON data structure instantly. Professional JSON parsing tool for developers.',
-      type: 'website',
+        'Free online JSON parser and analyzer. Parse, analyze, and understand JSON data structure instantly. Get detailed statistics and insights about your JSON data.',
+      keywords:
+        'JSON parser, JSON analyzer, JSON statistics, JSON structure, JSON viewer, JSON editor, online JSON tool, JSON data analysis',
       url: 'https://smarttextconverter.com/json/parser',
+      type: 'website',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'JSON Parser - Free Online JSON Parsing Tool',
-      description:
-        'Parse, analyze, and understand JSON data structure instantly. Professional JSON parsing tool for developers.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['json parser', 'json analyzer', 'json statistics', 'developer tools'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/json/parser',
     });
   }
 

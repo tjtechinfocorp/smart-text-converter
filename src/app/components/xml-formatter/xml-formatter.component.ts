@@ -57,7 +57,11 @@ export class XmlFormatterComponent implements OnInit {
       url: 'https://smarttextconverter.com/xml-formatter',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['xml formatter', 'xml beautifier', 'xml validator', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/xml-formatter',
       structuredData: [

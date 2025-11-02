@@ -95,31 +95,22 @@ export class LineToolsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Set SEO meta tags for list tools page
-    this.seoService.setTitle('List Tools — Free Online Line & List Utilities');
-    this.seoService.setMetaDescription(
-      'Free online list and line utility tools. Sort lines, remove duplicates, number lines, reverse lines, shuffle lines, join/split text. No registration required.'
-    );
-    this.seoService.setMetaKeywords(
-      'list tools, line utilities, list utilities, sort lines, remove duplicates, number lines, reverse lines, shuffle lines, text tools, online utilities'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/line-tools');
-
-
-    this.seoService.setOpenGraphTags({
-      title: 'line Tools — Free Online Line Utilities',
-      description:
-        'Free online line utility tools. Sort lines, remove duplicates, number lines, reverse lines, shuffle lines, join/split text.',
-      type: 'website',
-      url: 'https://smarttextconverter.com/line-tools',
-      image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
+    this.seoService.updateSEO({
       title: 'List Tools — Free Online Line & List Utilities',
       description:
-        'Free online list and line utility tools. Sort lines, remove duplicates, number lines, reverse lines, shuffle lines, join/split text.',
+        'Free online list and line utility tools. Sort lines, remove duplicates, number lines, reverse lines, shuffle lines, join/split text. No registration required.',
+      keywords:
+        'list tools, line utilities, list utilities, sort lines, remove duplicates, number lines, reverse lines, shuffle lines, text tools, online utilities',
+      url: 'https://smarttextconverter.com/line-tools',
+      type: 'website',
       image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-27T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['list tools', 'line utilities', 'text tools', 'online utilities'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/line-tools',
     });
 
     // Add structured data for line tools page

@@ -75,16 +75,23 @@ export class SqlFormatterComponent implements OnInit {
   }
 
   private setSEO(): void {
-    this.seoService.setTitle(
-      'SQL Formatter — Free Online SQL Beautifier & Minifier | SmartTextConverter'
-    );
-    this.seoService.setMetaDescription(
-      'Professional SQL formatter, beautifier, minifier, and validator. Format SQL queries with syntax highlighting and error detection. Free online SQL formatter.'
-    );
-    this.seoService.setMetaKeywords(
-      'sql formatter, sql beautifier, sql minifier, sql validator, sql optimizer, sql linter, sql prettifier, sql code formatter, sql beautify, sql minify, sql validate, sql tools, sql development, sql editor, sql syntax, sql formatting, sql optimization, sql compression, sql tools online, free sql formatter, sql code editor, sql development tools'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/sql/formatter');
+    this.seoService.updateSEO({
+      title: 'SQL Formatter — Free Online SQL Beautifier & Minifier | SmartTextConverter',
+      description:
+        'Professional SQL formatter, beautifier, minifier, and validator. Format SQL queries with syntax highlighting and error detection. Free online SQL formatter.',
+      keywords:
+        'sql formatter, sql beautifier, sql minifier, sql validator, sql optimizer, sql linter, sql prettifier, sql code formatter, sql beautify, sql minify, sql validate, sql tools, sql development, sql editor, sql syntax, sql formatting, sql optimization, sql compression, sql tools online, free sql formatter, sql code editor, sql development tools',
+      url: 'https://smarttextconverter.com/sql/formatter',
+      type: 'website',
+      image: '/main-logo-80x80.png',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['sql formatter', 'sql beautifier', 'sql minifier', 'developer tools'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/sql/formatter',
+    });
 
     // Add additional meta tags for better SEO
     this.seoService['meta'].updateTag({

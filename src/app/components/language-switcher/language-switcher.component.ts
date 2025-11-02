@@ -45,6 +45,10 @@ export class LanguageSwitcherComponent implements OnInit {
       description: '',
       locale: language.code,
     });
+    // Also update HTML lang attribute directly
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('lang', language.code);
+    }
     this.isOpen.set(false);
   }
 

@@ -107,7 +107,11 @@ export class HtmlFormatterComponent implements OnInit, OnDestroy {
       url: 'https://smarttextconverter.com/html/formatter',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['html formatter', 'html beautifier', 'html minifier', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/html/formatter',
       structuredData: [
@@ -225,7 +229,7 @@ export class HtmlFormatterComponent implements OnInit, OnDestroy {
         <section id="home">
             <h2>Home Section</h2>
             <p>This is a sample HTML document for formatting.</p>
-            <img src="image.jpg" alt="Sample Image">
+            <img src="image.jpg" alt="Sample HTML image example">
         </section>
     </main>
     <footer>

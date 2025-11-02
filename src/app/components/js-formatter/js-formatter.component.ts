@@ -93,7 +93,11 @@ console.log("Total:", grandTotal);`;
       url: 'https://smarttextconverter.com/js/formatter',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['javascript formatter', 'js beautifier', 'js minifier', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/js/formatter',
       structuredData: [

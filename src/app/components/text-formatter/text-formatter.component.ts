@@ -94,32 +94,23 @@ export class TextFormatterComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    // Set SEO meta tags for text formatter page
-    this.seoService.setTitle('Text Formatter — Free Online Text Formatting Tool');
-    this.seoService.setMetaDescription(
-      'Free online text formatting tool. Trim whitespace, collapse spaces, remove line breaks, and normalize line endings. No registration required.'
-    );
-    this.seoService.setMetaKeywords(
-      'text formatter, whitespace formatter, trim whitespace, collapse spaces, line breaks, indent, tabs to spaces, text formatting tool, online formatter'
-    );
-    this.seoService.setCanonicalURL('https://smarttextconverter.com/text-formatter');
-
-
-    this.seoService.setOpenGraphTags({
+    // Set SEO meta tags for text formatter page with E-E-A-T signals
+    this.seoService.updateSEO({
       title: 'Text Formatter — Free Online Text Formatting Tool',
       description:
-        'Free online text formatting tool. Trim whitespace, collapse spaces, remove line breaks, normalize line endings, indent/unindent lines, convert tabs to spaces.',
-      type: 'website',
+        'Free online text formatting tool. Trim whitespace, collapse spaces, remove line breaks, and normalize line endings. No registration required.',
+      keywords:
+        'text formatter, whitespace formatter, trim whitespace, collapse spaces, line breaks, indent, tabs to spaces, text formatting tool, online formatter',
       url: 'https://smarttextconverter.com/text-formatter',
+      type: 'website',
       image: '/main-logo-80x80.png',
-    });
-
-    this.seoService.setTwitterCardTags({
-      title: 'Text Formatter — Free Online Text Formatting Tool',
-      description:
-        'Free online text formatting tool. Trim whitespace, collapse spaces, remove line breaks, normalize line endings, indent/unindent lines, convert tabs to spaces.',
-      image: '/main-logo-80x80.png',
-      card: 'summary_large_image',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-22T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Processing Tools',
+      tags: ['text formatter', 'text formatting', 'whitespace', 'text utilities'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/text-formatter',
     });
 
     // Add structured data for text formatter page

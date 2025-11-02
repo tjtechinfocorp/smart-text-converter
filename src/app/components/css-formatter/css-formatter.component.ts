@@ -113,7 +113,11 @@ export class CssFormatterComponent implements OnInit, OnDestroy {
       url: 'https://smarttextconverter.com/css/formatter',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Developer Tools',
+      tags: ['css formatter', 'css beautifier', 'css minifier', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/css/formatter',
     });

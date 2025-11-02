@@ -23,6 +23,7 @@ export interface SEOData {
   nofollow?: boolean;
   structuredData?: any[];
   card?: string;
+  googleSiteVerification?: string;
 }
 
 export interface MultilangSEOData {
@@ -92,6 +93,14 @@ export class SEOService {
 
     // Set robots meta tag
     this.setRobotsMetaTag(data.noindex, data.nofollow);
+
+    // Set E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness)
+    this.setEEATSignals(data);
+
+    // Set Google Search Console verification
+    if (data.googleSiteVerification) {
+      this.setGoogleSiteVerification(data.googleSiteVerification);
+    }
 
     // Add structured data
     if (data.structuredData) {
@@ -194,8 +203,16 @@ export class SEOService {
    * Set language tags
    */
   setLanguageTags(data: SEOData): void {
-    // Set HTML lang attribute
-    this.document.documentElement.setAttribute('lang', data.locale || 'en');
+    // Set HTML lang attribute - ensure it's always set
+    const locale = data.locale || 'en';
+    const htmlElement = this.document.documentElement;
+    htmlElement.setAttribute('lang', locale);
+
+    // Also set it on the html element with id if it exists
+    const htmlRoot = this.document.getElementById('html-root');
+    if (htmlRoot) {
+      htmlRoot.setAttribute('lang', locale);
+    }
 
     // Remove existing hreflang alternates to avoid duplicates
     const existingAlternates = this.document.querySelectorAll('link[rel="alternate"][hreflang]');
@@ -235,6 +252,74 @@ export class SEOService {
   setRobotsMetaTag(noindex?: boolean, nofollow?: boolean): void {
     const content = this.buildRobotsContent(noindex, nofollow);
     this.meta.updateTag({ name: 'robots', content });
+  }
+
+  /**
+   * Set E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness)
+   */
+  setEEATSignals(data: SEOData): void {
+    // Author meta tag for Expertise and Authoritativeness
+    if (data.author) {
+      this.meta.updateTag({ name: 'author', content: data.author });
+      this.meta.updateTag({ property: 'article:author', content: data.author });
+    } else {
+      // Default author
+      this.meta.updateTag({ name: 'author', content: 'SmartTextConverter Team' });
+      this.meta.updateTag({ property: 'article:author', content: 'SmartTextConverter Team' });
+    }
+
+    // Date published for Trustworthiness
+    if (data.publishedTime) {
+      this.meta.updateTag({ name: 'date', content: data.publishedTime });
+      this.meta.updateTag({ property: 'article:published_time', content: data.publishedTime });
+      this.meta.updateTag({ property: 'published_time', content: data.publishedTime });
+    }
+
+    // Date modified for Trustworthiness
+    if (data.modifiedTime) {
+      this.meta.updateTag({ property: 'article:modified_time', content: data.modifiedTime });
+      this.meta.updateTag({ property: 'modified_time', content: data.modifiedTime });
+    } else {
+      // Set current date as modified time
+      const currentDate = new Date().toISOString();
+      this.meta.updateTag({ property: 'article:modified_time', content: currentDate });
+    }
+
+    // Section for content categorization
+    if (data.section) {
+      this.meta.updateTag({ property: 'article:section', content: data.section });
+    }
+
+    // Tags for content categorization
+    if (data.tags && data.tags.length > 0) {
+      data.tags.forEach(tag => {
+        this.meta.addTag({ property: 'article:tag', content: tag }, false);
+      });
+    }
+
+    // Publisher for Authoritativeness
+    this.meta.updateTag({ property: 'article:publisher', content: 'https://smarttextconverter.com' });
+
+    // Contact information for Trustworthiness
+    this.meta.updateTag({ name: 'contact', content: 'contact@smarttextconverter.com' });
+    this.meta.updateTag({ name: 'reply-to', content: 'contact@smarttextconverter.com' });
+  }
+
+  /**
+   * Set Google Search Console verification meta tag
+   */
+  setGoogleSiteVerification(verificationCode: string): void {
+    if (!verificationCode) return;
+    
+    // Remove existing verification tags
+    const existing = this.document.querySelectorAll('meta[name="google-site-verification"]');
+    existing.forEach(tag => tag.remove());
+    
+    // Add new verification tag
+    this.meta.updateTag({ 
+      name: 'google-site-verification', 
+      content: verificationCode 
+    });
   }
 
   /**
@@ -461,7 +546,25 @@ Allow: /js/`;
    * Set blog post SEO (legacy method for compatibility)
    */
   setBlogPostSEO(data: any): void {
-    this.updateSEO(data);
+    // Transform blog post data to match SEOData interface
+    const seoData: SEOData = {
+      title: data.title || '',
+      description: data.description || '',
+      keywords: Array.isArray(data.keywords) ? data.keywords.join(', ') : data.keywords,
+      url: data.url || this.getCurrentUrl(),
+      type: 'article',
+      image: data.image || '/og-image.png',
+      author: data.author || 'SmartTextConverter Team',
+      publishedTime: data.publishedDate || data.publishedTime || new Date().toISOString(),
+      modifiedTime: data.modifiedDate || data.modifiedTime || new Date().toISOString(),
+      section: data.category || 'Blog',
+      tags: Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []),
+      locale: 'en',
+      canonicalUrl: data.url || this.getCurrentUrl(),
+      structuredData: data.structuredData || [],
+    };
+    
+    this.updateSEO(seoData);
   }
 }
 

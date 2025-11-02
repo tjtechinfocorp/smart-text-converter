@@ -23,7 +23,11 @@ export class ToolsLandingComponent implements OnInit {
       url: 'https://smarttextconverter.com/tools',
       type: 'website',
       image: '/main-logo-80x80.png',
-      author: 'SmartTextConverter',
+      author: 'SmartTextConverter Team',
+      publishedTime: '2025-09-24T00:00:00Z',
+      modifiedTime: new Date().toISOString(),
+      section: 'Text Converter Tools',
+      tags: ['text converter', 'online tools', 'text formatter', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/tools',
       structuredData: [
