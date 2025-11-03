@@ -359,10 +359,10 @@ export const routes: Routes = [
     title: 'Contact Us | SmartTextConverter',
   },
 
-  // Wildcard route - 404 (no redirect to avoid SEO issues)
+  // Wildcard route - 404 (proper 404 component with noindex)
   {
     path: '**',
-    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
-    title: 'Page Not Found | SmartTextConverter',
+    loadComponent: () => import('./components/not-found/not-found.component').then(m => m.NotFoundComponent),
+    title: '404 - Page Not Found | SmartTextConverter',
   },
 ];

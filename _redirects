@@ -37,6 +37,8 @@
 /blog/javascript-formatter-complete-guide    /index.html   200
 /blog/html-formatter-complete-guide    /index.html   200
 /blog/sql-formatter-complete-guide    /index.html   200
+/blog/sql-formatter-guide    /index.html   200
+/blog/accessibility-best-practices    /index.html   200
 
 # JSON tools
 /json/formatter     /index.html   200
@@ -60,6 +62,9 @@
 /tools             /index.html   200
 /developer-tools   /index.html   200
 /text-processing   /index.html   200
+/landing/tools     /index.html   200
+/landing/developer-tools   /index.html   200
+/landing/text-processing   /index.html   200
 
 # SEO dashboard
 /seo-dashboard     /index.html   200
@@ -73,11 +78,16 @@
 /text-formatter/  /text-formatter  301
 /blog/            /blog             301
 /json/formatter/  /json/formatter  301
+/json/parser/     /json/parser      301
 /xml/formatter/   /xml/formatter   301
 /js/formatter/    /js/formatter    301
 /html/formatter/  /html/formatter  301
 /css/formatter/   /css/formatter   301
 /sql/formatter/   /sql/formatter   301
+/privacy/         /privacy          301
+/terms/           /terms            301
+/contact/         /contact          301
+# Comparison pages are handled individually above
 
 # Language query parameters are handled by the Angular app
 # No redirect rules needed for ?lang=* parameters

@@ -21,6 +21,7 @@ export interface SEOData {
   canonicalUrl?: string;
   noindex?: boolean;
   nofollow?: boolean;
+  robots?: string; // Alternative to noindex/nofollow - e.g., "noindex, nofollow"
   structuredData?: any[];
   card?: string;
   googleSiteVerification?: string;
@@ -77,9 +78,15 @@ export class SEOService {
       this.meta.updateTag({ name: 'keywords', content: data.keywords });
     }
 
-    // Set canonical URL
+    // Set canonical URL (automatically strips query parameters)
     if (data.canonicalUrl) {
       this.setCanonicalURL(data.canonicalUrl);
+    } else if (data.url) {
+      // Use the clean URL (without query params) as canonical
+      this.setCanonicalURL(data.url);
+    } else {
+      // Generate canonical from current route (without query params)
+      this.setCanonicalURL(this.getCurrentUrl(true));
     }
 
     // Set Open Graph tags
@@ -91,8 +98,12 @@ export class SEOService {
     // Set language tags
     this.setLanguageTags(data);
 
-    // Set robots meta tag
-    this.setRobotsMetaTag(data.noindex, data.nofollow);
+    // Set robots meta tag (support both string format and boolean flags)
+    if (data.robots) {
+      this.meta.updateTag({ name: 'robots', content: data.robots });
+    } else {
+      this.setRobotsMetaTag(data.noindex, data.nofollow);
+    }
 
     // Set E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness)
     this.setEEATSignals(data);
@@ -110,6 +121,7 @@ export class SEOService {
 
   /**
    * Set canonical URL
+   * Automatically strips query parameters to prevent duplicate content issues
    */
   setCanonicalURL(url: string): void {
     // Remove existing canonical link
@@ -118,10 +130,14 @@ export class SEOService {
       existingCanonical.remove();
     }
 
+    // Strip query parameters and hash from canonical URL
+    // This ensures all language variants (?lang=xx) canonicalize to the same URL
+    const cleanUrl = url.split('?')[0].split('#')[0];
+
     // Add new canonical link
     const link = this.document.createElement('link');
     link.setAttribute('rel', 'canonical');
-    link.setAttribute('href', url);
+    link.setAttribute('href', cleanUrl);
     this.document.head.appendChild(link);
   }
 
@@ -129,11 +145,14 @@ export class SEOService {
    * Set Open Graph tags
    */
   setOpenGraphTags(data: SEOData): void {
+    // Use clean URL (without query params) for Open Graph
+    const cleanUrl = data.url ? data.url.split('?')[0].split('#')[0] : this.getCurrentUrl(true);
+    
     const ogTags = [
       { property: 'og:title', content: data.title },
       { property: 'og:description', content: data.description },
       { property: 'og:type', content: data.type || 'website' },
-      { property: 'og:url', content: data.url || this.getCurrentUrl() },
+      { property: 'og:url', content: cleanUrl },
       { property: 'og:site_name', content: 'SmartTextConverter' },
       { property: 'og:locale', content: data.locale || 'en_US' },
     ];
@@ -367,10 +386,13 @@ export class SEOService {
   }
 
   /**
-   * Get current URL
+   * Get current URL (without query parameters for canonical)
    */
-  private getCurrentUrl(): string {
-    return this.baseUrl + this.router.url;
+  private getCurrentUrl(stripQueryParams: boolean = true): string {
+    const url = this.router.url;
+    // Strip query parameters for canonical URLs to avoid duplicate content issues
+    const cleanUrl = stripQueryParams ? url.split('?')[0] : url;
+    return this.baseUrl + cleanUrl;
   }
 
   /**
