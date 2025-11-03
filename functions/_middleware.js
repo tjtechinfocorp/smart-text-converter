@@ -3,9 +3,19 @@ export async function onRequest(context) {
   const { request, next } = context;
   const url = new URL(request.url);
 
+  // Redirect www to non-www for SEO consistency
+  // This ensures all traffic goes to smarttextconverter.com (non-www)
+  if (url.hostname === 'www.smarttextconverter.com') {
+    const nonWwwUrl = new URL(url);
+    nonWwwUrl.hostname = 'smarttextconverter.com';
+    return Response.redirect(nonWwwUrl.toString(), 301);
+  }
+
   // Skip middleware for static assets
-  if (url.pathname.startsWith('/assets/') ||
-      url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot)$/)) {
+  if (
+    url.pathname.startsWith('/assets/') ||
+    url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot)$/)
+  ) {
     return next();
   }
 
@@ -21,7 +31,7 @@ export async function onRequest(context) {
   const newResponse = new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
-    headers: response.headers
+    headers: response.headers,
   });
 
   // Add security headers
@@ -33,7 +43,10 @@ export async function onRequest(context) {
   newResponse.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
 
   // Set appropriate cache headers
-  if (url.pathname.startsWith('/assets/') || url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|webp)$/)) {
+  if (
+    url.pathname.startsWith('/assets/') ||
+    url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|webp)$/)
+  ) {
     newResponse.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
   } else if (url.pathname.match(/\.html$/)) {
     newResponse.headers.set('Cache-Control', 'public, max-age=3600');
