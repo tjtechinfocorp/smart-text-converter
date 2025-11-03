@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>https://smarttextconverter.com/sitemap.xml</loc></sitemap>
-  <sitemap><loc>https://smarttextconverter.com/sitemap-tools.xml</loc></sitemap>
-  <sitemap><loc>https://smarttextconverter.com/sitemap-static.xml</loc></sitemap>
-  <sitemap><loc>https://smarttextconverter.com/sitemap-blog.xml</loc></sitemap>
+  <sitemap>
+    <loc>https://smarttextconverter.com/sitemap.xml</loc>
+    <lastmod>2025-11-03</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://smarttextconverter.com/sitemap-tools.xml</loc>
+    <lastmod>2025-11-03</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://smarttextconverter.com/sitemap-blog.xml</loc>
+    <lastmod>2025-11-03</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://smarttextconverter.com/sitemap-static.xml</loc>
+    <lastmod>2025-11-03</lastmod>
+  </sitemap>
 </sitemapindex>
