@@ -470,7 +470,7 @@ export const en = {
   'action.input-placeholder': 'Enter your text here...',
   'action.output-placeholder': 'Converted text will appear here...',
   // Home Page
-  'home.hero.title': 'Free Online Text ',
+  'home.hero.title': 'Smart Text ',
   'home.hero.subtitle': 'Converter & Formatter',
   'home.hero.description':
     'Transform your text with powerful conversion tools: case changes, formatting, encoding, and SEO-friendly generators. All tools are free and work instantly in your browser.',

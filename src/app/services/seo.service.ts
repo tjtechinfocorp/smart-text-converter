@@ -147,13 +147,13 @@ export class SEOService {
   setOpenGraphTags(data: SEOData): void {
     // Use clean URL (without query params) for Open Graph
     const cleanUrl = data.url ? data.url.split('?')[0].split('#')[0] : this.getCurrentUrl(true);
-    
+
     const ogTags = [
       { property: 'og:title', content: data.title },
       { property: 'og:description', content: data.description },
       { property: 'og:type', content: data.type || 'website' },
       { property: 'og:url', content: cleanUrl },
-      { property: 'og:site_name', content: 'SmartTextConverter' },
+      { property: 'og:site_name', content: 'Smart Text Converter' },
       { property: 'og:locale', content: data.locale || 'en_US' },
     ];
 
@@ -329,15 +329,15 @@ export class SEOService {
    */
   setGoogleSiteVerification(verificationCode: string): void {
     if (!verificationCode) return;
-    
+
     // Remove existing verification tags
     const existing = this.document.querySelectorAll('meta[name="google-site-verification"]');
     existing.forEach(tag => tag.remove());
-    
+
     // Add new verification tag
-    this.meta.updateTag({ 
-      name: 'google-site-verification', 
-      content: verificationCode 
+    this.meta.updateTag({
+      name: 'google-site-verification',
+      content: verificationCode,
     });
   }
 
@@ -585,7 +585,7 @@ Allow: /js/`;
       canonicalUrl: data.url || this.getCurrentUrl(),
       structuredData: data.structuredData || [],
     };
-    
+
     this.updateSEO(seoData);
   }
 }

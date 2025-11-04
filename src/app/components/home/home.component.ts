@@ -43,11 +43,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     // Set SEO meta tags for home page using comprehensive SEO service
     this.seoService.updateSEO({
-      title: 'Text Converter — Free Online Text Case Converter & Formatter',
+      title: 'Smart Text Converter - Free Online Text Converter & Formatter',
       description:
-        'Text Converter lets you transform text: case, formatting, encoding, generators, pipelines, SEO-friendly output. Free online text converter tool.',
+        'Smart Text Converter is a free online text converter and formatter. Convert text case, format text, encode/decode, analyze text, and more. No registration required. Fast and secure.',
       keywords:
-        'text converter, case converter, uppercase, lowercase, title case, slugify, SEO tools, text formatter, online converter',
+        'smart text converter, text converter, case converter, uppercase, lowercase, title case, slugify, SEO tools, text formatter, online converter',
       url: 'https://smarttextconverter.com/',
       type: 'website',
       image: '/main-logo-80x80.png',
@@ -55,15 +55,21 @@ export class HomeComponent implements OnInit {
       publishedTime: '2024-01-01T00:00:00Z',
       modifiedTime: new Date().toISOString(),
       section: 'Text Processing Tools',
-      tags: ['text converter', 'case converter', 'online tools', 'developer tools', 'text utilities'],
+      tags: [
+        'text converter',
+        'case converter',
+        'online tools',
+        'developer tools',
+        'text utilities',
+      ],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/',
       structuredData: [
         {
           '@context': 'https://schema.org',
           '@type': 'WebApplication',
-          name: 'Text Converter',
-          description: 'Free online text case converter and formatter',
+          name: 'Smart Text Converter',
+          description: 'Smart Text Converter - Free online text case converter and formatter',
           url: 'https://smarttextconverter.com/',
           applicationCategory: 'UtilitiesApplication',
           operatingSystem: 'Web Browser',
@@ -85,9 +91,9 @@ export class HomeComponent implements OnInit {
       const structuredData = {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
-        name: 'SmartTextConverter',
+        name: 'Smart Text Converter',
         description:
-          'Free online text converter and formatter with multiple text processing tools supporting 20 languages',
+          'Smart Text Converter - Free online text converter and formatter with multiple text processing tools supporting 20 languages',
         url: 'https://smarttextconverter.com',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Web Browser',
@@ -136,7 +142,7 @@ export class HomeComponent implements OnInit {
         },
         author: {
           '@type': 'Organization',
-          name: 'SmartTextConverter',
+          name: 'Smart Text Converter',
           url: 'https://smarttextconverter.com',
         },
         audience: {
@@ -144,7 +150,7 @@ export class HomeComponent implements OnInit {
           audienceType: 'Global users requiring text processing tools',
         },
         keywords:
-          'text converter, case converter, text formatter, multi language, international, global, online tools, free utilities',
+          'smart text converter, text converter, case converter, text formatter, multi language, international, global, online tools, free utilities',
         screenshot: '/main-logo-80x80.png',
         softwareVersion: '2.0',
         datePublished: '2025-09-24',

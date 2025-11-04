@@ -21,10 +21,11 @@ export const SEO_CONFIG = {
 
   // Default SEO configuration
   defaultSEO: {
-    title: 'SmartTextConverter - Free Online Text Tools',
+    title: 'Smart Text Converter - Free Online Text Tools',
     description:
-      'Convert, format, and analyze text with our free online tools. Case converter, text formatter, and more utilities for developers and writers.',
-    keywords: 'text converter, case converter, online tools, free utilities, text formatter',
+      'Smart Text Converter - Convert, format, and analyze text with our free online tools. Case converter, text formatter, and more utilities for developers and writers.',
+    keywords:
+      'smart text converter, text converter, case converter, online tools, free utilities, text formatter',
     url: 'https://smarttextconverter.com',
     type: 'website',
     image: '/main-logo-80x80.png',
@@ -147,16 +148,17 @@ export const SEO_CONFIG = {
   pageSEO: {
     home: {
       en: {
-        title: 'SmartTextConverter - Free Online Text Tools',
+        title: 'Smart Text Converter - Free Online Text Tools',
         description:
-          'Convert, format, and analyze text with our free online tools. Case converter, text formatter, and more utilities for developers and writers.',
-        keywords: 'text converter, case converter, online tools, free utilities, text formatter',
+          'Smart Text Converter - Convert, format, and analyze text with our free online tools. Case converter, text formatter, and more utilities for developers and writers.',
+        keywords:
+          'smart text converter, text converter, case converter, online tools, free utilities, text formatter',
         structuredData: [
           {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
-            name: 'SmartTextConverter',
-            description: 'Free online text conversion and formatting tools',
+            name: 'Smart Text Converter',
+            description: 'Smart Text Converter - Free online text conversion and formatting tools',
             url: 'https://smarttextconverter.com',
             applicationCategory: 'DeveloperApplication',
             operatingSystem: 'Web Browser',
