@@ -363,6 +363,6 @@ export const routes: Routes = [
   {
     path: '**',
     loadComponent: () => import('./components/not-found/not-found.component').then(m => m.NotFoundComponent),
-    title: '404 - Page Not Found | SmartTextConverter',
+    title: '404 - Page Not Found | Smart Text Converter',
   },
 ];

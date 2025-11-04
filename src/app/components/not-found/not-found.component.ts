@@ -177,10 +177,10 @@ export class NotFoundComponent implements OnInit {
   ngOnInit(): void {
     // Set SEO with noindex to prevent indexing of 404 pages
     this.seoService.updateSEO({
-      title: '404 - Page Not Found | SmartTextConverter',
+      title: '404 - Page Not Found | Smart Text Converter',
       description:
-        'The page you are looking for does not exist. Return to SmartTextConverter homepage to access our free online text processing tools.',
-      keywords: '404, page not found, smarttextconverter',
+        'The page you are looking for does not exist. Return to Smart Text Converter homepage to access our free online text processing tools.',
+      keywords: '404, page not found, smart text converter',
       url: 'https://smarttextconverter.com/404',
       canonicalUrl: 'https://smarttextconverter.com/404',
       robots: 'noindex, nofollow',
