@@ -175,6 +175,9 @@ export class NotFoundComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Note: HTTP 404 status code is set server-side in server.ts
+    // by detecting NotFoundComponent in the rendered HTML
+
     // Set SEO with noindex to prevent indexing of 404 pages
     this.seoService.updateSEO({
       title: '404 - Page Not Found | Smart Text Converter',
