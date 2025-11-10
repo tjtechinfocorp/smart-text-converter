@@ -512,11 +512,20 @@ export class FAQSchemaService {
       return;
     }
 
-    // Remove existing FAQ schema
-    const existingScript = document.querySelector('script[data-faq-schema]');
-    if (existingScript) {
-      existingScript.remove();
-    }
+    // Remove existing FAQ schemas (both with data attribute and any containing FAQPage)
+    // This handles all cases: static schemas, dynamic schemas, www/non-www URLs, query params
+    const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    existingScripts.forEach(script => {
+      const scriptText = (script.textContent || '').toLowerCase();
+      // Remove if it has data-faq-schema attribute OR contains FAQPage schema
+      // Case-insensitive check for FAQPage to catch all variations
+      if (
+        script.hasAttribute('data-faq-schema') ||
+        (scriptText.includes('@type') && scriptText.includes('faqpage'))
+      ) {
+        script.remove();
+      }
+    });
 
     // Add new FAQ schema
     const script = document.createElement('script');
