@@ -249,7 +249,8 @@ export class SEOService {
     } else {
       const currentPath = this.router.url.split('?')[0];
       this.supportedLanguages.forEach(lang => {
-        const href = lang === 'en' ? `${this.baseUrl}${currentPath}` : `${this.baseUrl}/${lang}${currentPath}`;
+        const href =
+          lang === 'en' ? `${this.baseUrl}${currentPath}` : `${this.baseUrl}/${lang}${currentPath}`;
         const link = this.document.createElement('link');
         link.setAttribute('rel', 'alternate');
         link.setAttribute('hreflang', lang);
@@ -317,7 +318,10 @@ export class SEOService {
     }
 
     // Publisher for Authoritativeness
-    this.meta.updateTag({ property: 'article:publisher', content: 'https://smarttextconverter.com' });
+    this.meta.updateTag({
+      property: 'article:publisher',
+      content: 'https://smarttextconverter.com',
+    });
 
     // Contact information for Trustworthiness
     this.meta.updateTag({ name: 'contact', content: 'contact@smarttextconverter.com' });
@@ -389,7 +393,23 @@ export class SEOService {
    * Get current URL (without query parameters for canonical)
    */
   private getCurrentUrl(stripQueryParams: boolean = true): string {
-    const url = this.router.url;
+    let url = this.router.url;
+
+    // Remove language codes from path (e.g., /ar/html/formatter -> /html/formatter)
+    // Language should only be in query parameters, not path segments
+    const pathSegments = url
+      .split('?')[0]
+      .split('/')
+      .filter(segment => segment);
+    if (pathSegments.length > 0 && this.supportedLanguages.includes(pathSegments[0])) {
+      // Remove language code(s) from path
+      let remainingPath = pathSegments;
+      while (remainingPath.length > 0 && this.supportedLanguages.includes(remainingPath[0])) {
+        remainingPath = remainingPath.slice(1);
+      }
+      url = '/' + remainingPath.join('/') + (url.includes('?') ? url.split('?')[1] : '');
+    }
+
     // Strip query parameters for canonical URLs to avoid duplicate content issues
     const cleanUrl = stripQueryParams ? url.split('?')[0] : url;
     return this.baseUrl + cleanUrl;
@@ -580,7 +600,7 @@ Allow: /js/`;
       publishedTime: data.publishedDate || data.publishedTime || new Date().toISOString(),
       modifiedTime: data.modifiedDate || data.modifiedTime || new Date().toISOString(),
       section: data.category || 'Blog',
-      tags: Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []),
+      tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
       locale: 'en',
       canonicalUrl: data.url || this.getCurrentUrl(),
       structuredData: data.structuredData || [],

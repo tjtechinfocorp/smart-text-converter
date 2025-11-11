@@ -24,6 +24,97 @@ export async function onRequest(context) {
     return next();
   }
 
+  // Handle language codes in URL paths - redirect to query parameter format
+  // Supported languages: en, es, fr, de, it, pt, ru, ja, ko, zh, ar, hi, bn, ur
+  const supportedLanguages = [
+    'en',
+    'es',
+    'fr',
+    'de',
+    'it',
+    'pt',
+    'ru',
+    'ja',
+    'ko',
+    'zh',
+    'ar',
+    'hi',
+    'bn',
+    'ur',
+    'pt-br',
+    'fil',
+    'pl',
+    'tr',
+    'sw',
+    'id',
+    'nl',
+  ];
+  const pathSegments = url.pathname.split('/').filter(segment => segment);
+
+  if (pathSegments.length > 0) {
+    const firstSegment = pathSegments[0];
+    const secondSegment = pathSegments[1];
+
+    // Check if first segment is a language code
+    if (supportedLanguages.includes(firstSegment)) {
+      // Extract language code(s) and remaining path
+      let langCodes = [firstSegment];
+      let remainingPath = pathSegments.slice(1);
+
+      // Handle multiple language codes (e.g., /it/pt/js/formatter)
+      // Keep only the last valid language code
+      while (remainingPath.length > 0 && supportedLanguages.includes(remainingPath[0])) {
+        langCodes.push(remainingPath[0]);
+        remainingPath = remainingPath.slice(1);
+      }
+
+      // Use the last language code (most specific)
+      const langCode = langCodes[langCodes.length - 1];
+
+      // Reconstruct the correct path without language codes
+      // If no remaining path, redirect to homepage
+      let correctPath = remainingPath.length > 0 ? '/' + remainingPath.join('/') : '/';
+
+      // Handle invalid routes that need redirects (apply redirects in middleware to avoid double redirects)
+      const routeRedirects = {
+        '/list-tools': '/line-tools',
+        '/js-formatter': '/js/formatter',
+        '/html-formatter': '/html/formatter',
+        '/xml-formatter': '/xml/formatter',
+        '/css-formatter': '/css/formatter',
+        '/sql-formatter': '/sql/formatter',
+        '/json-formatter': '/json/formatter',
+        '/json-parser': '/json/parser',
+        '/comparison': '/blog',
+        '/tools': '/landing/tools',
+        '/developer-tools': '/landing/developer-tools',
+        '/text-processing': '/landing/text-processing',
+      };
+
+      // Check if the path needs a redirect
+      if (routeRedirects[correctPath]) {
+        correctPath = routeRedirects[correctPath];
+      } else if (correctPath.startsWith('/guide/')) {
+        correctPath = '/blog';
+      } else if (correctPath === '/blog/sql-formatter-complete-guide') {
+        correctPath = '/blog/sql-formatter-guide';
+      }
+
+      // Build redirect URL with language as query parameter
+      const redirectUrl = new URL(correctPath, url.origin);
+      redirectUrl.searchParams.set('lang', langCode);
+
+      // Preserve any existing query parameters (except lang which we're setting)
+      url.searchParams.forEach((value, key) => {
+        if (key !== 'lang') {
+          redirectUrl.searchParams.set(key, value);
+        }
+      });
+
+      return Response.redirect(redirectUrl.toString(), 301);
+    }
+  }
+
   // Add security headers
   const response = await next();
 
