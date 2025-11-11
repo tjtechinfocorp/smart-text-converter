@@ -3,12 +3,24 @@ export async function onRequest(context) {
   const { request, next } = context;
   const url = new URL(request.url);
 
+  // Redirect HTTP to HTTPS for security
+  if (url.protocol === 'http:') {
+    url.protocol = 'https:';
+    return Response.redirect(url.toString(), 301);
+  }
+
   // Redirect www to non-www for SEO consistency
   // This ensures all traffic goes to smarttextconverter.com (non-www)
   if (url.hostname === 'www.smarttextconverter.com') {
     const nonWwwUrl = new URL(url);
     nonWwwUrl.hostname = 'smarttextconverter.com';
     return Response.redirect(nonWwwUrl.toString(), 301);
+  }
+
+  // Remove invalid search query parameters (from sitemaps or forms)
+  if (url.searchParams.has('q') && url.searchParams.get('q') === '{search_term_string}') {
+    url.searchParams.delete('q');
+    return Response.redirect(url.toString(), 301);
   }
 
   // Skip middleware for static assets
@@ -59,9 +71,14 @@ export async function onRequest(context) {
     return Response.redirect(redirectUrl.toString(), 301);
   }
 
-  // Handle invalid blog post route
-  if (url.pathname === '/blog/sql-formatter-complete-guide') {
-    const redirectUrl = new URL('/blog/sql-formatter-guide', url.origin);
+  // Handle invalid blog post routes
+  const blogRedirects = {
+    '/blog/sql-formatter-complete-guide': '/blog/sql-formatter-guide',
+    '/blog/accessibility-blog': '/blog/accessibility-best-practices',
+  };
+
+  if (blogRedirects[url.pathname]) {
+    const redirectUrl = new URL(blogRedirects[url.pathname], url.origin);
     url.searchParams.forEach((value, key) => {
       redirectUrl.searchParams.set(key, value);
     });
