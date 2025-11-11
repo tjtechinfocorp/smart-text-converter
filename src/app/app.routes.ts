@@ -358,6 +358,12 @@ export const routes: Routes = [
       import('./components/contact/contact.component').then(m => m.ContactComponent),
     title: 'Contact Us | SmartTextConverter',
   },
+  {
+    path: 'seo-dashboard',
+    loadComponent: () =>
+      import('./components/seo-dashboard/seo-dashboard.component').then(m => m.SEODashboardComponent),
+    title: 'SEO Dashboard | SmartTextConverter',
+  },
 
   // Wildcard route - 404 (proper 404 component with noindex)
   {

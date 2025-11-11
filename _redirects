@@ -58,10 +58,10 @@
 /comparison/textcase-org    /index.html   200
 /comparison/best-case-converters-2024    /index.html   200
 
-# Landing pages
-/tools             /index.html   200
-/developer-tools   /index.html   200
-/text-processing   /index.html   200
+# Landing pages - redirect short URLs to full landing page URLs
+/tools             /landing/tools          301
+/developer-tools   /landing/developer-tools    301
+/text-processing   /landing/text-processing    301
 /landing/tools     /index.html   200
 /landing/developer-tools   /index.html   200
 /landing/text-processing   /index.html   200
@@ -91,6 +91,27 @@
 
 # Language query parameters are handled by the Angular app
 # No redirect rules needed for ?lang=* parameters
+
+# Redirect invalid formatter routes to correct paths
+/js-formatter      /js/formatter      301
+/html-formatter    /html/formatter    301
+/xml-formatter     /xml/formatter     301
+/css-formatter     /css/formatter     301
+/sql-formatter     /sql/formatter     301
+/json-formatter    /json/formatter    301
+/json-parser       /json/parser       301
+
+# Redirect invalid comparison route
+/comparison        /blog              301
+
+# Redirect invalid list-tools route
+/list-tools        /line-tools        301
+
+# Redirect invalid blog post route
+/blog/sql-formatter-complete-guide    /blog/sql-formatter-guide    301
+
+# Redirect invalid guide routes to blog
+/guide/*           /blog              301
 
 # Safe fallback for SPA routing - exclude files with extensions
 # This pattern only matches routes without file extensions
