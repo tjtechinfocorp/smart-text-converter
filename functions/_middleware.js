@@ -147,6 +147,37 @@ export async function onRequest(context) {
   if (pathSegments.length > 0) {
     const firstSegment = pathSegments[0];
 
+    // Special case: Handle 'ko' (Korean) in paths - strip it since it's not supported
+    // This prevents 404s for URLs like /ko/text-formatter
+    if (firstSegment === 'ko') {
+      const remainingPath = pathSegments.slice(1);
+      const correctPath = remainingPath.length > 0 ? '/' + remainingPath.join('/') : '/';
+
+      // Handle invalid routes that need redirects
+      let finalPath = correctPath;
+      if (routeRedirects[finalPath]) {
+        finalPath = routeRedirects[finalPath];
+      } else if (finalPath.startsWith('/guide/')) {
+        finalPath = '/blog';
+      } else if (finalPath === '/blog/sql-formatter-complete-guide') {
+        finalPath = '/blog/sql-formatter-guide';
+      }
+
+      const redirectUrl = new URL(finalPath, url.origin);
+      // Preserve existing query parameters (but validate language if present)
+      url.searchParams.forEach((value, key) => {
+        if (key === 'lang') {
+          if (supportedLanguages.includes(value)) {
+            redirectUrl.searchParams.set(key, value);
+          }
+        } else {
+          redirectUrl.searchParams.set(key, value);
+        }
+      });
+
+      return Response.redirect(redirectUrl.toString(), 301);
+    }
+
     // Check if first segment is a language code
     if (supportedLanguages.includes(firstSegment)) {
       // Extract language code(s) and remaining path
@@ -155,9 +186,18 @@ export async function onRequest(context) {
 
       // Handle multiple language codes (e.g., /it/pt/js/formatter)
       // Keep only the last valid language code
-      while (remainingPath.length > 0 && supportedLanguages.includes(remainingPath[0])) {
-        langCodes.push(remainingPath[0]);
-        remainingPath = remainingPath.slice(1);
+      // Skip 'ko' if it appears (not supported)
+      while (remainingPath.length > 0) {
+        if (remainingPath[0] === 'ko') {
+          // Skip 'ko' (not supported) and continue
+          remainingPath = remainingPath.slice(1);
+        } else if (supportedLanguages.includes(remainingPath[0])) {
+          langCodes.push(remainingPath[0]);
+          remainingPath = remainingPath.slice(1);
+        } else {
+          // Not a language code, stop processing
+          break;
+        }
       }
 
       // Use the last language code (most specific)

@@ -36,6 +36,8 @@ export interface MultilangSEOData {
 })
 export class SEOService {
   private baseUrl = 'https://smarttextconverter.com';
+  // Supported languages: must match functions/_middleware.js
+  // Note: 'ko' (Korean) removed as translation file doesn't exist
   private supportedLanguages = [
     'en',
     'es',
@@ -45,12 +47,18 @@ export class SEOService {
     'pt',
     'ru',
     'ja',
-    'ko',
     'zh',
     'ar',
     'hi',
     'bn',
     'ur',
+    'pt-br',
+    'fil',
+    'pl',
+    'tr',
+    'sw',
+    'id',
+    'nl',
   ];
 
   constructor(
