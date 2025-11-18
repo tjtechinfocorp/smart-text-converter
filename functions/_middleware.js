@@ -36,6 +36,40 @@ export async function onRequest(context) {
     return next();
   }
 
+  // Supported languages: en, es, fr, de, it, pt, ru, ja, zh, ar, hi, bn, ur, pt-br, fil, pl, tr, sw, id, nl
+  // Note: 'ko' (Korean) removed as translation file doesn't exist
+  const supportedLanguages = [
+    'en',
+    'es',
+    'fr',
+    'de',
+    'it',
+    'pt',
+    'ru',
+    'ja',
+    'zh',
+    'ar',
+    'hi',
+    'bn',
+    'ur',
+    'pt-br',
+    'fil',
+    'pl',
+    'tr',
+    'sw',
+    'id',
+    'nl',
+  ];
+
+  // Validate and handle language query parameter early
+  // If an invalid language is provided, remove it from the URL
+  const langParam = url.searchParams.get('lang');
+  if (langParam && !supportedLanguages.includes(langParam)) {
+    // Invalid language parameter - remove it and redirect to clean URL
+    url.searchParams.delete('lang');
+    return Response.redirect(url.toString(), 301);
+  }
+
   // Handle invalid routes that need redirects (check before language code handling)
   const routeRedirects = {
     '/list-tools': '/line-tools',
@@ -52,12 +86,20 @@ export async function onRequest(context) {
     '/text-processing': '/landing/text-processing',
   };
 
-  // Check for invalid routes and redirect (preserve query parameters)
+  // Check for invalid routes and redirect (preserve query parameters, but validate language)
   if (routeRedirects[url.pathname]) {
     const redirectUrl = new URL(routeRedirects[url.pathname], url.origin);
-    // Preserve all query parameters
+    // Preserve all query parameters, but validate language parameter
     url.searchParams.forEach((value, key) => {
-      redirectUrl.searchParams.set(key, value);
+      if (key === 'lang') {
+        // Only preserve language parameter if it's valid
+        if (supportedLanguages.includes(value)) {
+          redirectUrl.searchParams.set(key, value);
+        }
+        // If invalid, skip it (don't add to redirect URL)
+      } else {
+        redirectUrl.searchParams.set(key, value);
+      }
     });
     return Response.redirect(redirectUrl.toString(), 301);
   }
@@ -66,7 +108,14 @@ export async function onRequest(context) {
   if (url.pathname.startsWith('/guide/')) {
     const redirectUrl = new URL('/blog', url.origin);
     url.searchParams.forEach((value, key) => {
-      redirectUrl.searchParams.set(key, value);
+      if (key === 'lang') {
+        // Only preserve language parameter if it's valid
+        if (supportedLanguages.includes(value)) {
+          redirectUrl.searchParams.set(key, value);
+        }
+      } else {
+        redirectUrl.searchParams.set(key, value);
+      }
     });
     return Response.redirect(redirectUrl.toString(), 301);
   }
@@ -80,36 +129,19 @@ export async function onRequest(context) {
   if (blogRedirects[url.pathname]) {
     const redirectUrl = new URL(blogRedirects[url.pathname], url.origin);
     url.searchParams.forEach((value, key) => {
-      redirectUrl.searchParams.set(key, value);
+      if (key === 'lang') {
+        // Only preserve language parameter if it's valid
+        if (supportedLanguages.includes(value)) {
+          redirectUrl.searchParams.set(key, value);
+        }
+      } else {
+        redirectUrl.searchParams.set(key, value);
+      }
     });
     return Response.redirect(redirectUrl.toString(), 301);
   }
 
   // Handle language codes in URL paths - redirect to query parameter format
-  // Supported languages: en, es, fr, de, it, pt, ru, ja, ko, zh, ar, hi, bn, ur
-  const supportedLanguages = [
-    'en',
-    'es',
-    'fr',
-    'de',
-    'it',
-    'pt',
-    'ru',
-    'ja',
-    'ko',
-    'zh',
-    'ar',
-    'hi',
-    'bn',
-    'ur',
-    'pt-br',
-    'fil',
-    'pl',
-    'tr',
-    'sw',
-    'id',
-    'nl',
-  ];
   const pathSegments = url.pathname.split('/').filter(segment => segment);
 
   if (pathSegments.length > 0) {
@@ -147,7 +179,10 @@ export async function onRequest(context) {
 
       // Build redirect URL with language as query parameter
       const redirectUrl = new URL(correctPath, url.origin);
-      redirectUrl.searchParams.set('lang', langCode);
+      // Only set language parameter if it's valid (should always be valid here, but double-check)
+      if (supportedLanguages.includes(langCode)) {
+        redirectUrl.searchParams.set('lang', langCode);
+      }
 
       // Preserve any existing query parameters (except lang which we're setting)
       url.searchParams.forEach((value, key) => {
