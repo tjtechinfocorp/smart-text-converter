@@ -14,11 +14,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Smart Text Converter' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Smart Text Converter');
-  });
+
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);

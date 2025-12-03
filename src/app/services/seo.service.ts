@@ -87,14 +87,18 @@ export class SEOService {
     }
 
     // Set canonical URL (automatically strips query parameters)
-    if (data.canonicalUrl) {
+    if (data.locale && data.locale !== 'en' && this.supportedLanguages.includes(data.locale)) {
+      // For localized pages, always use the current URL (with language) as canonical
+      // This ensures self-referencing canonicals for localized versions
+      this.setCanonicalURL(this.getCurrentUrl(true, true));
+    } else if (data.canonicalUrl) {
       this.setCanonicalURL(data.canonicalUrl);
     } else if (data.url) {
       // Use the clean URL (without query params) as canonical
       this.setCanonicalURL(data.url);
     } else {
       // Generate canonical from current route (without query params)
-      this.setCanonicalURL(this.getCurrentUrl(true));
+      this.setCanonicalURL(this.getCurrentUrl(true, false));
     }
 
     // Set Open Graph tags
@@ -154,7 +158,12 @@ export class SEOService {
    */
   setOpenGraphTags(data: SEOData): void {
     // Use clean URL (without query params) for Open Graph
-    const cleanUrl = data.url ? data.url.split('?')[0].split('#')[0] : this.getCurrentUrl(true);
+    let cleanUrl = data.url ? data.url.split('?')[0].split('#')[0] : this.getCurrentUrl(true, false);
+
+    // For localized pages, override with the localized URL
+    if (data.locale && data.locale !== 'en' && this.supportedLanguages.includes(data.locale)) {
+      cleanUrl = this.getCurrentUrl(true, true);
+    }
 
     const ogTags = [
       { property: 'og:title', content: data.title },
@@ -400,22 +409,25 @@ export class SEOService {
   /**
    * Get current URL (without query parameters for canonical)
    */
-  private getCurrentUrl(stripQueryParams: boolean = true): string {
+  private getCurrentUrl(stripQueryParams: boolean = true, keepLanguage: boolean = false): string {
     let url = this.router.url;
 
     // Remove language codes from path (e.g., /ar/html/formatter -> /html/formatter)
     // Language should only be in query parameters, not path segments
-    const pathSegments = url
-      .split('?')[0]
-      .split('/')
-      .filter(segment => segment);
-    if (pathSegments.length > 0 && this.supportedLanguages.includes(pathSegments[0])) {
-      // Remove language code(s) from path
-      let remainingPath = pathSegments;
-      while (remainingPath.length > 0 && this.supportedLanguages.includes(remainingPath[0])) {
-        remainingPath = remainingPath.slice(1);
+    // UNLESS keepLanguage is true (for localized canonicals)
+    if (!keepLanguage) {
+      const pathSegments = url
+        .split('?')[0]
+        .split('/')
+        .filter(segment => segment);
+      if (pathSegments.length > 0 && this.supportedLanguages.includes(pathSegments[0])) {
+        // Remove language code(s) from path
+        let remainingPath = pathSegments;
+        while (remainingPath.length > 0 && this.supportedLanguages.includes(remainingPath[0])) {
+          remainingPath = remainingPath.slice(1);
+        }
+        url = '/' + remainingPath.join('/') + (url.includes('?') ? url.split('?')[1] : '');
       }
-      url = '/' + remainingPath.join('/') + (url.includes('?') ? url.split('?')[1] : '');
     }
 
     // Strip query parameters for canonical URLs to avoid duplicate content issues
