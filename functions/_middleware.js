@@ -1,4 +1,17 @@
 // Cloudflare Pages Functions middleware for Angular Universal SSR
+
+// Helper function to create redirect responses with X-Robots-Tag header
+// This prevents Google from indexing redirect pages
+function createRedirect(url, status = 301) {
+  return new Response(null, {
+    status,
+    headers: {
+      'Location': url,
+      'X-Robots-Tag': 'noindex, nofollow'
+    }
+  });
+}
+
 export async function onRequest(context) {
   const { request, next } = context;
   const url = new URL(request.url);
@@ -6,7 +19,7 @@ export async function onRequest(context) {
   // Redirect HTTP to HTTPS for security
   if (url.protocol === 'http:') {
     url.protocol = 'https:';
-    return Response.redirect(url.toString(), 301);
+    return createRedirect(url.toString());
   }
 
   // Redirect www to non-www for SEO consistency
@@ -14,13 +27,13 @@ export async function onRequest(context) {
   if (url.hostname === 'www.smarttextconverter.com') {
     const nonWwwUrl = new URL(url);
     nonWwwUrl.hostname = 'smarttextconverter.com';
-    return Response.redirect(nonWwwUrl.toString(), 301);
+    return createRedirect(nonWwwUrl.toString());
   }
 
   // Remove invalid search query parameters (from sitemaps or forms)
   if (url.searchParams.has('q') && url.searchParams.get('q') === '{search_term_string}') {
     url.searchParams.delete('q');
-    return Response.redirect(url.toString(), 301);
+    return createRedirect(url.toString());
   }
 
   // Skip middleware for static assets
@@ -67,7 +80,7 @@ export async function onRequest(context) {
   if (langParam && !supportedLanguages.includes(langParam)) {
     // Invalid language parameter - remove it and redirect to clean URL
     url.searchParams.delete('lang');
-    return Response.redirect(url.toString(), 301);
+    return createRedirect(url.toString());
   }
 
   // Handle invalid routes that need redirects (check before language code handling)
@@ -86,9 +99,13 @@ export async function onRequest(context) {
     '/text-processing': '/landing/text-processing',
   };
 
+  // Normalize pathname by removing trailing slashes (except for root path)
+  // This ensures /text-processing/ matches /text-processing in routeRedirects
+  const normalizedPath = url.pathname === '/' ? '/' : url.pathname.replace(/\/+$/, '');
+
   // Check for invalid routes and redirect (preserve query parameters, but validate language)
-  if (routeRedirects[url.pathname]) {
-    const redirectUrl = new URL(routeRedirects[url.pathname], url.origin);
+  if (routeRedirects[normalizedPath]) {
+    const redirectUrl = new URL(routeRedirects[normalizedPath], url.origin);
     // Preserve all query parameters, but validate language parameter
     url.searchParams.forEach((value, key) => {
       if (key === 'lang') {
@@ -101,11 +118,11 @@ export async function onRequest(context) {
         redirectUrl.searchParams.set(key, value);
       }
     });
-    return Response.redirect(redirectUrl.toString(), 301);
+    return createRedirect(redirectUrl.toString());
   }
 
   // Handle guide routes redirect
-  if (url.pathname.startsWith('/guide/')) {
+  if (normalizedPath.startsWith('/guide/')) {
     const redirectUrl = new URL('/blog', url.origin);
     url.searchParams.forEach((value, key) => {
       if (key === 'lang') {
@@ -117,7 +134,7 @@ export async function onRequest(context) {
         redirectUrl.searchParams.set(key, value);
       }
     });
-    return Response.redirect(redirectUrl.toString(), 301);
+    return createRedirect(redirectUrl.toString());
   }
 
   // Handle invalid blog post routes
@@ -126,8 +143,8 @@ export async function onRequest(context) {
     '/blog/accessibility-blog': '/blog/accessibility-best-practices',
   };
 
-  if (blogRedirects[url.pathname]) {
-    const redirectUrl = new URL(blogRedirects[url.pathname], url.origin);
+  if (blogRedirects[normalizedPath]) {
+    const redirectUrl = new URL(blogRedirects[normalizedPath], url.origin);
     url.searchParams.forEach((value, key) => {
       if (key === 'lang') {
         // Only preserve language parameter if it's valid
@@ -138,7 +155,7 @@ export async function onRequest(context) {
         redirectUrl.searchParams.set(key, value);
       }
     });
-    return Response.redirect(redirectUrl.toString(), 301);
+    return createRedirect(redirectUrl.toString());
   }
 
   // Handle language codes in URL paths - redirect to query parameter format
@@ -175,7 +192,7 @@ export async function onRequest(context) {
         }
       });
 
-      return Response.redirect(redirectUrl.toString(), 301);
+      return createRedirect(redirectUrl.toString());
     }
 
     // Check if first segment is a language code
@@ -231,7 +248,7 @@ export async function onRequest(context) {
         }
       });
 
-      return Response.redirect(redirectUrl.toString(), 301);
+      return createRedirect(redirectUrl.toString());
     }
   }
 

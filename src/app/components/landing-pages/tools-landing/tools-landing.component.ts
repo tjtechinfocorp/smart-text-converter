@@ -20,7 +20,7 @@ export class ToolsLandingComponent implements OnInit {
         'Discover our comprehensive collection of free online text converter tools. Case converter, text formatter, JSON/XML formatter, JavaScript formatter, and more. No registration required.',
       keywords:
         'text converter tools, online text tools, free text utilities, case converter, text formatter, JSON formatter, XML formatter, JavaScript formatter, text analyzer, encode decode',
-      url: 'https://smarttextconverter.com/tools',
+      url: 'https://smarttextconverter.com/landing/tools',
       type: 'website',
       image: '/main-logo-80x80.png',
       author: 'SmartTextConverter Team',
@@ -29,7 +29,7 @@ export class ToolsLandingComponent implements OnInit {
       section: 'Text Converter Tools',
       tags: ['text converter', 'online tools', 'text formatter', 'developer tools'],
       locale: 'en',
-      canonicalUrl: 'https://smarttextconverter.com/tools',
+      canonicalUrl: 'https://smarttextconverter.com/landing/tools',
       structuredData: [
         {
           '@context': 'https://schema.org',
@@ -37,7 +37,7 @@ export class ToolsLandingComponent implements OnInit {
           name: 'Free Online Text Converter Tools',
           description:
             'Comprehensive collection of free online text processing and conversion tools',
-          url: 'https://smarttextconverter.com/tools',
+          url: 'https://smarttextconverter.com/landing/tools',
           numberOfItems: 10,
           itemListElement: [
             {
@@ -122,7 +122,7 @@ export class ToolsLandingComponent implements OnInit {
           '@type': 'WebApplication',
           name: 'SmartTextConverter Tools',
           description: 'Free online text converter and formatter tools collection',
-          url: 'https://smarttextconverter.com/tools',
+          url: 'https://smarttextconverter.com/landing/tools',
           applicationCategory: 'UtilitiesApplication',
           operatingSystem: 'Web Browser',
           offers: {

@@ -68,17 +68,14 @@ app.get('**', (req, res, next) => {
       inlineCriticalCss: true, // Inline critical CSS for faster rendering
     })
     .then(html => {
-      // Check if this is a 404 page by looking for NotFoundComponent indicators
-      // This is a fallback in case the RESPONSE token doesn't set the status
-      const is404Page = 
-        html.includes('app-not-found') ||
-        html.includes('Page Not Found') ||
-        html.includes('404 - Page Not Found');
-      
+      // Check if this is a 404 page using the reliable marker element
+      // The NotFoundComponent includes <div id="ssr-status-404"> for this purpose
+      const is404Page = html.includes('id="ssr-status-404"');
+
       if (is404Page) {
         res.status(404);
       }
-      
+
       res.send(html);
     })
     .catch(err => next(err));

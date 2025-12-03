@@ -20,7 +20,7 @@ export class DeveloperToolsLandingComponent implements OnInit {
         'Professional developer tools for JSON formatting, XML processing, JavaScript beautification, and code validation. Free online tools for developers, no registration required.',
       keywords:
         'developer tools, JSON formatter, XML formatter, JavaScript formatter, code beautifier, code validator, online developer tools, free coding tools, JSON parser, XML validator, JS minifier',
-      url: 'https://smarttextconverter.com/developer-tools',
+      url: 'https://smarttextconverter.com/landing/developer-tools',
       type: 'website',
       image: '/main-logo-80x80.png',
       author: 'SmartTextConverter Team',
@@ -29,14 +29,14 @@ export class DeveloperToolsLandingComponent implements OnInit {
       section: 'Developer Tools',
       tags: ['developer tools', 'json formatter', 'xml formatter', 'code beautifier'],
       locale: 'en',
-      canonicalUrl: 'https://smarttextconverter.com/developer-tools',
+      canonicalUrl: 'https://smarttextconverter.com/landing/developer-tools',
       structuredData: [
         {
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'Free Online Developer Tools',
           description: 'Professional developer tools for JSON, XML, and JavaScript processing',
-          url: 'https://smarttextconverter.com/developer-tools',
+          url: 'https://smarttextconverter.com/landing/developer-tools',
           numberOfItems: 4,
           itemListElement: [
             {
@@ -76,7 +76,7 @@ export class DeveloperToolsLandingComponent implements OnInit {
           '@type': 'WebApplication',
           name: 'SmartTextConverter Developer Tools',
           description: 'Free online developer tools for JSON, XML, and JavaScript processing',
-          url: 'https://smarttextconverter.com/developer-tools',
+          url: 'https://smarttextconverter.com/landing/developer-tools',
           applicationCategory: 'DeveloperApplication',
           operatingSystem: 'Web Browser',
           offers: {

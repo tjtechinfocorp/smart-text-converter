@@ -75,8 +75,8 @@ describe('SEOService', () => {
 
   it('should set self-referencing canonical URL for localized page', () => {
     // Mock router URL to be localized
-    Object.defineProperty(routerSpy, 'url', { get: () => '/fr/case-converter' });
-    
+    Object.defineProperty(routerSpy, 'url', { get: () => '/case-converter?lang=fr' });
+
     const seoData = {
       title: 'Test Title',
       description: 'Test Description',
@@ -89,13 +89,15 @@ describe('SEOService', () => {
 
     service.updateSEO(seoData);
 
-    expect(service.setCanonicalURL).toHaveBeenCalledWith('https://smarttextconverter.com/fr/case-converter');
+    expect(service.setCanonicalURL).toHaveBeenCalledWith(
+      'https://smarttextconverter.com/case-converter?lang=fr'
+    );
   });
 
   it('should set self-referencing canonical URL for another localized page', () => {
     // Mock router URL to be localized
-    Object.defineProperty(routerSpy, 'url', { get: () => '/es/text-formatter' });
-    
+    Object.defineProperty(routerSpy, 'url', { get: () => '/text-formatter?lang=es' });
+
     const seoData = {
       title: 'Test Title',
       description: 'Test Description',
@@ -108,7 +110,9 @@ describe('SEOService', () => {
 
     service.updateSEO(seoData);
 
-    expect(service.setCanonicalURL).toHaveBeenCalledWith('https://smarttextconverter.com/es/text-formatter');
+    expect(service.setCanonicalURL).toHaveBeenCalledWith(
+      'https://smarttextconverter.com/text-formatter?lang=es'
+    );
   });
 
   it('should use provided canonical URL if not localized', () => {

@@ -125,11 +125,12 @@ export class TextGeneratorComponent implements OnInit, AfterViewInit {
       image: '/main-logo-80x80.png',
       author: 'SmartTextConverter Team',
       publishedTime: '2025-09-26T00:00:00Z',
-      modifiedTime: new Date().toISOString(),
+      modifiedTime: '2025-10-26T00:00:00Z', // Fixed date to avoid "changing content" signals
       section: 'Text Processing Tools',
       tags: ['text generator', 'text utilities', 'developer tools'],
       locale: 'en',
       canonicalUrl: 'https://smarttextconverter.com/text-generator',
+      robots: 'index, follow',
       structuredData: [
         {
           '@context': 'https://schema.org',

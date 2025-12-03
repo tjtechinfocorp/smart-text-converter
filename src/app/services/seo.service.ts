@@ -144,7 +144,11 @@ export class SEOService {
 
     // Strip query parameters and hash from canonical URL
     // This ensures all language variants (?lang=xx) canonicalize to the same URL
-    const cleanUrl = url.split('?')[0].split('#')[0];
+    // UNLESS the URL explicitly contains a lang parameter (passed from updateSEO for localized pages)
+    let cleanUrl = url;
+    if (!url.includes('lang=')) {
+      cleanUrl = url.split('?')[0].split('#')[0];
+    }
 
     // Add new canonical link
     const link = this.document.createElement('link');
@@ -431,6 +435,19 @@ export class SEOService {
     }
 
     // Strip query parameters for canonical URLs to avoid duplicate content issues
+    // UNLESS keepLanguage is true (for localized canonicals), in which case we keep the lang param
+    if (keepLanguage && url.includes('?')) {
+      const queryParams = url.split('?')[1];
+      if (queryParams.includes('lang=')) {
+        // Extract lang param and append to clean URL
+        const params = new URLSearchParams(queryParams);
+        const lang = params.get('lang');
+        if (lang) {
+          return this.baseUrl + url.split('?')[0] + `?lang=${lang}`;
+        }
+      }
+    }
+
     const cleanUrl = stripQueryParams ? url.split('?')[0] : url;
     return this.baseUrl + cleanUrl;
   }

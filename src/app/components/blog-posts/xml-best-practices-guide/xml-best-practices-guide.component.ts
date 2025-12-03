@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { SEOService } from '../../../services/seo.service';
 
 @Component({
   selector: 'app-xml-best-practices-guide',
@@ -263,7 +263,9 @@ import { CommonModule } from '@angular/common';
                 <div
                   class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
                 >
-                  <div class="font-semibold text-gray-900 dark:text-white mb-2">XML Declaration</div>
+                  <div class="font-semibold text-gray-900 dark:text-white mb-2">
+                    XML Declaration
+                  </div>
                   <p class="text-sm text-gray-600 dark:text-gray-300">
                     Defines XML version and encoding
                   </p>
@@ -721,9 +723,9 @@ import { CommonModule } from '@angular/common';
 })
 export class XmlBestPracticesGuideComponent implements OnInit {
   constructor(
-    private meta: Meta,
-    private title: Title,
-    private router: Router
+    private seoService: SEOService,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
@@ -743,95 +745,23 @@ export class XmlBestPracticesGuideComponent implements OnInit {
   }
 
   private setSEO(): void {
-    // Set page title
-    this.title.setTitle(
-      'XML Best Practices Guide: Writing Clean, Efficient XML | Smart Text Converter'
-    );
-
-    // Meta tags
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Master XML best practices with our comprehensive guide. Learn formatting, validation, optimization, and security techniques for professional XML development.',
-    });
-    this.meta.updateTag({
-      name: 'keywords',
-      content:
-        'XML best practices, XML formatting, XML validation, XML optimization, XML security, XML tools, XML guide, XML tutorial',
-    });
-    this.meta.updateTag({ name: 'author', content: 'Smart Text Converter' });
-    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
-
-    // Open Graph tags
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'XML Best Practices Guide: Writing Clean, Efficient XML',
-    });
-    this.meta.updateTag({
-      property: 'og:description',
-      content:
-        'Master the art of writing professional XML documents with our comprehensive guide covering formatting, validation, optimization, and industry best practices.',
-    });
-    this.meta.updateTag({ property: 'og:type', content: 'article' });
-    this.meta.updateTag({
-      property: 'og:url',
-      content: 'https://smarttextconverter.com/blog/xml-best-practices-guide',
-    });
-    this.meta.updateTag({ property: 'og:image', content: '/main-logo-80x80.png' });
-    this.meta.updateTag({ property: 'og:site_name', content: 'Smart Text Converter' });
-
-    // Twitter Card tags
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({
-      name: 'twitter:title',
-      content: 'XML Best Practices Guide: Writing Clean, Efficient XML',
-    });
-    this.meta.updateTag({
-      name: 'twitter:description',
-      content:
-        'Master the art of writing professional XML documents with our comprehensive guide covering formatting, validation, optimization, and industry best practices.',
-    });
-    this.meta.updateTag({ name: 'twitter:image', content: '/main-logo-80x80.png' });
-
-    // Article specific meta tags
-    this.meta.updateTag({ name: 'article:published_time', content: '2025-09-25T00:00:00Z' });
-    this.meta.updateTag({ name: 'article:author', content: 'Smart Text Converter' });
-    this.meta.updateTag({ name: 'article:section', content: 'Web Development' });
-    this.meta.updateTag({ name: 'article:tag', content: 'XML' });
-    this.meta.updateTag({ name: 'article:tag', content: 'Web Development' });
-    this.meta.updateTag({ name: 'article:tag', content: 'Data Format' });
-
-    // Structured data
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'XML Best Practices Guide: Writing Clean, Efficient XML',
+    this.seoService.updateSEO({
+      title: 'XML Best Practices Guide: Writing Clean, Efficient XML | Smart Text Converter',
       description:
-        'Master the art of writing professional XML documents with our comprehensive guide covering formatting, validation, optimization, and industry best practices.',
-      image: '/main-logo-80x80.png',
-      author: {
-        '@type': 'Organization',
-        name: 'Smart Text Converter',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Smart Text Converter',
-        logo: {
-          '@type': 'ImageObject',
-          url: '/main-logo-80x80.png',
-        },
-      },
-      datePublished: '2025-09-25T00:00:00Z',
-      dateModified: '2025-09-25T00:00:00Z',
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': 'https://smarttextconverter.com/blog/xml-best-practices-guide',
-      },
-      articleSection: 'Web Development',
+        'Master XML best practices with our comprehensive guide. Learn formatting, validation, optimization, and security techniques for professional XML development.',
       keywords:
         'XML best practices, XML formatting, XML validation, XML optimization, XML security, XML tools, XML guide, XML tutorial',
-    };
-
-    this.meta.updateTag({ name: 'application/ld+json', content: JSON.stringify(structuredData) });
+      url: 'https://smarttextconverter.com/blog/xml-best-practices-guide',
+      type: 'article',
+      image: '/blog-images/xml-best-practices-guide.webp',
+      author: 'Smart Text Converter',
+      publishedTime: '2025-10-06T00:00:00Z',
+      modifiedTime: '2025-10-06T00:00:00Z',
+      section: 'Web Development',
+      tags: ['XML', 'Programming', 'Best Practices'],
+      locale: 'en',
+      canonicalUrl: 'https://smarttextconverter.com/blog/xml-best-practices-guide',
+      robots: 'index, follow',
+    });
   }
 }

@@ -20,7 +20,7 @@ export class TextProcessingLandingComponent implements OnInit {
         'Comprehensive text processing tools for case conversion, text formatting, encoding/decoding, text analysis, and line manipulation. Free online tools for writers, developers, and content creators.',
       keywords:
         'text processing tools, text formatter, case converter, text analyzer, encode decode, line tools, text manipulation, online text tools, free text utilities, text statistics, word frequency',
-      url: 'https://smarttextconverter.com/text-processing',
+      url: 'https://smarttextconverter.com/landing/text-processing',
       type: 'website',
       image: '/main-logo-80x80.png',
       author: 'SmartTextConverter Team',
@@ -29,14 +29,14 @@ export class TextProcessingLandingComponent implements OnInit {
       section: 'Text Processing Tools',
       tags: ['text processing', 'text formatter', 'case converter', 'text analyzer'],
       locale: 'en',
-      canonicalUrl: 'https://smarttextconverter.com/text-processing',
+      canonicalUrl: 'https://smarttextconverter.com/landing/text-processing',
       structuredData: [
         {
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'Free Online Text Processing Tools',
           description: 'Comprehensive collection of text processing and manipulation tools',
-          url: 'https://smarttextconverter.com/text-processing',
+          url: 'https://smarttextconverter.com/landing/text-processing',
           numberOfItems: 6,
           itemListElement: [
             {
@@ -93,7 +93,7 @@ export class TextProcessingLandingComponent implements OnInit {
           name: 'SmartTextConverter Text Processing Tools',
           description:
             'Free online text processing and manipulation tools for writers and developers',
-          url: 'https://smarttextconverter.com/text-processing',
+          url: 'https://smarttextconverter.com/landing/text-processing',
           applicationCategory: 'UtilitiesApplication',
           operatingSystem: 'Web Browser',
           offers: {
